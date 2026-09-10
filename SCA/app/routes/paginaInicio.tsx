@@ -1,13 +1,13 @@
+import { PaginaInicio } from "~/pagina_inicio/PaginaInicio";
 import type { Route } from "./+types/home";
-import { CadastroSecretarias } from "~/cadastro_secretarias/CadastroSecretarias";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Cadastro" },
-    { name: "description", content: "Cadastrar Secretárias" },
+    { title: "Página Incial" },
+    { name: "description", content: "Primeira página ao logar." },
   ];
 }
 
 export default function Home() {
-  return <CadastroSecretarias />;
+  return <PaginaInicio />;
 }

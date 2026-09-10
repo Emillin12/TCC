@@ -1,13 +1,14 @@
+import { Ajuda } from "~/ajuda/Ajuda";
 import type { Route } from "./+types/home";
-import { CadastroSecretarias } from "~/cadastro_secretarias/CadastroSecretarias";
+
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Cadastro" },
-    { name: "description", content: "Cadastrar Secretárias" },
+    { title: "Ajuda" },
+    { name: "description", content: "Suporte de ajuda apara as secretárias " },
   ];
 }
 
 export default function Home() {
-  return <CadastroSecretarias />;
+  return <Ajuda />;
 }

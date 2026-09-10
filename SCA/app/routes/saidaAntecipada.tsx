@@ -1,5 +1,5 @@
+import { SaidaAntecipadaAnexo } from "~/saidas_antecipadas_anexos/saidaAntecipadaAnexo";
 import type { Route } from "./+types/home";
-import { CadastroSecretarias } from "~/cadastro_secretarias/CadastroSecretarias";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,5 +9,5 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <CadastroSecretarias />;
+  return <SaidaAntecipadaAnexo />;
 }

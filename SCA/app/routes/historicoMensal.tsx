@@ -1,13 +1,13 @@
+import { HistoricoMensal } from "~/historico _mensal/HistoricoMensal";
 import type { Route } from "./+types/home";
-import { CadastroSecretarias } from "~/cadastro_secretarias/CadastroSecretarias";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Cadastro" },
-    { name: "description", content: "Cadastrar Secretárias" },
+    { title: "Movimentaçao" },
+    { name: "description", content: "Movimentação dos alunos por mês." },
   ];
 }
 
 export default function Home() {
-  return <CadastroSecretarias />;
+  return <HistoricoMensal />;
 }

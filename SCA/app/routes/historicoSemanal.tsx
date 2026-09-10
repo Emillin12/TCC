@@ -1,13 +1,13 @@
+import { HistoricoSemanal } from "~/historico_semanal/HisotricoSemanal";
 import type { Route } from "./+types/home";
-import { CadastroSecretarias } from "~/cadastro_secretarias/CadastroSecretarias";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Cadastro" },
-    { name: "description", content: "Cadastrar Secretárias" },
+    { title: "Desempenho" },
+    { name: "description", content: "Movimentação da semana." },
   ];
 }
 
 export default function Home() {
-  return <CadastroSecretarias />;
+  return <HistoricoSemanal />;
 }

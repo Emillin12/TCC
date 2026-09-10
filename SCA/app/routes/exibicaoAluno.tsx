@@ -1,13 +1,13 @@
+import { ExibicaoAluno } from "~/exibicao_aluno/ExibicaoAluno";
 import type { Route } from "./+types/home";
-import { CadastroSecretarias } from "~/cadastro_secretarias/CadastroSecretarias";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Cadastro" },
-    { name: "description", content: "Cadastrar Secretárias" },
+    { title: "Exibicao" },
+    { name: "description", content: "Mostrar os Alunos" },
   ];
 }
 
 export default function Home() {
-  return <CadastroSecretarias />;
+  return <ExibicaoAluno />;
 }

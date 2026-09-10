@@ -1,32 +1,43 @@
 export function PaginaInicio() {
-    const inicio ={
-        {  id: 1;
-            <img src=""  />
-            titulo: "Cadastro de Alunos";
-            descricao: "Cadastre e mantenha os dados dos aluos sempre atualizados."; 
-
+  const inicio = [
+    {
+      id: 1,
+      img: "https://via.placeholder.com/300x150",
+      titulo: "Cadastro de Alunos",
+      descricao: "Cadastre e mantenha os dados dos alunos sempre atualizados.",
     }
-    }
+  ];
 
+  return (
+    <main className="flex">
+      <aside className="bg-blue-900 text-white h-screen w-64 p-6">
+        <img
+          className="rounded-full w-20 mb-4"
+          src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg"
+          alt="Logo"
+        />
+        <h2 className="text-xl font-bold mb-2">Bem Vindo!</h2>
+        <p className="mb-2">Faça seu cadastro para acessar o Portal Escolar e aproveitar todos os recursos disponíveis.</p>
+      </aside>
 
+      <section className="flex-1 p-8">
+        <header className="mb-6">
+          <h1 className="text-2xl bg-transparent font-bold mb-2">Menu Principal</h1>
+        </header>
 
-
-     return (
-    <div className=" flex-col items-center  ">
-      <header className="flex flex-col items-center justify-between w-full h-full">
-        <h1 className="text-2xl bg-blue-500 font-bold mb-8">Bem-vindo ao sistema de controle </h1>
-       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {PaginaInicio.map((PaginaInicio) => (
-            <div key={PaginaInicio.id} className="bg-white  rounded-lg p-6">
-     <h1 className="text-xl font-bold mb-2">{PaginaInicio.titulo}</h1>
-           <p>{PaginaInicio.descricao}</p>
-           </div>
-         ))}
-       </div>
-      </header>
-   </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {inicio.map((item) => (
+            <div key={item.id} className="bg-white rounded-lg p-6 shadow">
+              {item.img && (
+                <img src={item.img} alt={item.titulo} className="w-full h-32 object-cover rounded mb-4" />
+              )}
+              <h3 className="text-xl font-bold mb-2">{item.titulo}</h3>
+              <p>{item.descricao}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
   );
-   
-
 }
 

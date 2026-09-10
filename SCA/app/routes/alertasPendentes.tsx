@@ -1,13 +1,14 @@
+import { AlertasPendentes } from "~/alertas_pendentes/AlertasPendentes";
 import type { Route } from "./+types/home";
-import { CadastroSecretarias } from "~/cadastro_secretarias/CadastroSecretarias";
+
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Cadastro" },
-    { name: "description", content: "Cadastrar Secretárias" },
+    { title: "Alertas" },
+    { name: "description", content: "Avisar as Secretárias." },
   ];
 }
 
 export default function Home() {
-  return <CadastroSecretarias />;
+  return <AlertasPendentes />;
 }

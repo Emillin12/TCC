@@ -1,5 +1,5 @@
 
-export function CadastroSecretarias() {
+export function Ajuda() {
   return (
     <main className="flex ">
       <div className="bg-blue-900 text-white  h-screen w-50 ">

@@ -1,13 +1,13 @@
+import { PerfilSecretaria } from "~/perfil_secretarias/PerfilSecretarias";
 import type { Route } from "./+types/home";
-import { CadastroSecretarias } from "~/cadastro_secretarias/CadastroSecretarias";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Cadastro" },
-    { name: "description", content: "Cadastrar Secretárias" },
+    { title: "Perfil" },
+    { name: "description", content: "Perfil do secretário." },
   ];
 }
 
 export default function Home() {
-  return <CadastroSecretarias />;
+  return <PerfilSecretaria />;
 }

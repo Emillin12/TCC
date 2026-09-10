@@ -1,13 +1,13 @@
+import { Login } from "~/login/Login";
 import type { Route } from "./+types/home";
-import { CadastroSecretarias } from "~/cadastro_secretarias/CadastroSecretarias";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Cadastro" },
-    { name: "description", content: "Cadastrar Secretárias" },
+    { title: "Entrar" },
+    { name: "description", content: "Entrada e saída dos secretários." },
   ];
 }
 
 export default function Home() {
-  return <CadastroSecretarias />;
+  return <Login />;
 }

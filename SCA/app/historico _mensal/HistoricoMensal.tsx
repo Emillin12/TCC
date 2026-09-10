@@ -1,5 +1,5 @@
 
-export function CadastroSecretarias() {
+export function HistoricoMensal() {
   return (
     <main className="flex ">
       <div className="bg-blue-900 text-white  h-screen w-50 ">

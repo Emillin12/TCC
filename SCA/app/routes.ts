@@ -5,17 +5,17 @@ export default [
     route("cadastroSecretarias","routes/cadastroSecretarias.tsx"),
     route("Ajuda" , "routes/ajuda.tsx"),
     route("alertasPendentes" , "routes/alertasPendentes.tsx"),
-    route("Anexo Atestados" , "routes/anexoAtestado.tsx"),
-    route("Cadastro Alunos", "routes/cadastroalunos.tsx"),
-    route("Exibicao Aluno" , "routes/exibicaoAluno.tsx"),
-    route("Historico Mensal" , "routes/historicoMensal.tsx"),
-    route("Historico Semanal" , "routes/historicoSemanal.tsx"),
-    route("Pagina Inicio" , "routes/paginaInicio.tsx"),
+    route("AnexoAtestados" , "routes/anexoAtestado.tsx"),
+    route("CadastroAlunos", "routes/cadastroalunos.tsx"),
+    route("ExibicaoAluno" , "routes/exibicaoAluno.tsx"),
+    route("HistoricoMensal" , "routes/historicoMensal.tsx"),
+    route("HistoricoSemanal" , "routes/historicoSemanal.tsx"),
+    route("PaginaInicio" , "routes/paginaInicio.tsx"),
     route("Login" , "routes/login.tsx"),
-    route("Perfil Secretarias" , "routes/perfilSecretarias.tsx"),
-    route("Saida Antecipada" , "routes/saidaAntecipada.tsx"),
+    route("PerfilSecretarias" , "routes/perfilSecretarias.tsx"),
+    route("SaidaAntecipada" , "routes/saidaAntecipada.tsx"),
     route("Seguranca" , "routes/seguranca.tsx"),
-    route("Sobre Nós" , "routes/sobreNos.tsx")
+    route("SobreNos" , "routes/sobreNos.tsx")
     
 
 

@@ -1,7 +1,11 @@
 
 import { Welcome } from "~/welcome/welcome";
 import type { Route } from "./+types/home";
+<<<<<<< Updated upstream
 
+=======
+import { Welcome } from "../welcome/pagina-inicial";
+>>>>>>> Stashed changes
 
 export function meta({}: Route.MetaArgs) {
   return [

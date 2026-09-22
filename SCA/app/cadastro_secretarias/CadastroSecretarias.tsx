@@ -9,7 +9,7 @@ export function CadastroSecretarias() {
 
     {
       id:2,
-      img:"https://thumbs.dreamstime.com/b/%C3%ADcone-do-vetor-da-escola-isolado-no-fundo-transparente-sc-linear-130109780.jpg"
+      img:""
     }
   ];
 

@@ -3,8 +3,7 @@ export function CadastroSecretarias() {
   const inicio = [
     {
       id: 1,
-      img: "https://via.placeholder.com/300x150",
-      titulo: "Cadastro de Secretárias",
+      titulo: "Dados do Usuário",
       descricao: "Cadastre e mantenha os dados das Secretárias atualizados.",
     }
   ];
@@ -23,18 +22,25 @@ export function CadastroSecretarias() {
 
       <section className="flex-1 p-8">
         <header className="mb-6">
-          <h1 className="text-2xl bg-transparent font-bold mb-2">Escola Estadual Sanico Teles </h1>
+          <h1 className="text-2xl bg-transparent font-bold mb-2">Cadastro de Secretários(as)</h1>
+          <h1> Preencha os dados abaixo para criar sua conta</h1>
         </header>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className=" w-300 h-300 ">
           {inicio.map((item) => (
             <div key={item.id} className="bg-white rounded-lg p-6 shadow">
-              {item.img && (
-                <img src={item.img} alt={item.titulo} className="w-full h-32 object-cover rounded mb-4" />
-              )}
-              <h3 className="text-xl font-bold mb-2">{item.titulo}</h3>
-              <p>{item.descricao}</p>
+              <h3 className="text-xl font-bold mb-2 text-center mr-10 ml-5">{item.titulo}</h3>
+              <p className="justify-between mr-25 ml-10"> Nome:  </p>
+              <p className="justify-between mr-25 ml-10">MASP: </p>
+              <p className="justify-between mr-25 ml-10">CPF: </p>
+              <p className="justify-between mr-25 ml-10">Instituição: </p>
+              <p className="justify-between mr-25 ml-10">E-mail Institucional: </p>
+              <p className="justify-between mr-25 ml-10">Turno: </p>
+              <p className="justify-between mr-25 ml-10">Senha: </p>
+              <button className="rounded-full bg-blue-800 text-white w-10 h-15">Save Changes</button>
+
             </div>
+          
           ))}
         </div>
       </section>

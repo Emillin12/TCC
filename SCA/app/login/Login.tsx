@@ -5,22 +5,29 @@ export function Login() {
       img: "https://via.placeholder.com/300x150",
       titulo:"",
       descrição:" "
+    },
+    {
+      id : 2,
+      img: "https://via.placeholder.com/300x150",
+      titulo:"",
+      descrição:" "
     }
   ];
-  const campo = [
+  const preencimento = [
     {
       id : 1,
       nome: "Email institucional",
-      tipo: "email",
-      senha: "Digite seu email institucional"
+      tipo:"Email",
+      senha:"Senha"
     },
     {
-      id :2,
+      id : 2,
       nome:"Senha",
-      tipo: "password",
-      senha: "Digite sua senha"
+      tipo:"Senha",
+      senha:"Digite sua senha"
     }
   ]
+  
 
 
   return (
@@ -39,7 +46,16 @@ export function Login() {
           <p className="mb-6">Informe as suas credenciais para entrar</p>
         </header>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div>
+          <p className="font-medium mb-1">Email institucional</p>
+          <input type="email" placeholder="Digite seu email institucional" className="w-2/5 border border-gray-300 rounded p-2" />
+          
+        </div>
+
+        <div className="mt-25">
+          <p className="block font-medium mb-1">Senha</p>
+          <input type="password" placeholder="Digite sua senha" className="w-2/5 border border-gray-300 rounded p-2" />
+          
           
         </div>
       </section>

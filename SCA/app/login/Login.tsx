@@ -8,7 +8,7 @@ export function Login() {
     },
     {
       id : 2,
-      img: "https://via.placeholder.com/300x150",
+      img: "https://cdn-icons-png.flaticon.com/512/158/158234.png",
       titulo:"",
       descrição:" "
     }
@@ -58,6 +58,10 @@ export function Login() {
           
           
         </div>
+
+        <button className="bg-blue-900 text-white font-medium py-2 px-6 rounded-md mt-6">
+          Entrar
+        </button>
       </section>
     </main>
   )

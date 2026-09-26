@@ -82,7 +82,7 @@ export function PaginaInicio() {
 
 
 
-              <button className="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 absolute right-2 cursor-pointer">Buscar</button>
+              <button className="bg-blue-500 text-blue-300 px-4 py-1.5 rounded-md hover:bg-blue-600 absolute right-2 cursor-pointer">Buscar</button>
 
             </form>
 

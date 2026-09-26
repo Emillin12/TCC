@@ -57,17 +57,17 @@ export function PaginaInicio() {
      
       <header className="flex justify-between bg-gradient-to-r from-red-500 to-yellow-500 p-4 shadow-md">
         <div className="p-1 flex gap-4 text-white text-2xl font-bold">
-          <h1>Pokemon</h1>
+          <h1>Escola Estadual Sanico Teles</h1>
         </div>
         <nav className="flex p-1 gap-4 text-white font-medium">
           <span className="cursor-pointer hover:underline" onClick={() => window.location.href = '/'}>
             Home
           </span>
-          <span className="cursor-pointer hover:underline" onClick={() => window.location.href = '/pokemons'}>
-            Pokemons
+          <span className="cursor-pointer hover:underline" onClick={() => window.location.href = '/Sobre Nós'}>
+            Sobre Nós
           </span>
-          <span className="cursor-pointer hover:underline" onClick={() => window.location.href = '/types'}>
-            Tipos
+          <span className="cursor-pointer hover:underline" onClick={() => window.location.href = '/Ajuda'}>
+            Ajuda
           </span>
         </nav>
       </header>

@@ -42,38 +42,33 @@ export function PaginaInicio() {
       titulo: "Anexo de Atestado",
       descricao: "Adicione atestados de registros já finalizados",
     },
-
-
-   
-
-
-
   ];
 
-  
-     return (
     <main className="flex flex-col min-h-screen">
       
      
       <header className="flex justify-between bg-gradient-to-r from-red-500 to-yellow-500 p-4 shadow-md">
-        <div className="p-1 flex gap-4 text-white text-2xl font-bold">
+        <div className="p-1 flex gap-4 text-black text-2xl font-bold">
           <h1>Escola Estadual Sanico Teles</h1>
         </div>
-        <nav className="flex p-1 gap-4 text-white font-medium">
+        <nav className="flex p-1 gap-4 text-black font-medium">
           <span className="cursor-pointer hover:underline" onClick={() => window.location.href = '/'}>
-            Home
+             Sobre Nós
           </span>
           <span className="cursor-pointer hover:underline" onClick={() => window.location.href = '/Sobre Nós'}>
-            Sobre Nós
+           Ajuda
           </span>
           <span className="cursor-pointer hover:underline" onClick={() => window.location.href = '/Ajuda'}>
-            Ajuda
+            Perfil
+          </span>
+          <span className="cursor-pointer hover:underline" onClick={() => window.location.href = '/Perfil'}>
+            Sair
           </span>
         </nav>
       </header>
 
      
-      <div className="flex flex-col flex-1 bg-red-100 pb-10">
+      <div className="flex flex-col flex-1 bg-gray-300-100pb-10">
 
         
         <div className="flex h-20 items-center bg-white mx-10 my-10 rounded-lg px-5 shadow-md ">
@@ -88,7 +83,7 @@ export function PaginaInicio() {
 
 
 
-              <button className="bg-red-500 text-white px-4 py-1.5 rounded-md hover:bg-red-600 absolute right-2 cursor-pointer">Buscar</button>
+              <button className="bg-blue-500 text-white px-4 py-1.5 rounded-md hover:bg-blue-600 absolute right-2 cursor-pointer">Buscar</button>
 
             </form>
 
@@ -101,7 +96,7 @@ export function PaginaInicio() {
  
   return (
     <main className="flex">
-      <aside className="text-white h-screenw-0 p-6">
+      <aside className="text-black h-screenw-0 p-6">
         <img
           className="rounded-full w-20 mb-4"
           src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg"
@@ -134,5 +129,5 @@ export function PaginaInicio() {
 
 </div>
 </main>
-     )
+     
 };

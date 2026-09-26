@@ -7,7 +7,7 @@ export function PaginaInicio() {
      
     {
       id: 2,
-      img: "",
+      img: "https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fpt.vecteezy.com%2Farte-vetorial%2F4666478-educacao-genero-igualdade-glifo-icone-universitario-alunos-universidade-graduados-menina-menino-estudando-na-escola-feminino-masculino-direitos-humanos-silhueta-simbolo-negativo-espaco-vetor-ilustracao-isolada&ved=0CBYQjRxqFwoTCKib4oGrjZcDFQAAAAAdAAAAABBq&opi=89978449",
       titulo: "Cadastro de Alunos",
       descricao: "Cadastre e mantenha os dados dos alunos sempre atualizados.",
     },
@@ -47,8 +47,8 @@ export function PaginaInicio() {
     <main className="flex flex-col min-h-screen">
       
      
-      <header className="flex justify-between bg-gradient-to-r from-red-500 to-yellow-500 p-4 shadow-md">
-        <div className="p-1 flex gap-4 text-black text-2xl font-bold">
+      <header className="flex justify-between bg-gradient-to-r from-blue-500 to-blue-500 p-4 shadow-md">
+        <div className="p-1 flex gap-4 text-blue text-2xl font-bold">
           <h1>Escola Estadual Sanico Teles</h1>
         </div>
         <nav className="flex p-1 gap-4 text-black font-medium">

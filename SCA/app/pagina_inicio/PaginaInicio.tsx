@@ -4,10 +4,7 @@ import type { title } from "process";
 export function PaginaInicio() {
   const inicio = [
 
-     {
-      id: 1,
-      descricao: "Um sistema completo para facilitar  a organização de informações e fortalecer a comunicação entre a escola e os alunos.",
-    },
+     
     {
       id: 2,
       img: "",
@@ -60,19 +57,20 @@ export function PaginaInicio() {
  
   return (
     <main className="flex">
-      <aside className="bg-blue-900 text-white h-screen w-64 p-6">
+      <aside className="text-white h-screenw-0 p-6">
         <img
           className="rounded-full w-20 mb-4"
           src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg"
           alt="Logo"
         />
-        <h2 className="text-xl font-bold mb-2">Bem Vindo!</h2>
-        <p className="mb-2">Faça seu cadastro para acessar o Portal Escolar e aproveitar todos os recursos disponíveis.</p>
+      
       </aside>
 
       <section className="flex-1 p-8">
         <header className="mb-6">
           <h1 className="text-2xl bg-transparent font-bold mb-2">Escola Estadual Sanico Teles </h1>
+           <h2 className="text-xl font-bold mb-2">Bem Vindo! </h2>
+           <p className="mb-2">Um sistema completo para facilitar  a organização de informações e fortalecer a comunicação entre a escola e os alunos. </p>
         </header>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

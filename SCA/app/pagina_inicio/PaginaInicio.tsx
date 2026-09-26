@@ -46,7 +46,7 @@ export function PaginaInicio() {
     <main className="flex flex-col min-h-screen">
       
      
-      <header className="flex justify-between bg-gradient-to-r from-blue-500 to-blue-500 p-4 shadow-md">
+      <header className="flex justify-between bg-linear-to-r from-blue-500 to-blue-500 p-4 shadow-md">
         <div className="p-1 flex gap-4 text-blue text-2xl font-bold">
           <h1>Escola Estadual Sanico Teles</h1>
         </div>

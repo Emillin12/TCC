@@ -50,9 +50,53 @@ export function PaginaInicio() {
 
   ];
 
-  const coresTipos = {
+  
+     return (
+    <main className="flex flex-col min-h-screen">
+      
+     
+      <header className="flex justify-between bg-gradient-to-r from-red-500 to-yellow-500 p-4 shadow-md">
+        <div className="p-1 flex gap-4 text-white text-2xl font-bold">
+          <h1>Pokemon</h1>
+        </div>
+        <nav className="flex p-1 gap-4 text-white font-medium">
+          <span className="cursor-pointer hover:underline" onClick={() => window.location.href = '/'}>
+            Home
+          </span>
+          <span className="cursor-pointer hover:underline" onClick={() => window.location.href = '/pokemons'}>
+            Pokemons
+          </span>
+          <span className="cursor-pointer hover:underline" onClick={() => window.location.href = '/types'}>
+            Tipos
+          </span>
+        </nav>
+      </header>
+
+     
+      <div className="flex flex-col flex-1 bg-red-100 pb-10">
+
+        
+        <div className="flex h-20 items-center bg-white mx-10 my-10 rounded-lg px-5 shadow-md ">
+
+            <form className="w-full relative">
+
+              <input
+
+              type="text"
+
+              className="w-330 p-3 pb-1 pl-10 border-b border-gray-200 focus:outline-none  "/>
+
+
+
+              <button className="bg-red-500 text-white px-4 py-1.5 rounded-md hover:bg-red-600 absolute right-2 cursor-pointer">Buscar</button>
+
+            </form>
+
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 justify-items-center items-center px-6 mx-auto w-full max-w-6xl"></div>
     
-  };
+
 
  
   return (
@@ -87,5 +131,8 @@ export function PaginaInicio() {
       </section>
     </main>
   );
-}
 
+</div>
+</main>
+     )
+};

@@ -32,7 +32,18 @@ const menu = [
 
   return (
     <main className="flex ">
+      <aside className="bg-blue-900 text-white h-screen w-64 p-6">
+        <img className="rounded-full w-20 mb-4" src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg" alt="Logo" />
+
+        <button className="block text-left mb-2">{menu[0].nome}</button>
+        <button className="block text-left mb-2">{menu[1].nome}</button>
+        <button className="block text-left mb-2">{menu[2].nome}</button>
+        <button className="block text-left mb-2">{menu[3].nome}</button>
+        <button className="block text-left mb-2">{menu[4].nome}</button>
+        <button className="block text-left mb-2">{menu[5].nome}</button>
+      </aside>
       
     </main>
+    
   );
 }

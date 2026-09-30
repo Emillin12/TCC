@@ -4,9 +4,9 @@ import SanicoImage from "./sanicoo em desenho.png";
 export function Welcome() {
   return (
     <main>
-      <div className="bg-blue-900 text-white columns-2 text-2xl flex justify-start">
+      <div className="bg-blue-900 text-white columns-2 text-2xl flex justify-start mask-right">
         <img
-          className="mask-left , rounded-full , w-20 , flex"
+          className="mask-left , rounded-full , w-20 , flex mask-right"
           src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg"
           alt=""
         />

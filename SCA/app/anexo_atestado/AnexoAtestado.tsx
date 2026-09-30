@@ -74,13 +74,13 @@ export function AnexoAtestados() {
             <div className="flex gap-4 mb-4">
               <div className="flex-1">
                 <p className="font-medium mb-1">Data do atestado</p>
-                <input type="date" className="w-1/2 border border-gray-300 rounded p-2"/>
+                <input type="date" placeholder="00/00/0000"className="w-1/2 border border-gray-300 rounded p-2"/>
               </div>
               <div className="flex-1">
                 <p className="font-medium mb-1">Tipo de atestado</p>
                 
                 <select className="w-1/2 border border-gray-300 rounded p-2">
-                  
+                  <option value="opções">Opção</option>
                   <option value="opções">Atestado médico</option>
                   <option value="opções">Declaração</option>
                 </select>

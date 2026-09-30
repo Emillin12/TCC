@@ -247,5 +247,20 @@ Anexo de atestados médicos e outros documentos
 . Imagem do documento :
 . Descrição/Observações: Ficou preso no trânsito e não conseguiu chegar a tempo na escola, por isso se atrasou.
 
+. ID do aluno : 108643
+. ID da turma: 101567
+. Nome do aluno: Gabriel Henrique Santos
+. Nome da turma: 7º Ano 2
+. Data do atraso/saída antecipada: 10/10/2026
+. Hora do atraso/saída antecipada: 14:00
+. Tipo da ocorrência (atraso ou saída antecipada): Saída antecipada
+. Justificativa da ocorrência: Mal-estar
+. Observações adicionais (opcional): Responsável do aluno foi chamado para buscá-lo na escola devido ao mal-estar.
 
+
+Anexo de atestados médicos e outros documentos
+
+. Tipo de documento (atestado médico, declaração):
+. Imagem do documento :
+. Descrição/Observações: 
 

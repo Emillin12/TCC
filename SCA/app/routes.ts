@@ -10,7 +10,7 @@ export default [
     route("ExibicaoAluno" , "routes/exibicaoAluno.tsx"),
     route("HistoricoMensal" , "routes/historicoMensal.tsx"),
     route("HistoricoSemanal" , "routes/historicoSemanal.tsx"),
-    route("PaginaInicio" , "routes/paginaInicio.tsx"),
+    route("PaginaInicio" , "routes/PaginaInicio.tsx"),
     route("Login" , "routes/login.tsx"),
     route("PerfilSecretarias" , "routes/perfilSecretarias.tsx"),
     route("SaidaAntecipada" , "routes/saidaAntecipada.tsx"),

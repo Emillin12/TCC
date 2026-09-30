@@ -2,9 +2,15 @@
 import type { title } from "process";
 
 export function PaginaInicio() {
+
+  const descricao  =
+     {
+      id: 1,
+      descricao: "Um sistema completo para facilitar  a organização de informações e fortalecer a comunicação entre a escola e os alunos.",
+    }
   const inicio = [
 
-     
+
     {
       id: 2,
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa5FCmxPC6YhJzijgGLQJ8aYrCjoF46EdgInkUP3CR_g&s=10",
@@ -125,6 +131,8 @@ export function PaginaInicio() {
       </section>
     </main>
   );
+
+
 
 </div>
 </main>

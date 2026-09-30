@@ -131,7 +131,7 @@ export function PaginaInicio() {
       </section>
     </main>
   );
-}
+
 
 
 </div>

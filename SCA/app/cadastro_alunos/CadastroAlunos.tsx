@@ -51,10 +51,59 @@ export function CadastroAlunos() {
           <div className="text-xl font-medium text-black dark:text-white">Registrar Saídas Antecipadas/Atraso</div>
           <p className="text-gray-500 dark:text-gray-400">Preencha os dados abaixo par registrar a ocorrência</p>
         </div>
+
+
+         <section className="flex-1 p-8">
+        <header className="mb-6 text-center gap-4">
+          
+          <div>
+            <h1 className="text-2xl font-bold">Anexo de Atestado</h1>
+            <p>Anexe o atestado médico ou justificativa do aluno</p>
+          </div>
+        </header>
+
+        <div className="flex gap-8">
+          <div className="flex-1">
+            <p className="font-medium mb-1">Nome do aluno</p>
+            <input type="text" placeholder="Nome do aluno" className="w-2/5 border border-gray-300 rounded p-2" />
+
+            <p className="font-medium mb-2 ">Periodo do atestado</p>
+            <div className="flex gap-4 mb-4">
+              <div className="flex-1">
+                <p className="font-medium mb-1">Horário de inicio</p>
+                <input type="time" className="w-1/2 border border-gray-300 rounded p-2" />
+              </div>
+
+              <div className="flex-1">
+                <p className="font-medium mb-1">Horário final</p>
+                <input type="time" className="w-1/2 border border-gray-300 rounded p-2" />
+              </div>
+
+            </div>
+
+            <div className="flex gap-4 mb-4">
+              <div className="flex-1">
+                <p className="font-medium mb-1">Data do atestado</p>
+                <input type="date" className="w-1/2 border border-gray-300 rounded p-2"/>
+              </div>
+              <div className="flex-1">
+                <p className="font-medium mb-1">Tipo de atestado</p>
+                
+                <select className="w-1/2 border border-gray-300 rounded p-2">
+                  
+                  <option value="opções">Atestado médico</option>
+                  <option value="opções">Declaração</option>
+                </select>
+              </div>
+            </div>
+
+            
+          </div>
+        </div>
+      </section>
+
+
       </div>
-
-
-     
     </main>
   );
 }

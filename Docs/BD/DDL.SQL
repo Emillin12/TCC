@@ -15,6 +15,7 @@ Cadastro de Alunos
 . CPF
 . Data de nascimento
 . Turma
+. Turmo
 . Genêro
 . Raça
 . Nacionalidade/Naturalidade

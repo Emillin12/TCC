@@ -41,6 +41,7 @@ Cadastro de Alunos
 . CPF: 555.666.777-88
 . Data de nascimento: 15/03/2008
 . Turma: 3º Ano 1
+. Turmo: Manhã
 . Genêro: Masculino
 . Raça: Branca
 . Nacionalidade/Naturalidade: Brasileiro
@@ -57,6 +58,7 @@ Cadastro de Alunos
 . CPF: 666.777.888-99
 . Data de nascimento: 22/07/2009
 . Turma: 2º Ano 2
+. Turmo: Manhã
 . Genêro: Feminino
 . Raça: Branca
 . Nacionalidade/Naturalidade: Brasileira
@@ -73,6 +75,7 @@ Cadastro de Alunos
 . CPF: 777.888.999-00
 . Data de nascimento: 10/11/2011
 . Turma: 1º Ano 1
+. Turmo: Manhã
 . Genêro: Masculino
 . Raça: Parda
 . Nacionalidade/Naturalidade: Brasileiro
@@ -86,8 +89,9 @@ Cadastro de Alunos
 . Nome completo do aluno: Gabriel Henrique Santos
 . ID :  108643
 . CPF: 688.999.000-11
-. Data de nascimento: 05/05/2008 
-. Turma: 3º Ano 2
+. Data de nascimento: 05/05/2014 
+. Turma: 7º Ano 2
+. Turmo: Tarde
 . Genêro: Masculino
 . Raça: Parda
 . Nacionalidade/Naturalidade: Brasileiro

@@ -1,5 +1,5 @@
 
-export function AnexoAtestado() {
+export function AnexoAtestados() {
   const menu = [
     {
       id : 1,
@@ -45,9 +45,7 @@ export function AnexoAtestado() {
 
       <section className="flex-1 p-8">
         <header className="mb-6 text-center gap-4">
-          <svg className="w-12 h-12 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 12a4 4 0 100-8 4 4 0 000 8zM6 20a6 6 0 0112 0" />
-          </svg>
+          
           <div>
             <h1 className="text-2xl font-bold">Anexo de Atestado</h1>
             <p>Anexe o atestado médico ou justificativa do aluno</p>
@@ -58,6 +56,11 @@ export function AnexoAtestado() {
           <div className="flex-1">
             <p className="font-medium mb-1">Nome do aluno</p>
             <input type="text" placeholder="Nome do aluno" className="w-full border border-gray-300 mb-4 rounded p-2" />
+
+            <p className="font-medium mb-2">Periodo do atestado</p>
+            <div className="flex gap-4 mb-4">
+              <input type="email" placeholder="Digite seu email institucional" className="w-2/5 border border-gray-300 rounded p-2" />
+            </div>
           </div>
         </div>
       </section>

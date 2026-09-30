@@ -55,12 +55,39 @@ export function AnexoAtestados() {
         <div className="flex gap-8">
           <div className="flex-1">
             <p className="font-medium mb-1">Nome do aluno</p>
-            <input type="text" placeholder="Nome do aluno" className="w-full border border-gray-300 mb-4 rounded p-2" />
+            <input type="text" placeholder="Nome do aluno" className="w-2/5 border border-gray-300 rounded p-2" />
 
-            <p className="font-medium mb-2">Periodo do atestado</p>
+            <p className="font-medium mb-2 ">Periodo do atestado</p>
             <div className="flex gap-4 mb-4">
-              <input type="email" placeholder="Digite seu email institucional" className="w-2/5 border border-gray-300 rounded p-2" />
+              <div className="flex-1">
+                <p className="font-medium mb-1">Horário de inicio</p>
+                <input type="time" className="w-1/2 border border-gray-300 rounded p-2" />
+              </div>
+
+              <div className="flex-1">
+                <p className="font-medium mb-1">Horário final</p>
+                <input type="time" className="w-1/2 border border-gray-300 rounded p-2" />
+              </div>
+
             </div>
+
+            <div className="flex gap-4 mb-4">
+              <div className="flex-1">
+                <p className="font-medium mb-1">Data do atestado</p>
+                <input type="date" className="w-1/2 border border-gray-300 rounded p-2"/>
+              </div>
+              <div className="flex-1">
+                <p className="font-medium mb-1">Tipo de atestado</p>
+                
+                <select className="w-1/2 border border-gray-300 rounded p-2">
+                  
+                  <option value="opções">Atestado médico</option>
+                  <option value="opções">Declaração</option>
+                </select>
+              </div>
+            </div>
+
+            
           </div>
         </div>
       </section>

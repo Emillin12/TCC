@@ -93,6 +93,11 @@ export function AnexoAtestados() {
               </div>
             </div>
 
+            <div className="mt-6 flex justify-end gap-4">
+              <button className="bg-gray-300 text-gray-800 font-medium py-2 px-6 rounded-md">limpar</button>
+            </div>
+
+            <div className="bg-blue-900 text-white font-medium py-2 px-6 rounded-md">Salvar atestado</div>
             
           </div>
         </div>

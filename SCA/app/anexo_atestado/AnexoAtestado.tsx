@@ -71,10 +71,16 @@ export function AnexoAtestados() {
 
             </div>
 
+            <p className="font-medium mb-2 ">Anexo do atestado</p>
+            <input type="file" className="w-1/2 border border-gray-300 rounded p-2" />
+
+            <p className="font-medium mb-2 ">Observações</p>
+            <input type="text" placeholder="Observações" className="w-2/5 border border-gray-300 rounded p-2" />
+
             <div className="flex gap-4 mb-4">
               <div className="flex-1">
                 <p className="font-medium mb-1">Data do atestado</p>
-                <input type="date" placeholder="00/00/0000"className="w-1/2 border border-gray-300 rounded p-2"/>
+                <input type="date" className="w-1/2 border border-gray-300 rounded p-2"/>
               </div>
               <div className="flex-1">
                 <p className="font-medium mb-1">Tipo de atestado</p>
@@ -87,6 +93,11 @@ export function AnexoAtestados() {
               </div>
             </div>
 
+            <div className="mt-6 flex justify-end gap-4">
+              <button className="bg-gray-300 text-gray-800 font-medium py-2 px-6 rounded-md">limpar</button>
+            </div>
+
+            <div className="bg-blue-900 text-white font-medium py-2 px-6 rounded-md">Salvar atestado</div>
             
           </div>
         </div>

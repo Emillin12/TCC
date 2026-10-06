@@ -1,5 +1,5 @@
 
-export function anexoAtestados() {
+export function anexoAtestado() {
   const menu = [
     {
       id : 1,
@@ -35,12 +35,12 @@ export function anexoAtestados() {
       <aside className="bg-blue-900 text-white h-screen w-64 p-6">
         <img className="rounded-full w-20 mb-4" src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg" alt="Logo" />
 
-        <button className="block text-left mb-2">Alertas Pendentes</button>
-        <button className="block text-left mb-2">Anexo de Atestado</button>
-        <button className="block text-left mb-2">Histórico Mensal</button>
-        <button className="block text-left mb-2">Histórico Semanal</button>
-        <button className="block text-left mb-2">Inicio</button>
-        <button className="block text-left mb-2">Registrar Ocorrencia</button>
+        <button className="block text-left mb-2">{menu[0].nome}</button>
+        <button className="block text-left mb-2">{menu[1].nome}</button>
+        <button className="block text-left mb-2">{menu[2].nome}</button>
+        <button className="block text-left mb-2">{menu[3].nome}</button>
+        <button className="block text-left mb-2">{menu[4].nome}</button>
+        <button className="block text-left mb-2">{menu[5].nome}</button>
       </aside>
 
       <section className="flex-1 p-8">

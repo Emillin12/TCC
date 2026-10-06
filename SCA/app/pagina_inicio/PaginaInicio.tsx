@@ -44,12 +44,18 @@ export function PaginaInicio() {
   ];
 
   return (
-    <main className="flex flex-col min-h-screen bg-gray-100">
+    <main className="flex flex-col min-h-screen">
       
       
-      <header className="flex justify-between items-center bg-gradient-to-r    p-4 shadow-md">
+      <header className="flex justify-between bg-gradient-to-r  p-4 shadow-md">
+        <aside className="">
+            <img
+              className="rounded-full w-20 mb-4"
+              src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg"
+            />
+          </aside>
         
-        <div className="flex items-center gap-4text-2xl font-extrabold box-content  p-4 ">
+        <div className=" gap-1 text-3xl font-extrabold  ">
           <h1>Escola Estadual Sanico Teles</h1>
         </div>
 
@@ -85,39 +91,24 @@ export function PaginaInicio() {
       </header>
 
      
-      <div className="flex flex-col flex-1 pb-10">
+      <div className=" flex-col float-right ">
 
         </div>
         <main className="flex">
+          <section className="flex-1 p-10 bg-gray-100">
 
-          
-          <aside className="text-black p-6">
-            <img
-              className="rounded-full w-20 mb-4"
-              src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg"
-              alt="Logo da Escola Estadual Sanico Teles"
-            />
-          </aside>
-
-         
-          <section className="flex-1 p-8  size-100">
-
-            <header className="mb-6">
-              <h1 className="text-2xl font-bold mb-2  justify-self-start ">
-                Escola Estadual Sanico Teles
-              </h1>
-
-              <h2 className="text-xl font-bold mb-2">
+              <h2 className="text-xl font-bold mb-2 ">
                 Bem-vindo ao SCSA - Sistema de Controle de Saidas Antecipadas e Atrasos 
               </h2>
 
-              <p className="mb-2 box-decoration-clone">
+           <div
+               className="mb-2 row-span-2 text-pretty">
                 Um sistema completo para facilitar a organização de
                 informações e fortalecer a comunicação entre a escola e os
                 alunos.
-              </p>
-            </header>
-
+            
+              </div>
+      
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
               {inicio.map((item) => (

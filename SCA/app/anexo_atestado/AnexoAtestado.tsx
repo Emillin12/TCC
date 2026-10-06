@@ -1,5 +1,5 @@
 
-export function AnexoAtestados() {
+export function anexoAtestado() {
   const menu = [
     {
       id : 1,
@@ -35,12 +35,12 @@ export function AnexoAtestados() {
       <aside className="bg-blue-900 text-white h-screen w-64 p-6">
         <img className="rounded-full w-20 mb-4" src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg" alt="Logo" />
 
-        <button className="block text-left mb-2">Alertas Pendentes</button>
-        <button className="block text-left mb-2">Anexo de Atestado</button>
-        <button className="block text-left mb-2">Histórico Mensal</button>
-        <button className="block text-left mb-2">Histórico Semanal</button>
-        <button className="block text-left mb-2">Inicio</button>
-        <button className="block text-left mb-2">Registrar Ocorrencia</button>
+        <button className="block text-left mb-2">{menu[0].nome}</button>
+        <button className="block text-left mb-2">{menu[1].nome}</button>
+        <button className="block text-left mb-2">{menu[2].nome}</button>
+        <button className="block text-left mb-2">{menu[3].nome}</button>
+        <button className="block text-left mb-2">{menu[4].nome}</button>
+        <button className="block text-left mb-2">{menu[5].nome}</button>
       </aside>
 
       <section className="flex-1 p-8">
@@ -71,10 +71,16 @@ export function AnexoAtestados() {
 
             </div>
 
+            <p className="font-medium mb-2 ">Anexo do atestado</p>
+            <input type="file" className="w-1/2 border border-gray-300 rounded p-2" />
+
+            <p className="font-medium mb-2 ">Observações</p>
+            <input type="text" placeholder="Observações" className="w-2/5 border border-gray-300 rounded p-2" />
+
             <div className="flex gap-4 mb-4">
               <div className="flex-1">
                 <p className="font-medium mb-1">Data do atestado</p>
-                <input type="date" placeholder="00/00/0000"className="w-1/2 border border-gray-300 rounded p-2"/>
+                <input type="date" className="w-1/2 border border-gray-300 rounded p-2"/>
               </div>
               <div className="flex-1">
                 <p className="font-medium mb-1">Tipo de atestado</p>
@@ -87,6 +93,11 @@ export function AnexoAtestados() {
               </div>
             </div>
 
+            <div className="mt-6 flex justify-end gap-4">
+              <button className="bg-gray-300 text-gray-800 font-medium py-2 px-6 rounded-md">limpar</button>
+            </div>
+
+            <div className="bg-blue-900 text-white font-medium py-2 px-6 rounded-md">Salvar atestado</div>
             
           </div>
         </div>

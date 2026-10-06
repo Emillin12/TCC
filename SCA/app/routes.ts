@@ -5,7 +5,7 @@ export default [
     route("cadastroSecretarias","routes/cadastroSecretarias.tsx"),
     route("Ajuda" , "routes/ajuda.tsx"),
     route("alertasPendentes" , "routes/alertasPendentes.tsx"),
-    route("AnexoAtestados" , "routes/anexoAtestado.tsx"),
+    route("AnexoAtestados" , "routes/anexoAtestados.tsx"),
     route("CadastroAlunos", "routes/cadastroalunos.tsx"),
     route("ExibicaoAluno" , "routes/exibicaoAluno.tsx"),
     route("HistoricoMensal" , "routes/historicoMensal.tsx"),

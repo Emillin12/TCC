@@ -1,5 +1,5 @@
 
-export function anexoAtestados() {
+export function AnexoAtestados() {
   const menu = [
     {
       id : 1,

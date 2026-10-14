@@ -10,36 +10,31 @@ export function PaginaInicio() {
       id: 3,
       img: "",
       titulo: "Registrar Saídas Antecipadas e Atrasos",
-      descricao:
-        "Registre e controle saídas antecipadas e atrasos dos alunos de forma organizada.",
+      descricao: "Registre e controle saídas antecipadas e atrasos dos alunos de forma organizada.",
     },
     {
       id: 4,
       img: "",
       titulo: "Registros Semanais",
-      descricao:
-        "Visualize e controle os registros e ocorrências de cada semana letiva.",
+      descricao:"Visualize e controle os registros e ocorrências de cada semana letiva.",
     },
     {
       id: 5,
       img: "",
       titulo: "Histórico Mensal",
-      descricao:
-        "Acompanhe de forma prática os registros mensais da escola.",
+      descricao:"Acompanhe de forma prática os registros mensais da escola.",
     },
     {
       id: 6,
       img: "",
       titulo: "Alertas Pendentes",
-      descricao:
-        "Verifique os alunos que estão com alertas pendentes.",
+      descricao: "Verifique os alunos que estão com alertas pendentes.",
     },
     {
       id: 7,
       img: "",
       titulo: "Atestados",
-      descricao:
-        "Adicione atestados de registros já finalizados.",
+      descricao:"Adicione atestados de registros já finalizados.",
     },
   ];
 
@@ -62,7 +57,7 @@ export function PaginaInicio() {
         <nav className="flex gap-4 text-blue-500 font-medium">
           <span
             className="cursor-pointer hover:underline"
-            onClick={() => (window.location.href = "/")}
+            onClick={() => (window.location.href = "/ Sobre Nós")}
           >
             Sobre Nós
           </span>

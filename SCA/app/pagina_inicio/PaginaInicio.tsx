@@ -1,37 +1,37 @@
 export function PaginaInicio() {
   const inicio = [
     {
-      id: 2,
+      id: 1,
       img: "",
       titulo: " Cadastro de Alunos",
       descricao: "Cadastre e mantenha os dados dos alunos sempre atualizados.",
     },
     {
-      id: 3,
+      id: 2,
       img: "",
       titulo: "Registrar Saídas Antecipadas e Atrasos",
       descricao: "Registre e controle saídas antecipadas e atrasos dos alunos de forma organizada.",
     },
     {
-      id: 4,
+      id: 3,
       img: "",
       titulo: "Registros Semanais",
       descricao:"Visualize e controle os registros e ocorrências de cada semana letiva.",
     },
     {
-      id: 5,
+      id: 4,
       img: "",
       titulo: "Histórico Mensal",
       descricao:"Acompanhe de forma prática os registros mensais da escola.",
     },
     {
-      id: 6,
+      id: 5,
       img: "",
       titulo: "Alertas Pendentes",
       descricao: "Verifique os alunos que estão com alertas pendentes.",
     },
     {
-      id: 7,
+      id: 6,
       img: "",
       titulo: "Atestados",
       descricao:"Adicione atestados de registros já finalizados.",

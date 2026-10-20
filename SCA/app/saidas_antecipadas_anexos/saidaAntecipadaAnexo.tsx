@@ -167,7 +167,10 @@ export function SaidaAntecipadaAnexo() {
           <div>
               <p className="text-xs text-gray-700 mb-2">Turma</p>
               <select className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700">
-                <option value="">Turma</option>
+                <option value="">Selecione a turma</option>
+                <option value="1°ano">1° ano</option>
+                <option value="2°ano">2° ano</option>
+                <option value="3°ano">3° ano</option>
               </select>
             </div>
             <div>
@@ -177,6 +180,39 @@ export function SaidaAntecipadaAnexo() {
                 className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700"
               />
             </div>
+
+            <div>
+              <p className="text-xs text-gray-700 mb-2">Responsável (Quem autorizou/ Recebeu)</p>
+              <input
+                type="text"
+                placeholder="Nome do Responsável"
+                className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700"
+              />
+            </div>
+
+            <div>
+              <p className="text-xs text-gray-700 mb-2">Horário de saída</p>
+              <input
+                type="time"
+                className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700"
+              />
+            </div>
+            <div className="col-span-3">
+              <p className="text-xs text-gray-700 mb-3">Motivo/Observações</p>
+              <textarea
+                placeholder="Informe o motivo da saída antecipada ou atraso do aluno"
+                className="w-full  h-44 p-2 border border-gray-300 text-xs resize-none"
+              />
+            </div>
+
+            <div className="col-span-2">
+              <p className="text-xs text-gray-700 mb-3"> Atestado</p>
+              <label className="flex items-center justify-center w-full max-w-3xl h-28 border border-gray-300 bg-white text-xs text-gray-500 cursor-pointer">
+                Clique para anexar o arquivo
+                <input type="file" className="hidden" />
+              </label>
+            </div>
+            
         </div>
       </section>
       

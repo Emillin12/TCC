@@ -74,19 +74,21 @@ export function PaginaInicio() {
             Ajuda
           </span>
 
-          <span
+          <div
             className="cursor-pointer hover:underline"
             onClick={() => (window.location.href = "/Perfil")}
           >
             Perfil
-          </span>
+          </div>
 
-          <span
+          <div
             className="cursor-pointer hover:underline"
             onClick={() => (window.location.href = "/")}
           >
             Sair
-          </span>
+          </div>
+
+          
         </nav>
       </header>
 

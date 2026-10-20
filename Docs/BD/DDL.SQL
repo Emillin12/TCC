@@ -1,53 +1,64 @@
 Cadastro de Secreitarias
-
-. Nome completo da secretaria
-. MASP 
-. CPF
-. Email institucional
-. Turno
-. Senha 
-
+https://www.w3schools.com/sql/sql_dates.asp
+CREATE TABLE secretarias (
+  id int PRIMARY KEY,
+  nome varchar(255) NOT NULL,
+  masp varchar(255) NOT NULL,
+  email varchar(255) NOT NULL,
+  turno varchar(255)NOT NULL,
+  senha varchar(255) NOT NULL
+);
 
 Cadastro de Alunos
 
-. Nome completo do aluno
-. ID 
-. CPF
-. Data de nascimento
-. Turma
-. Turmo
-. Genêro
-. Raça
-. Nacionalidade/Naturalidade
-. Nome do responsável
-. CPF do responsável
-. Telefone do responsável
-. Email do responsável
-. Endereço completo
-
+CREATE TABLE alunos (
+  id int PRIMARY KEY,
+  nome completo do aluno varchar(255) NOT NULL,
+  cpf varchar(255)NOT NULL,
+  data de nascimento date(255)NOT NULL,
+  turma varchar(255)NOT NULL,
+  turno varchar(255)NOT NULL,
+  genero varchar(255)NOT NULL,
+  raca varchar(255)NOT NULL,
+  nacionalidade/naturalidade varchar(255)NOT NULL,
+  nome do responsavel varchar(255) NOT NULL,
+  cpf do responsavel varchar(255) NOT NULL,
+  telefone do responsavel varchar(255)NOT NULL,
+  email do responsavel varchar(255)NOT NULL,
+  endereco completo varchar(255)NOT NULL
+);
 
 Cadastro de Turmas
 
-. Nome da turma
-. ID da turma
-. Turno
+CREATE TABLE turmas (
+  id int PRIMARY KEY,
+  nome da turma varchar(255) NOT NULL,
+  id da turma varchar(255) NOT NULL,
+  turno varchar(255) NOT NULL
+);
 
 
 Atrasos e Saídas Antecipadas
 
-. ID do aluno
-. ID da turma
-. Nome do aluno
-. Nome da turma
-. Data do atraso/saída antecipada
-. Hora do atraso/saída antecipada
-. Tipo da ocorrência (atraso ou saída antecipada)
-. Justificativa da ocorrência
-. Observações adicionais (opcional)
+CREATE TABLE atraso e saidas antecipadas  (
+  id int PRIMARY KEY,
+  id do aluno varchar(255) NOT NULL,
+  id da turma varchar(255) NOT NULL,
+  nome do aluno varchar(255) NOT NULL,
+  nome da turma varchar(255) NOT NULL,
+  data do atraso/saída antecipada date,
+  hora do atraso/saída antecipada time,
+  tipo da ocorrência varchar(255) NOT NULL,
+  justificativa da ocorrência varchar(255) NOT NULL,
+  observações adicionais varchar(255)
+);
 
 
 Anexo de atestados médicos e outros documentos
-
-. Tipo de documento (atestado médico, declaração, etc.)
-. Imagem do documento 
-. Descrição/Observações
+CREATE TABLE anexo de atestado  (
+  id int PRIMARY KEY,
+  tipo do documento varchar(255) NOT NULL,
+  imagem do documento varchar(255)NOT NULL,
+  descrição/Observações varchar(255),
+);
+  

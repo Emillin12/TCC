@@ -1,12 +1,5 @@
 Cadastro de Secreitarias
-
-. Nome completo da secretaria: Cleide Helena Da Silva
-. MASP : 123456
-. CPF: 111.222.333-44
-. Email institucional:  cleidehelena@educacao.mg.gov.br
-. Turno: Manhã
-. Senha : 1183281
-
+insert into secretarias (id,nome,masp,cpf,email,turno,senha) values (1,'Cleide Helena Da Silva','123456','111.222.333-44','cleidehelena@educacao.mg.gov.br','Manhã','1183281');
 
 . Nome completo da secretaria: Maria Aparecida De Oliveira
 . MASP : 654321

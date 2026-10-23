@@ -1,6 +1,6 @@
 
 export function SaidaAntecipadaAnexo() {
-  const menu = [
+const menu = [
     {
       id : 1,
       nome : "Alertas Pendentes"
@@ -84,8 +84,10 @@ export function SaidaAntecipadaAnexo() {
       nome : "Registrar Ocorrência"
     }
   ]
+
   return (
-    <main className="flex min-h-screen bg-gray-100 ">
+    <main className="flex min-h-screen bg-gray-100">
+      
       <div className="bg-blue-950 text-white w-44 flex-shrink-0 flex flex-col items-center py-3 px-2">
         <img
           className="rounded-full w-24 h-24 object-cover mb-6"
@@ -116,37 +118,40 @@ export function SaidaAntecipadaAnexo() {
         </button>
       </div>
 
-      <section className="flex-1">
+      
+      <div className="flex-1">
         <div className="bg-white border border-gray-300 rounded-md w-full min-h-screen p-8 flex flex-col">
-          <header className="mb-10">
+          
+          <div className="mb-10">
             <h1 className="text-2xl text-gray-900">
               Registrar Saída Antecipada/ Atraso
             </h1>
             <p className="text-xs text-gray-800">
               Preencha os dados abaixo para registrar a ocorrência do aluno
             </p>
-          </header>
+          </div>
 
           <div className="grid grid-cols-2 gap-x-12 gap-y-6">
+            
             <div>
               <p className="text-xs text-gray-700 mb-2">Aluno</p>
-
               <input
-              type="text"
+                type="text"
                 placeholder="Placeholder"
                 className="w-full h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700"
-                />
+              />
             </div>
-
-            <p className="text-xs text-gray-700 mb-2">Tipo da Ocorrência</p>
+            <div>
+              <p className="text-xs text-gray-700 mb-2">Tipo da Ocorrência</p>
               <select className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700">
                 <option value="">Select</option>
                 <option value="saida">Saída antecipada</option>
                 <option value="atraso">Atraso</option>
               </select>
-          </div>
+            </div>
 
-          <div>
+            
+            <div>
               <p className="text-xs text-gray-700 mb-2">Período</p>
               <select className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700">
                 <option value="">Select</option>
@@ -154,23 +159,20 @@ export function SaidaAntecipadaAnexo() {
                 <option value="tarde">Tarde</option>
                 <option value="noite">Noite</option>
               </select>
-          </div>
-
-          <div>
+            </div>
+            <div>
               <p className="text-xs text-gray-700 mb-2">Data da Ocorrência</p>
               <input
                 type="date"
                 className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700"
               />
-          </div>
+            </div>
 
-          <div>
+            
+            <div>
               <p className="text-xs text-gray-700 mb-2">Turma</p>
               <select className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700">
-                <option value="">Selecione a turma</option>
-                <option value="1°ano">1° ano</option>
-                <option value="2°ano">2° ano</option>
-                <option value="3°ano">3° ano</option>
+                <option value="">Turma</option>
               </select>
             </div>
             <div>
@@ -181,15 +183,17 @@ export function SaidaAntecipadaAnexo() {
               />
             </div>
 
+            
             <div>
-              <p className="text-xs text-gray-700 mb-2">Responsável (Quem autorizou/ Recebeu)</p>
+              <p className="text-xs text-gray-700 mb-2">
+                Responsável (Quem autorizou/ Recebeu)
+              </p>
               <input
                 type="text"
-                placeholder="Nome do Responsável"
-                className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700"
+                placeholder="Nome do responsável"
+                className="w-full max-w-sm h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700"
               />
             </div>
-
             <div>
               <p className="text-xs text-gray-700 mb-2">Horário de saída</p>
               <input
@@ -197,25 +201,40 @@ export function SaidaAntecipadaAnexo() {
                 className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700"
               />
             </div>
-            <div className="col-span-3">
-              <p className="text-xs text-gray-700 mb-3">Motivo/Observações</p>
+
+            
+            <div className="col-span-2">
+              <p className="text-xs text-gray-700 mb-2">Motivo/ observações</p>
               <textarea
-                placeholder="Informe o motivo da saída antecipada ou atraso do aluno"
-                className="w-full  h-44 p-2 border border-gray-300 text-xs resize-none"
+                placeholder="Informe o motivo da saída antecipada ou do atraso"
+                className="w-full h-20 p-2 border border-gray-300 rounded bg-white text-xs text-gray-700 resize-none"
               />
             </div>
 
+            
             <div className="col-span-2">
-              <p className="text-xs text-gray-700 mb-3"> Atestado</p>
-              <label className="flex items-center justify-center w-full max-w-3xl h-28 border border-gray-300 bg-white text-xs text-gray-500 cursor-pointer">
-                Clique para anexar o arquivo
+              <p className="text-xs text-gray-700 mb-2">Atestado</p>
+              <label className="flex items-center justify-center w-72 h-48 bg-gray-200 text-gray-400 cursor-pointer">
+                <svg className="w-20 h-20" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="17" cy="7" r="2.5" />
+                  <path d="M2 20l7-11 5 8 3-4 5 7z" />
+                </svg>
                 <input type="file" className="hidden" />
               </label>
             </div>
-            
+          </div>
+
+          
+          <div className="flex justify-end gap-6 mt-8">
+            <button className="bg-blue-950 text-white text-xs py-2 px-5 rounded-sm">
+              Anexar Atestado
+            </button>
+            <button className="bg-blue-950 text-white text-xs py-2 px-5 rounded-sm">
+              Registrar Ocorrência
+            </button>
+          </div>
         </div>
-      </section>
-      
+      </div>
     </main>
   );
 }

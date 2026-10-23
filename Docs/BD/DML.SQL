@@ -1,259 +1,93 @@
 Cadastro de Secreitarias
 insert into secretarias (id,nome,masp,cpf,email,turno,senha) values (1,'Cleide Helena Da Silva','123456','111.222.333-44','cleidehelena@educacao.mg.gov.br','Manhã','1183281');
 
-. Nome completo da secretaria: Maria Aparecida De Oliveira
-. MASP : 654321
-. CPF: 222.333.444-55
-. Email institucional: mariaaparecida@educacao.mg.gov.br
-. Turno: Tarde
-. Senha : 222952
+insert into secretarias (id,nome,masp,cpf,email,turno,senha) values (2,'Maria Aparecida De Oliveira','654321','222.333.444-55','mariaaparecida@educacao.mg.gov.br','Tarde','222952');
 
+insert into secretarias (id,nome,masp,cpf,email,turno,senha) values (3,'Joana Da Silva Souza','789012','333.444.555-66','joanadasilva@educacao.mg.gov.br','Noite','377533');
 
-. Nome completo da secretaria: Joana Da Silva Souza
-. MASP : 789012
-. CPF: 333.444.555-66
-. Email institucional: joanadasilva@educacao.mg.gov.br
-. Turno: Noite
-. Senha : 377533
-
-
-. Nome completo da secretaria: Jaqueline Souza
-. MASP : 345678
-. CPF: 444.555.666-77
-. Email institucional: jaquelinesouza@educacao.mg.gov.br
-. Turno: Manhã
-. Senha : 4535398
-
-
-
+insert into secretarias (id,nome,masp,cpf,email,turno,senha) values (4,'Jaqueline Souza','345678','444.555.666-77','jaquelinesouza@educacao.mg.gov.br','Noite','4535398');
 
 Cadastro de Alunos
+insert into alunos (id,nome,cpf,data_nascimento,turma,turno,genero,raca,nacionalidade,nome_responsavel,cpf_responsavel,telefone_responsavel,email_responsavel,endereco) values (108640,'João Pedro de Oliveira','555.666.777-88','15/03/2008','3º Ano 1','Manhã','Masculino','Branco','Brasileiro','Maria Aparecida de Oliveira','222.333.444-55','(31) 99999-9999','mariaaparecida@gmail.com','Rua Exemplo, 823 - Bairro Exemplo - Santa Rita Do Sapucaí - MG');
 
-. Nome completo do aluno: João Pedro de Oliveira
-. ID : 108640
-. CPF: 555.666.777-88
-. Data de nascimento: 15/03/2008
-. Turma: 3º Ano 1
-. Turmo: Manhã
-. Genêro: Masculino
-. Raça: Branca
-. Nacionalidade/Naturalidade: Brasileiro
-. Nome do responsável: Maria Aparecida de Oliveira
-. CPF do responsável: 222.333.444-55
-. Telefone do responsável: (31) 99999-9999
-. Email do responsável: mariaaparecida@gmail.com
-. Endereço completo: Rua Exemplo, 823 - Bairro Exemplo - Santa Rita Do Sapucaí - MG 
+insert into alunos (id,nome,cpf,data_nascimento,turma,turno,genero,raca,nacionalidade,nome_responsavel,cpf_responsavel,telefone_responsavel,email_responsavel,endereco) values (108641,'Ana Beatriz Souza','666.777.888-99','22/07/2009','2º Ano 2','Manhã','Feminino','Branca','Brasileira','João da Silva Souza','333.444.555-66','(31) 99999-9999','anabeatriz@gmail.com','Rua Exemplo, 1923 - Bairro Exemplo - Santa Rita Do Sapucaí - MG');
 
-Cadastro de Alunos
+insert into alunos (id,nome,cpf,data_nascimento,turma,turno,genero,raca,nacionalidade,nome_responsavel,cpf_responsavel,telefone_responsavel,email_responsavel,endereco) values (108642,'Carlos Eduardo Lima','777.888.999-00','10/11/2011','1º Ano 1','Manhã','Masculino','Parda','Brasileiro','Fernanda Lima','444.555.666-77','(31) 99999-9999','fernandalima@gmail.com','Rua Exemplo, 1883 - Bairro Exemplo - Santa Rita Do Sapucaí - MG');
 
-. Nome completo do aluno: Ana Beatriz Souza
-. ID : 108641
-. CPF: 666.777.888-99
-. Data de nascimento: 22/07/2009
-. Turma: 2º Ano 2
-. Turmo: Manhã
-. Genêro: Feminino
-. Raça: Branca
-. Nacionalidade/Naturalidade: Brasileira
-. Nome do responsável: João da Silva Souza
-. CPF do responsável: 333.444.555-66
-. Telefone do responsável: (31) 99999-9999
-. Email do responsável: joao11@gmail.com
-. Endereço completo: Rua Exemplo, 1923 - Bairro Exemplo - Santa Rita Do Sapucaí - MG 
+insert into alunos (id,nome,cpf,data_nascimento,turma,turno,genero,raca,nacionalidade,nome_responsavel,cpf_responsavel,telefone_responsavel,email_responsavel,endereco) values (108643,'Gabriel Henrique Santos','688.999.000-11','05/05/2014','7º Ano 2','Tarde','Masculino','Pardo','Brasileiro','Luana Santos','055.666.777-88','(31) 99999-9999','luanasantos123@gmail.com','Rua Exemplo, 123 - Bairro Exemplo - Santa Rita Do Sapucaí - MG');
 
-
-
-. Nome completo do aluno: Carlos Eduardo Lima
-. ID : 108642
-. CPF: 777.888.999-00
-. Data de nascimento: 10/11/2011
-. Turma: 1º Ano 1
-. Turmo: Manhã
-. Genêro: Masculino
-. Raça: Parda
-. Nacionalidade/Naturalidade: Brasileiro
-. Nome do responsável: Fernanda Lima
-. CPF do responsável: 444.555.666-77
-. Telefone do responsável: (31) 99999-9999
-. Email do responsável: fernandalima@gmail.com
-. Endereço completo: Rua Exemplo, 1883 - Bairro Exemplo - Santa Rita Do Sapucaí - MG
-
-
-. Nome completo do aluno: Gabriel Henrique Santos
-. ID :  108643
-. CPF: 688.999.000-11
-. Data de nascimento: 05/05/2014 
-. Turma: 7º Ano 2
-. Turmo: Tarde
-. Genêro: Masculino
-. Raça: Parda
-. Nacionalidade/Naturalidade: Brasileiro
-. Nome do responsável: Luana Santos
-. CPF do responsável: 055.666.777-88   
-. Telefone do responsável: (31) 99999-9999
-. Email do responsável: luanasantos123@gmail.com
-. Endereço completo: Rua Exemplo, 123 - Bairro Exemplo - Santa Rita Do Sapucaí - MG 
-
-
-
-. Nome completo do aluno:  Pamela Rodrigues
-. ID : 108644
-. CPF: 777.888.999-00
-. Data de nascimento: 15/03/2008
-. Turma: 3º Ano 1
-. Genêro: Feminino
-. Raça: Branca
-. Nacionalidade/Naturalidade: Brasileira
-. Nome do responsável: Helena Rodrigues
-. CPF do responsável: 055.666.777-88   
-. Telefone do responsável: (31) 99999-9999
-. Email do responsável: helena.rodrigues@gmail.com
-. Endereço completo: Rua Exemplo, 45 - Bairro Exemplo - Santa Rita Do Sapucaí - MG 
-
-
+insert into alunos (id,nome,cpf,data_nascimento,turma,turno,genero,raca,nacionalidade,nome_responsavel,cpf_responsavel,telefone_responsavel,email_responsavel,endereco) values (108644,'Pamela Rodrigues','777.888.999-00','15/03/2008','3º Ano 1','Manhã','Feminino','Branca','Brasileira','Helena Rodrigues','055.666.777-88','(31) 99999-9999',' helena.rodrigues@gmail.com','Rua Exemplo, 45 - Bairro Exemplo - Santa Rita Do Sapucaí - MG');
 
 
 Cadastro de Turmas
 
-. Nome da turma : 6º Ano 1
-. ID da turma : 101564
-. Turno : Tarde
+insert into turmas (id,nome,turno) values (101564,'6º Ano 1','Tarde')
 
-. Nome da turma: 6º Ano 2
-. ID da turma: 101565
-. Turno: Tarde
+insert into turmas (id,nome,turno) values (101565,'6º Ano 2','Tarde')
 
-. Nome da turma: 7º Ano 1
-. ID da turma: 101566
-. Turno: Tarde
+insert into turmas (id,nome,turno) values (101566,'7º Ano 1','Tarde')
 
-. Nome da turma: 7º Ano 2
-. ID da turma: 101567
-. Turno: Tarde
+insert into turmas (id,nome,turno) values (101567,'7º Ano 2','Tarde')
 
-. Nome da turma: 8º Ano 1
-. ID da turma: 101568
-. Turno: Manhã
+insert into turmas (id,nome,turno) values (101568,'8º Ano 1','Manhã')
 
-. Nome da turma: 8º Ano 2
-. ID da turma: 101569
-. Turno: Manhã
+insert into turmas (id,nome,turno) values (101569,'8º Ano 2','Manhã')
 
-. Nome da turma: 9º Ano 1
-. ID da turma: 101570
-. Turno: Manhã
+insert into turmas (id,nome,turno) values (101570,'9º Ano 1','Manhã')
 
-. Nome da turma: 9º Ano 2
-. ID da turma: 101571
-. Turno: Manhã
+insert into turmas (id,nome,turno) values (101571,'9º Ano 2','Manhã')
 
-. Nome da turma: 1º Ano 1
-. ID da turma: 101572
-. Turno: Manhã
+insert into turmas (id,nome,turno) values (101572,'1º Ano 1','Manhã')
 
-. Nome da turma: 1º Ano 2
-. ID da turma: 101573
-. Turno: Manhã
+insert into turmas (id,nome,turno) values (101573,'1º Ano 2','Manhã')
 
-. Nome da turma:  1º Ano Técnico em Energias Renovaveis
-. ID da turma: 1015744
-. Turno: Integral
+insert into turmas (id,nome,turno) values (1015744,'1º Ano Técnico em Energias Renovaveis','Integral')
 
-. Nome da turma: 2º Ano 1
-. ID da turma: 101574
-. Turno: Manhã
+insert into turmas (id,nome,turno) values (101574,'2º Ano 1','Manhã')
 
-. Nome da turma: 2º Ano 2
-. ID da turma: 101575
-. Turno: Manhã
+insert into turmas (id,nome,turno) values (101575,'2º Ano 2','Manhã')
 
-. Nome da turma: 2º Ano Técnico em Energias Renovaveis
-. ID da turma: 101575
-. Turno: Integral
+insert into turmas (id,nome,turno) values (101575,'2º Ano Técnico em Energias Renovaveis','Integral')
 
-. Nome da turma: 3º Ano 1
-. ID da turma: 101576
-. Turno: Manhã
+insert into turmas (id,nome,turno) values (101576,'3º Ano 1','Manhã')
 
-. Nome da turma: 3º Ano 2
-. ID da turma: 101577
-. Turno: Manhã
+insert into turmas (id,nome,turno) values (101577,'3º Ano 2','Manhã')
 
-. Nome da turma: 3º Ano Técnico em Informática
-. ID da turma: 101578
-. Turno: Integral
+insert into turmas (id,nome,turno) values (101578,'3º Ano Técnico em Informática','Integral')
+
 
 
 
 Atrasos e Saídas Antecipadas
-
-. ID do aluno : 108640
-. ID da turma: 101576
-. Nome do aluno: João Pedro de Oliveira
-. Nome da turma: 3º Ano 1
-. Data do atraso/saída antecipada: 4/10/2026
-. Hora do atraso/saída antecipada: 8:10
-. Tipo da ocorrência (atraso ou saída antecipada): Atraso
-. Justificativa da ocorrência: Médico 
-. Observações adicionais (opcional): 
-
+insert into atrasos_saidas (id_aluno, id_turma, data_ocorrencia, hora_ocorrencia, tipo_ocorrencia, justificativa, observacoes) values (108640, 101576, '2026-10-04', '08:10', 'Atraso', 'Médico', '');
 
 Anexo de atestados médicos e outros documentos
 
-. Tipo de documento (atestado médico, declaração): Atestado médico
-. Imagem do documento : .png
-. Descrição/Observações:  
+insert into anexos (tipo_documento, imagem_documento, descricao) values ('Atestado médico', 'atestado_medico.png', 'O aluno apresentou um atestado médico justificando o atraso devido a uma consulta médica.');
 
 
-. ID do aluno : 108641
-. ID da turma: 101577
-. Nome do aluno: Ana Beatriz Souza
-. Nome da turma: 2º Ano 2
-. Data do atraso/saída antecipada:  15/08/2026
-. Hora do atraso/saída antecipada: 12:30
-. Tipo da ocorrência (atraso ou saída antecipada): Saída antecipada
-. Justificativa da ocorrência: Trabalho
-. Observações adicionais (opcional):
 
+
+Atrasos e Saídas Antecipadas
+insert into atrasos_saidas (id_aluno, id_turma, data_ocorrencia, hora_ocorrencia, tipo_ocorrencia, justificativa, observacoes) values (108641, 101577, '2026-08-15', '12:30', 'Saída antecipada', 'Trabalho', 'A responsável do aluno solicitou a saída antecipada devido a compromissos de trabalho.');
 
 Anexo de atestados médicos e outros documentos
 
-. Tipo de documento (atestado médico, declaração): Declaração
-. Imagem do documento :
-. Descrição/Observações: 
+insert into anexos (tipo_documento, imagem_documento, descricao) values ('Declaração', 'declaracao_saida_antecipada.png', 'A responsável do aluno apresentou uma declaração solicitando a saída antecipada devido a compromissos de trabalho.');
 
 
-. ID do aluno : 108642
-. ID da turma: 101574
-. Nome do aluno: Carlos Eduardo Lima
-. Nome da turma: 1º Ano 1
-. Data do atraso/saída antecipada: 29/09/2026
-. Hora do atraso/saída antecipada: 8:40
-. Tipo da ocorrência (atraso ou saída antecipada): Atraso
-. Justificativa da ocorrência: Ficou preso no trânsito
-. Observações adicionais (opcional):
 
+insert into atrasos_saidas (id_aluno, id_turma, data_ocorrencia, hora_ocorrencia, tipo_ocorrencia, justificativa, observacoes) values (108642, 101574, '2026-09-29', '08:40', 'Atraso', 'Ficou preso no trânsito', '');
 
 Anexo de atestados médicos e outros documentos
 
-. Tipo de documento (atestado médico, declaração)
-. Imagem do documento :
-. Descrição/Observações: Ficou preso no trânsito e não conseguiu chegar a tempo na escola, por isso se atrasou.
+insert into anexos (tipo_documento, imagem_documento, descricao) values ('Declaração', 'declaracao_atraso_transito.png', 'O aluno ficou preso no trânsito e não conseguiu chegar a tempo na escola, por isso se atrasou.');
 
-. ID do aluno : 108643
-. ID da turma: 101567
-. Nome do aluno: Gabriel Henrique Santos
-. Nome da turma: 7º Ano 2
-. Data do atraso/saída antecipada: 10/10/2026
-. Hora do atraso/saída antecipada: 14:00
-. Tipo da ocorrência (atraso ou saída antecipada): Saída antecipada
-. Justificativa da ocorrência: Mal-estar
-. Observações adicionais (opcional): Responsável do aluno foi chamado para buscá-lo na escola devido ao mal-estar.
 
+
+insert into atrasos_saidas (id_aluno, id_turma, data_ocorrencia, hora_ocorrencia, tipo_ocorrencia, justificativa, observacoes) values (108643, 101567, '2026-10-10', '14:00', 'Saída antecipada', 'Mal-estar', 'Responsável do aluno foi chamado para buscá-lo na escola devido ao mal-estar.');
 
 Anexo de atestados médicos e outros documentos
 
-. Tipo de documento (atestado médico, declaração):
-. Imagem do documento :
-. Descrição/Observações: 
+insert into anexos (tipo_documento, imagem_documento, descricao) values ('Atestado médico', 'atestado_mal_estar.png', 'O aluno apresentou um atestado médico justificando a saída antecipada devido a mal-estar.');
 

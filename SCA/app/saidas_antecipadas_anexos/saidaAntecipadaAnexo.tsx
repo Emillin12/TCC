@@ -113,7 +113,7 @@ const menu = [
         <button className="block w-full text-left text-xs px-2 py-2 mb-6">
           Inicio
         </button>
-        <button className="block w-full text-left text-xs px-2 py-2 mb-6 bg-blue-700 rounded">
+        <button className="block w-full text-left text-xs px-2 py-2 mb-6 ">
           Registrar ocorrência
         </button>
       </div>
@@ -172,7 +172,14 @@ const menu = [
             <div>
               <p className="text-xs text-gray-700 mb-2">Turma</p>
               <select className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700">
-                <option value="">Turma</option>
+                <option value="">Selecione a turma</option>
+                <option value="6ano">6° ano</option>
+                <option value="7ano">7° ano</option>
+                <option value="8ano">8° ano</option>
+                <option value="9ano">9° ano</option>
+                <option value="1ano">1° ano</option>
+                <option value="2ano">2° ano</option>
+                <option value="3ano">3° ano</option>
               </select>
             </div>
             <div>

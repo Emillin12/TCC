@@ -104,7 +104,7 @@ export function HistoricoSemanal() {
 
   return (
     <main className="flex min-h-screen bg-gray-100">
-      <div className="bg-blue-950 text-white w-44 flex-shrink-0 flex flex-col items-center py-3 px-2">
+      <div className="bg-blue-950 text-white w-44 shrink-0 flex flex-col items-center py-3 px-2">
         <img
           className="rounded-full w-24 h-24 object-cover mb-6"
           src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg"
@@ -150,6 +150,52 @@ export function HistoricoSemanal() {
           <div className="bg-green-600 text-white rounded-lg p-3">
             <p className="text-xs font-bold">Alunos cadastrados</p>
           </div>
+
+          <div className="bg-yellow-500 text-white rounded-lg p-3">
+            <p className="text-xs font-bold">Atrasos hoje</p>
+          </div>
+
+          <div className="bg-blue-500 text-white rounded-lg p-3">
+            <p className="text-xs font-bold">Saidas antecipadas</p>
+          </div>
+
+          <div className="bg-red-500 text-white rounded-lg p-3">
+            <p className="text-xs font-bold">Alertas pendentes</p>
+          </div>
+        </div>
+
+        <div>
+          <p className="text-xs text-gray-700 mb-2">Periodo</p>
+              <input
+                type="date"
+                className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700"
+                
+                
+              />
+        </div>
+
+        <div>
+          <p className="text-xs text-gray-700 mb-2">Tipo de registro</p>
+              <select className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700">
+                <option value="">Select</option>
+                <option value="manha">Saida Antecipada</option>
+                <option value="tarde">Atraso</option>
+              </select>
+        </div>
+
+        <div>
+          <p className="text-xs text-gray-700 mb-2">Turma</p>
+              <select className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700">
+                <option value="">Select</option>
+                <option value="manha">6° ano</option>
+                <option value="tarde">7° ano</option>
+                <option value="manha">8° ano</option>
+                <option value="tarde">9° ano</option>
+                <option value="manha">1° ano ensino medio</option>
+                <option value="tarde">2° ano ensino medio</option>
+                <option value="manha">3° ano ensino medio</option>
+                
+              </select>
         </div>
       </div>
     </main>

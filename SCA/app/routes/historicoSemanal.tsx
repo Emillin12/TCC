@@ -1,4 +1,4 @@
-import { HistoricoSemanal } from "~/historico_semanal/HisotricoSemanal";
+import { HistoricoSemanal } from "~/historico_semanal/HistoricoSemanal";
 import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {

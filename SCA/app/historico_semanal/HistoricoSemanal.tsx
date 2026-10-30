@@ -144,27 +144,27 @@ export function HistoricoSemanal() {
               Acompanhe o histórico de atrasos e saídas antecipadas durante a semana.
             </p>
           </div>
+
+          <div className="grid grid-cols-4 gap-6  max-w-4xl mb-8">
+            <div className="bg-green-600 text-white rounded-lg p-3">
+              <p className="text-xs font-bold">Alunos cadastrados</p>
+            </div>
+
+            <div className="bg-yellow-500 text-white rounded-lg p-3">
+             <p className="text-xs font-bold">Atrasos hoje</p>
+            </div>
+
+            <div className="bg-blue-500 text-white rounded-lg p-3">
+              <p className="text-xs font-bold">Saidas antecipadas</p>
+            </div>
+
+            <div className="bg-red-500 text-white rounded-lg p-3">
+              <p className="text-xs font-bold">Alertas pendentes</p>
+            </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-6  max-w-4xl mb-8">
-          <div className="bg-green-600 text-white rounded-lg p-3">
-            <p className="text-xs font-bold">Alunos cadastrados</p>
-          </div>
-
-          <div className="bg-yellow-500 text-white rounded-lg p-3">
-            <p className="text-xs font-bold">Atrasos hoje</p>
-          </div>
-
-          <div className="bg-blue-500 text-white rounded-lg p-3">
-            <p className="text-xs font-bold">Saidas antecipadas</p>
-          </div>
-
-          <div className="bg-red-500 text-white rounded-lg p-3">
-            <p className="text-xs font-bold">Alertas pendentes</p>
-          </div>
-        </div>
-
-        <div>
+        <div className="flex gap-6 mb-8">
+          <div>
           <p className="text-xs text-gray-700 mb-2">Periodo</p>
               <input
                 type="date"
@@ -191,12 +191,22 @@ export function HistoricoSemanal() {
                 <option value="tarde">7° ano</option>
                 <option value="manha">8° ano</option>
                 <option value="tarde">9° ano</option>
-                <option value="manha">1° ano ensino medio</option>
-                <option value="tarde">2° ano ensino medio</option>
-                <option value="manha">3° ano ensino medio</option>
+                <option value="manha">1° ano EMTI</option>
+                <option value="tarde">2° ano EMTI</option>
+                <option value="manha">3° ano EMTI</option>
+                <option value="manha">1° ano em ensino técnico</option>
+                <option value="manha">2° ano em ensino técnico</option>
+                <option value="manha">3° ano em ensino técnico</option>
+
                 
               </select>
         </div>
+        </div>
+        </div>
+
+        
+
+        
       </div>
     </main>
   )

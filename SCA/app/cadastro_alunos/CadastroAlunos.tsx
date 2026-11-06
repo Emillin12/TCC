@@ -33,8 +33,8 @@ export function CadastroAlunos() {
 
 
   return (
-    <main className="flex h-screen">
-      <aside className=" bg-blue-900 text-white h-screen w-64 p-6 ">
+    <main className="flex h-screen w-scre">
+      <aside className=" bg-blue-900 text-white h-screen w-1/8 p-6 ">
         <img className="rounded-full w-20 mb-4" src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg" alt="Logo" />
 
         <button className="block text-left mb-2">Alertas Pendentes</button>
@@ -45,8 +45,8 @@ export function CadastroAlunos() {
         <button className="block text-left mb-2">Inicio</button>
         <button className="block text-left mb-2">Registrar Ocorrencia</button>
       </aside>
-
-      <div className="flex m-10 w-300 justify-center rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+      
+      <div className="flex m-10 w-screen   flex-col rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
           
         <div>
           <div className="text-xl font-medium text-black dark:text-white">Cadastro do Aluno</div>
@@ -57,23 +57,24 @@ export function CadastroAlunos() {
         <section className="flex p-8 justify-between">
       
 
-        <div className="flex gap-8 flex-col">
+        <div className="flex gap-8 flex-col justify-between">
           
           <div className="flex flex-row">
+            <div className="flex flex-col">
             <p className="font-medium mb-1">Nome do aluno</p>
             <input type="text" placeholder="Nome do aluno" className="w-50 border border-gray-300 rounded p-2" />
+            </div>
             
-              <p>Data de Nascimento</p>
-              <input type="date" className="w-1/2 border border-gray-300 rounded p-2"/>
+            <div className="flex flex-col justify-between">
+              <p className="font-medium mb-1 pl-20">Data de Nascimento</p>
+              <input type="date" className=" border border-gray-300 rounded p-2"/>
+            </div>
             
-
-          </div>
-            
-
       
-
-          
-            <div className="flex flex-col">
+          </div>
+      
+  
+            <div className="flex flex-col justify-between">
               <p className="font-medium mb-1">CPF do aluno</p>
               <input type="text" placeholder="Nome do aluno" className="w-2/5 border border-gray-300 rounded p-2" />
                
@@ -85,26 +86,40 @@ export function CadastroAlunos() {
 
            
 
-            <div className="flex flex-row">
+            <div className="flex flex-row justify-between">
               <p className="font-medium mb-1">Turma</p>
               
               <select className="w-1/2 border border-gray-300 rounded p-2">
                 <option value="opções">Selecione</option>
-                <option value="opções">Atestado médico</option>
-                <option value="opções">Declaração</option>
+                <option value="opções">1° ano </option>
+                <option value="opções">2° ano </option>
+                <option value="opções">3° ano</option>
+                <option value="opções">1° ano técnico</option>
+                <option value="opções">3° ano técnico</option>
+                <option value="opções">3° ano técnico</option>
+                <option value="opções">9° ano</option>
+                <option value="opções">8° ano</option>
+                <option value="opções">7° ano</option>
+                <option value="opções">6° ano</option>
+
+                                
+
               </select>
-              <p className="font-medium mb-1">Turno</p>
+              <p className="font-medium mb-1 ">Turno</p>
               
               <select className="w-1/2 border border-gray-300 rounded p-2">
                 
-                <option value="opções">Atestado médico</option>
-                <option value="opções">Declaração</option>
+                <option value="opções">Selecione</option>
+                <option value="opções">Matutino</option>
+                <option value="opções">Vespertino</option>
+                <option value="opções">Noturno</option>
+                <option value="opções">Integral</option>
               </select>
 
               
             </div>
 
-            <div>
+            <div className="flex justify-between">
               <p className="font-medium mb-1">E-mail(opicional)</p>
                 <input type="text" placeholder="Nome do aluno" className="w-2/5 border border-gray-300 rounded p-2" />
 

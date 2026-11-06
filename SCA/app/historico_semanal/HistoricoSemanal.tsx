@@ -184,7 +184,7 @@ export function HistoricoSemanal() {
 
                 <tbody className="text-gray-800">
 
-  {/* PRIMEIRO REGISTRO */}
+  
   <tr>
     <td contentEditable={true} className="border p-2">16/06/2026</td>
     <td contentEditable={true} className="border p-2">Atraso</td>
@@ -196,7 +196,7 @@ export function HistoricoSemanal() {
     <td contentEditable={true} className="border p-2">Consulta médica</td>
   </tr>
 
-  {/* SEGUNDO REGISTRO */}
+  
   <tr>
     <td contentEditable={true} className="border p-2">18/06/2026</td>
     <td contentEditable={true} className="border p-2">Saída Antecipada</td>
@@ -208,7 +208,7 @@ export function HistoricoSemanal() {
     <td contentEditable={true} className="border p-2">-</td>
   </tr>
 
-  {/* LINHAS VAZIAS */}
+  
   {Array.from({ length: 10 }, (_, index) => (
     <tr key={index}>
       {tabelas.map((tabela) => (

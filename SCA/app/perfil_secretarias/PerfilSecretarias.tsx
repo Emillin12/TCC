@@ -90,15 +90,28 @@ export function PerfilSecretaria() {
             <h1 className="text-2xl text-gray-900">
               Meu perfil
             </h1>
-          </div>
-          <button className=" test-sm font-bold text-red-600 justify-end">
+
+            <button className=" test-sm font-bold text-red-600 justify-end">
             Sair
-          </button>
+            </button>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          <div className="flex items-center gap-6 border border-gray-300 rounded-md p-6">
+            <span className="text-5xl text-gray-800">
+              <div className="flex-1">
+                <h2 className="text-lg text-gray-900 mb-4">
+                  Secretaria(o)
+                </h2>
+              </div>
+            </span>
+
+          </div>
+        </div>
+          
         </div>
 
-        <div className="">
-
-        </div>
+        
       </div>
       
     </main>

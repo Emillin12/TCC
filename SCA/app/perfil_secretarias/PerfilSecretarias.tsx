@@ -65,7 +65,7 @@ export function PerfilSecretaria() {
 
   return (
     <main className="flex min-h-screen bg-gray-100">
-      <div className="bg-gradient-to-b from-blue-950 to-blue-500 text-white w-64 shrink-0 flex flex-col py-4 px-4">
+      <div className="bg-blue-950 text-white w-64 shrink-0 flex flex-col py-4 px-4">
         <button className="self-start text-2xl mb-4" aria-label="Voltar">
           ↩
         </button>

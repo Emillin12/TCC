@@ -115,7 +115,7 @@ export function AlertasPendentes() {
 
   return (
     <main className="flex min-h-screen bg-gray-100">
-      <div className="bg-gradient-to-b from-blue-950 to-blue-500 text-white w-44 shrink-0 flex flex-col items-center py-3 px-2">
+      <div className="bg-blue-950 from-blue-950 to-blue-500 text-white w-44 shrink-0 flex flex-col items-center py-3 px-2">
         <img
           className="rounded-full w-24 h-24 object-cover mb-6"
           src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg"

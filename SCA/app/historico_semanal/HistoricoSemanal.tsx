@@ -53,7 +53,7 @@ export function HistoricoSemanal() {
             key={item.id}
             className={`block w-full text-left text-xs px-2 py-2 mb-6 ${
               item.nome === "Histórico Semanal"
-                ? "bg-blue-700 rounded"
+                ? " rounded"
                 : ""
             }`}
           >

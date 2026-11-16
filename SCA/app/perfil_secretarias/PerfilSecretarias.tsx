@@ -1,3 +1,4 @@
+import { useState } from "react"
 
 export function PerfilSecretaria() {
   const dadosPerfil = [
@@ -63,10 +64,90 @@ export function PerfilSecretaria() {
     }
   ]
 
+  // o que o usuário escolheu
+  const [tema, setTema] = useState("Claro")
+  const [idioma, setIdioma] = useState("Português")
+
+  function mudarPreferencia(nome: string, valor: string) {
+    if (nome === "Tema") setTema(valor)
+    if (nome === "Idioma") setIdioma(valor)
+  }
+
+  // o que for digitado nos campos do perfil
+  const [valores, setValores] = useState<Record<string, string>>(
+    Object.fromEntries([...dadosPerfil, ...infoConta].map((item) => [item.nome, item.valor]))
+  )
+
+  function digitar(nome: string, valor: string) {
+    setValores({ ...valores, [nome]: valor })
+  }
+
+  // texto em português (é a chave da tradução)
+  const mensagem = "Por trás de uma escola organizada, acolhedora e eficiente, existe o trabalho dedicado de uma secretária escolar. Cada atendimento, cada documento e cada orientação refletem compromisso e cuidado. Nunca se esqueça: seu trabalho é essencial e sua dedicação transforma a rotina escolar todos os dias!"
+
+  // traduções. Para o português não precisa, ele usa o texto original.
+  // Para adicionar um idioma novo, crie outro bloco igual a esses.
+  const traducoes: Record<string, Record<string, string>> = {
+    English: {
+      "Voltar": "Back",
+      "Olá, Secretaria(o)!": "Hello, Secretary!",
+      [mensagem]: "Behind an organized, welcoming and efficient school, there is the dedicated work of a school secretary. Every service, every document and every piece of guidance reflects commitment and care. Never forget: your work is essential and your dedication transforms the school routine every day!",
+      "Meu Perfil": "My Profile",
+      "Sair": "Log out",
+      "Secretaria(o)": "Secretary",
+      "Secretaria": "Secretary",
+      "Nome": "Name",
+      "Turno": "Shift",
+      "Informações da conta": "Account information",
+      "Nome do Usuário": "Username",
+      "Cargo": "Position",
+      "Email Institucional": "Institutional email",
+      "Preferências": "Preferences",
+      "Tema": "Theme",
+      "Escolha o tema de sua preferência": "Choose your preferred theme",
+      "Claro": "Light",
+      "Escuro": "Dark",
+      "Idioma": "Language",
+      "Selecione o idioma": "Select the language",
+      "Fale Conosco/Suporte": "Contact Us/Support"
+    },
+    Español: {
+      "Voltar": "Volver",
+      "Olá, Secretaria(o)!": "¡Hola, Secretaria(o)!",
+      [mensagem]: "Detrás de una escuela organizada, acogedora y eficiente, está el trabajo dedicado de una secretaria escolar. Cada atención, cada documento y cada orientación reflejan compromiso y cuidado. ¡Nunca olvides: tu trabajo es esencial y tu dedicación transforma la rutina escolar todos los días!",
+      "Meu Perfil": "Mi Perfil",
+      "Sair": "Salir",
+      "Nome": "Nombre",
+      "Informações da conta": "Información de la cuenta",
+      "Nome do Usuário": "Nombre de usuario",
+      "Email Institucional": "Correo institucional",
+      "Preferências": "Preferencias",
+      "Escolha o tema de sua preferência": "Elige el tema de tu preferencia",
+      "Escuro": "Oscuro",
+      "Selecione o idioma": "Selecciona el idioma",
+      "Fale Conosco/Suporte": "Contáctenos/Soporte"
+    }
+  }
+
+  // devolve o texto no idioma escolhido (se não tiver tradução, mostra o original)
+  function t(texto: string) {
+    return traducoes[idioma]?.[texto] ?? texto
+  }
+
+  // cores de cada tema
+  const escuro = tema === "Escuro"
+  const fundo = escuro ? "bg-gray-900" : "bg-gray-100"
+  const painel = escuro ? "bg-gray-800 border-gray-700" : "bg-white border-gray-300"
+  const caixa = escuro ? "border-gray-600" : "border-gray-300"
+  const textoForte = escuro ? "text-gray-100" : "text-gray-900"
+  const textoMedio = escuro ? "text-gray-300" : "text-gray-700"
+  const textoFraco = escuro ? "text-gray-400" : "text-gray-600"
+  const campo = escuro ? "bg-gray-700 border-gray-600 text-gray-100" : "bg-white border-gray-300 text-gray-700"
+
   return (
-    <main className="flex min-h-screen bg-gray-100">
-      <div className="bg-blue-950 text-white w-64 shrink-0 flex flex-col py-4 px-4">
-        <button className="self-start text-2xl mb-4" aria-label="Voltar">
+    <main className={`flex min-h-screen ${fundo}`}>
+      <div className="bg-gradient-to-b from-blue-950 to-blue-500 text-white w-64 shrink-0 flex flex-col py-4 px-4">
+        <button className="self-start text-2xl mb-4" aria-label={t("Voltar")}>
           ↩
         </button>
 
@@ -77,55 +158,71 @@ export function PerfilSecretaria() {
         />
 
         <h2 className="text-lg mb-8">
-          Olá, Secretaria(o)!
+          {t("Olá, Secretaria(o)!")}
         </h2>
 
         <p className="text-sm leading-relaxed">
-          Por trás de uma escola organizada, acolhedora e eficiente, existe o trabalho dedicado de uma secretária escolar. Cada atendimento, cada documento e cada orientação refletem compromisso e cuidado. Nunca se esqueça: seu trabalho é essencial e sua dedicação transforma a rotina escolar todos os dias!
+          {t(mensagem)}
         </p>
       </div>
 
       <div className="flex-1 p-6">
-        <div className="bg-white border border-gray-300 rounded-md w-full min-h-screen p-8 flex flex-col">
+        <div className={`${painel} border rounded-md w-full min-h-screen p-8 flex flex-col`}>
           <div className="flex justify-between items-center mb-8">
-            <h1 className="text-2xl text-gray-900">
-              Meu Perfil
+            <h1 className={`text-2xl ${textoForte}`}>
+              {t("Meu Perfil")}
             </h1>
-            <button className="text-sm font-bold text-red-600">
-              Sair
+            <button className="text-sm font-bold text-red-500">
+              {t("Sair")}
             </button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-            <div className="flex items-center gap-6 border border-gray-300 rounded-md p-6">
-              <span className="text-5xl text-gray-800" aria-hidden="true">👤</span>
+            <div className={`flex items-center gap-6 border ${caixa} rounded-md p-6`}>
+              <span className={`text-5xl ${textoMedio}`} aria-hidden="true">👤</span>
               <div className="flex-1">
-                <h2 className="text-lg text-gray-900 mb-4">
-                  Secretaria(o)
+                <h2 className={`text-lg ${textoForte} mb-4`}>
+                  {t("Secretaria(o)")}
                 </h2>
                 {dadosPerfil.map((dado) => (
-                  <p key={dado.id} className="text-xs text-gray-700 mb-3">
-                    {dado.nome}: <span className="text-gray-900">{dado.valor || "-"}</span>
-                  </p>
+                  <label key={dado.id} className={`flex items-center gap-2 text-xs ${textoMedio} mb-3`}>
+                    {t(dado.nome)}:
+                    <input
+                      type="text"
+                      value={valores[dado.nome]}
+                      onChange={(e) => digitar(dado.nome, e.target.value)}
+                      className={`flex-1 h-7 px-2 border rounded text-xs ${campo}`}
+                    />
+                  </label>
                 ))}
               </div>
             </div>
 
-            <div className="border border-gray-300 rounded-md p-6">
-              <h2 className="text-sm font-bold text-gray-900 mb-4">
-                Informações da conta
+            <div className={`border ${caixa} rounded-md p-6`}>
+              <h2 className={`text-sm font-bold ${textoForte} mb-4`}>
+                {t("Informações da conta")}
               </h2>
               {infoConta.map((info) => (
-                <p key={info.id} className="text-xs text-gray-700 mb-3">
-                  {info.nome}: <span className="text-gray-900">{info.valor || "-"}</span>
-                </p>
+                <label key={info.id} className={`flex items-center gap-2 text-xs ${textoMedio} mb-3`}>
+                  {t(info.nome)}:
+                  {info.nome === "Cargo" ? (
+                    <span className={textoForte}>{t(valores[info.nome])}</span>
+                  ) : (
+                    <input
+                      type={info.nome === "Email Institucional" ? "email" : "text"}
+                      value={valores[info.nome]}
+                      onChange={(e) => digitar(info.nome, e.target.value)}
+                      className={`flex-1 h-7 px-2 border rounded text-xs ${campo}`}
+                    />
+                  )}
+                </label>
               ))}
             </div>
           </div>
 
           <div className="mb-10 max-w-xl">
-            <h2 className="text-sm font-bold text-gray-900 mb-4">
-              Preferências
+            <h2 className={`text-sm font-bold ${textoForte} mb-4`}>
+              {t("Preferências")}
             </h2>
             {preferencias.map((preferencia) => (
               <div
@@ -133,18 +230,20 @@ export function PerfilSecretaria() {
                 className="flex items-center justify-between gap-4 mb-6"
               >
                 <div className="flex items-center gap-3">
-                  <span className="text-lg text-gray-700" aria-hidden="true">{preferencia.icone}</span>
+                  <span className={`text-lg ${textoMedio}`} aria-hidden="true">{preferencia.icone}</span>
                   <div>
-                    <p className="text-xs font-bold text-gray-900">{preferencia.nome}</p>
-                    <p className="text-xs text-gray-600">{preferencia.descricao}</p>
+                    <p className={`text-xs font-bold ${textoForte}`}>{t(preferencia.nome)}</p>
+                    <p className={`text-xs ${textoFraco}`}>{t(preferencia.descricao)}</p>
                   </div>
                 </div>
                 <select
-                  className="w-36 h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700"
-                  aria-label={preferencia.nome}
+                  value={preferencia.nome === "Tema" ? tema : idioma}
+                  onChange={(e) => mudarPreferencia(preferencia.nome, e.target.value)}
+                  className={`w-36 h-9 px-2 border rounded text-xs ${campo}`}
+                  aria-label={t(preferencia.nome)}
                 >
                   {preferencia.opcoes.map((opcao) => (
-                    <option key={opcao} value={opcao}>{opcao}</option>
+                    <option key={opcao} value={opcao}>{t(opcao)}</option>
                   ))}
                 </select>
               </div>
@@ -152,14 +251,14 @@ export function PerfilSecretaria() {
           </div>
 
           <div>
-            <h2 className="text-lg text-gray-900 mb-4">
-              Fale Conosco/Suporte
+            <h2 className={`text-lg ${textoForte} mb-4`}>
+              {t("Fale Conosco/Suporte")}
             </h2>
             <div className="flex gap-16">
               {contatos.map((contato) => (
                 <div key={contato.id} className="flex flex-col items-center gap-2">
-                  <span className="text-3xl text-gray-800" aria-hidden="true">{contato.icone}</span>
-                  <p className="text-xs text-gray-600">{contato.valor}</p>
+                  <span className={`text-3xl ${textoMedio}`} aria-hidden="true">{contato.icone}</span>
+                  <p className={`text-xs ${textoFraco}`}>{contato.valor}</p>
                 </div>
               ))}
             </div>
@@ -168,4 +267,5 @@ export function PerfilSecretaria() {
       </div>
     </main>
   )
+
 }

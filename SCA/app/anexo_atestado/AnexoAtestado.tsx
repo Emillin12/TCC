@@ -1,3 +1,6 @@
+
+import {Link} from "react-router"
+
 export function AnexoAtestados() {
   const anexoAtestados = [
     {
@@ -31,6 +34,15 @@ export function AnexoAtestados() {
 
     },
   ]
+
+  const rotas: Record<string, string> = {
+    "Alertas Pendentes" : "routes/alertasPendentes.tsx",
+    "Anexo de Atestado" : "/anexoAtestados",
+    "Cadastrar Aluno" : "/cadastroalunos",
+    "Histórico Mensal" : "/historicoMensal",
+    "Histórico Semanal" : "/historicoSemanal",
+    "Início" : "/paginainicio",
+  }
   return (
     <main className="flex min-h-screen bg-gray-100">
       
@@ -41,24 +53,22 @@ export function AnexoAtestados() {
           alt="Logo"
         />
 
-        <button className="block w-full text-left text-xs px-2 py-2 mb-6">
+        <Link to={rotas["Alertas Pendentes"]} className="block w-full text-left text-xs px-2 py-2 mb-6">
           Alertas Pendentes
-        </button>
-        <button className="block w-full text-left text-xs px-2 py-2 mb-6">
+        </Link>
+        <Link to={rotas["Anexo de Atestado"]} className="block w-full text-left text-xs px-2 py-2 mb-6">
           Anexo de atestado
-        </button>
-        <button className="block w-full text-left text-xs px-2 py-2 mb-6">
+        </Link>
+        <Link to={rotas["Histórico Mensal"]} className="block w-full text-left text-xs px-2 py-2 mb-6">
           Histórico Mensal
-        </button>
-        <button className="block w-full text-left text-xs px-2 py-2 mb-6">
+        </Link>
+        <Link to={rotas["Histórico Semanal"]} className="block w-full text-left text-xs px-2 py-2 mb-6">
           Histórico Semanal
-        </button>
-        <button className="block w-full text-left text-xs px-2 py-2 mb-6">
+        </Link>
+        <Link to={rotas["Início"]} className="block w-full text-left text-xs px-2 py-2 mb-6">
           Inicio
-        </button>
-        <button className="block w-full text-left text-xs px-2 py-2 mb-6">
-          Registrar ocorrência
-        </button>
+        </Link>
+  
       </aside>
 
       

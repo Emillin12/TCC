@@ -1,4 +1,5 @@
 
+import {Link} from "react-router"
 export function CadastroAlunos() {
 
    
@@ -30,6 +31,15 @@ export function CadastroAlunos() {
 
   ]
 
+  const rotas: Record<string, string> = {
+    "Alertas Pendentes" : "routes/alertasPendentes.tsx",
+    "Anexo de Atestado" : "/anexoAtestados",
+    "Cadastrar Aluno" : "/cadastroalunos",
+    "Histórico Mensal" : "/historicoMensal",
+    "Histórico Semanal" : "/historicoSemanal",
+    "Início" : "/paginainicio",
+  }
+
 
 
   return (
@@ -37,13 +47,25 @@ export function CadastroAlunos() {
       <aside className=" bg-blue-900 text-white h-screen w-1/8 p-6 ">
         <img className="rounded-full w-20 mb-4" src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg" alt="Logo" />
 
-        <button className="block text-left mb-2">Alertas Pendentes</button>
-        <button className="block text-left mb-2">Anexo de Atestado</button>
-        <button className="block text-left mb-2">Cadastrar Aluno(a)</button>
-        <button className="block text-left mb-2">Histórico Mensal</button>
-        <button className="block text-left mb-2">Histórico Semanal</button>
-        <button className="block text-left mb-2">Inicio</button>
-        <button className="block text-left mb-2">Registrar Ocorrencia</button>
+        <Link to={rotas["Alertas Pendentes"]} className="block text-left mb-2">
+          Alertas Pendentes
+        </Link>
+        <Link to={rotas["Anexo de Atestado"]} className="block text-left mb-2">
+          Anexo de Atestado
+        </Link>
+        <Link to={rotas["Cadastrar Aluno"]} className="block text-left mb-2">
+          Cadastrar Aluno(a)
+        </Link>
+        <Link to={rotas["Histórico Mensal"]} className="block text-left mb-2">
+          Histórico Mensal
+        </Link>
+        <Link to={rotas["Histórico Semanal"]} className="block text-left mb-2">
+          Histórico Semanal
+        </Link>
+        <Link to={rotas["Início"]} className="block text-left mb-2">
+          Início
+        </Link>
+        
       </aside>
       
       <div className="flex m-10 w-screen   flex-col rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">

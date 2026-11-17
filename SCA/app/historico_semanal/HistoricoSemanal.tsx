@@ -1,4 +1,4 @@
-
+import {Link} from "react-router"
 export function HistoricoSemanal() {
 
   const menu = [
@@ -8,7 +8,7 @@ export function HistoricoSemanal() {
     { id: 4, nome: "Histórico Mensal" },
     { id: 5, nome: "Histórico Semanal" },
     { id: 6, nome: "inicio" },
-    { id: 7, nome: "Registrar ocorrência" }
+    
   ];
 
   const cards = [
@@ -36,6 +36,15 @@ export function HistoricoSemanal() {
     { id: 8, nome: "observação" }
   ];
 
+  const rotas: Record<string, string> = {
+    "Alertas Pendentes" : "routes/alertasPendentes.tsx",
+    "Anexo de Atestado" : "/anexoAtestados",
+    "Cadastrar Aluno" : "/cadastroalunos",
+    "Histórico Mensal" : "/historicoMensal",
+    "Histórico Semanal" : "/historicoSemanal",
+    "Início" : "/paginainicio",
+  }
+
   return (
     <main className="flex min-h-screen bg-gray-100">
 
@@ -49,7 +58,8 @@ export function HistoricoSemanal() {
         />
 
         {menu.map((item) => (
-          <button
+          <Link
+            to={rotas[item.nome]}
             key={item.id}
             className={`block w-full text-left text-xs px-2 py-2 mb-6 ${
               item.nome === "Histórico Semanal"
@@ -58,7 +68,7 @@ export function HistoricoSemanal() {
             }`}
           >
             {item.nome}
-          </button>
+          </Link>
         ))}
 
       </div>
@@ -112,14 +122,14 @@ export function HistoricoSemanal() {
 
               <input
                 type="date"
-                className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700"
+                className="w-full max-w-(220px) h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700"
               />
             </div>
 
             <div>
               <p className="text-xs text-gray-700 mb-2">Tipo de registro</p>
 
-              <select className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700">
+              <select className="w-full max-w-(220px) h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700">
                 <option value="">Todos</option>
                 <option value="saida">Saída Antecipada</option>
                 <option value="atraso">Atraso</option>
@@ -129,7 +139,7 @@ export function HistoricoSemanal() {
             <div>
               <p className="text-xs text-gray-700 mb-2">Turma</p>
 
-              <select className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700">
+              <select className="w-full max-w-(220px) h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700">
                 <option value="">Todas</option>
                 <option value="6">6° ano</option>
                 <option value="7">7° ano</option>
@@ -150,7 +160,7 @@ export function HistoricoSemanal() {
               <input
                 type="text"
                 placeholder="Pesquisar aluno"
-                className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700"
+                className="w-full max-w-(220px) h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700"
               />
             </div>
 
@@ -215,7 +225,7 @@ export function HistoricoSemanal() {
         <td
           key={tabela.id}
           contentEditable={true}
-          className="border p-2 h-9 min-w-[80px] focus:bg-yellow-50"
+          className="border p-2 h-9 min-w-(80px) focus:bg-yellow-50"
         ></td>
       ))}
     </tr>

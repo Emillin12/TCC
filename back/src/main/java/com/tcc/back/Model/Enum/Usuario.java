@@ -1,82 +1,49 @@
 package com.tcc.back.Model.Enum;
 
-public record Usuario() {
+import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "usuario")
+public class Usuario {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @Entity
-    @Table(name = "usuarios")
-    public class Usuario {
+    private String nome;
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
+    @Enumerated(EnumType.STRING)
+    private Turno turno;
 
-        private String nome;
-        private String masp;
-        private String cpf;
-        private String email;
-        private String turno;
-        private String senha;
+    @Column(name = "email_institucional", unique = true)
+    private String emailInstitucional;
 
-        public Usuario() {
-        }
+    // A senha pode ser recebida no cadastro, mas nunca é devolvida na resposta
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private String senha;
 
-        public Long getId() {
-            return id;
-        }
+    @Column(unique = true)
+    private String masp;
 
-        public void setId(Long id) {
-            this.id = id;
-        }
-
-        public String getNome() {
-            return nome;
-        }
-
-        public void setNome(String nome) {
-            this.nome = nome;
-        }
-
-        public String getMasp() {
-            return masp;
-        }
-
-        public void setMasp(String masp) {
-            this.masp = masp;
-        }
-
-        public String getCpf() {
-            return cpf;
-        }
-
-        public void setCpf(String cpf) {
-            this.cpf = cpf;
-        }
-
-        public String getEmail() {
-            return email;
-        }
-
-        public void setEmail(String email) {
-            this.email = email;
-        }
-
-        public String getTurno() {
-            return turno;
-        }
-
-        public void setTurno(String turno) {
-            this.turno = turno;
-        }
-
-        public String getSenha() {
-            return senha;
-        }
-
-        public void setSenha(String senha) {
-            this.senha = senha;
-        }
+    public Usuario() {
     }
 
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
+
+    public Turno getTurno() { return turno; }
+    public void setTurno(Turno turno) { this.turno = turno; }
+
+    public String getEmailInstitucional() { return emailInstitucional; }
+    public void setEmailInstitucional(String emailInstitucional) { this.emailInstitucional = emailInstitucional; }
+
+    public String getSenha() { return senha; }
+    public void setSenha(String senha) { this.senha = senha; }
+
+    public String getMasp() { return masp; }
+    public void setMasp(String masp) { this.masp = masp; }
 }

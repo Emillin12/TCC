@@ -1,4 +1,6 @@
+
 import {useState} from "react";
+import {Link} from "react-router"
 export function AlertasPendentes() {
   const menu = [
     {
@@ -25,10 +27,7 @@ export function AlertasPendentes() {
       id : 6,
       nome : "Início"
     },
-    {
-      id : 7,
-      nome : "Registrar ocorrência"
-    }
+   
   ]
   const colunas = [
     {
@@ -92,7 +91,7 @@ export function AlertasPendentes() {
     )
   }
 
-  
+  //ADICIONAR LINHA BRANCA NO FINAL
   function adicionarLinha() {
     const proximoId = Math.max(...alertas.map((alerta) => alerta.id)) + 1
     setAlertas([
@@ -113,6 +112,15 @@ export function AlertasPendentes() {
 
   const campoTabela = "w-full bg-transparent px-2 py-2 text-xs text-gray-800 outline-none focus:bg-blue-50"
 
+  const rotas: Record<string, string> = {
+    "Alertas Pendentes" : "routes/alertasPendentes.tsx",
+    "Anexo de Atestado" : "/anexoAtestado",
+    "Cadastrar Aluno" : "/cadastroalunos",
+    "Histórico Mensal" : "/historicoMensal",
+    "Histórico Semanal" : "/historicoSemanal",
+    "Início" : "/paginainicio",
+  }
+
   return (
     <main className="flex min-h-screen bg-gray-100">
       <div className="bg-blue-950 from-blue-950 to-blue-500 text-white w-44 shrink-0 flex flex-col items-center py-3 px-2">
@@ -123,12 +131,13 @@ export function AlertasPendentes() {
         />
 
         {menu.map((item) => (
-          <button
+          <Link
             key={item.id}
+            to={rotas[item.nome]}
             className={`block w-full text-left text-xs px-2 py-2 mb-6 ${item.nome === "Alertas Pendentes" ? " rounded" : ""}`}
           >
             {item.nome}
-          </button>
+          </Link>
         ))}
       </div>
 

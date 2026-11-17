@@ -1,35 +1,37 @@
 package com.tcc.back.Controller;
 
-import com.tcc.back.Model.Enum.Turno;
+import com.tcc.back.DTO.CadastroRequest;
+import com.tcc.back.DTO.LoginRequest;
+import com.tcc.back.DTO.UsuarioResponse;
+import com.tcc.back.Model.Enum.Usuario;
 import com.tcc.back.Service.UsuarioService;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/usuarios")
+@CrossOrigin(origins = "*")
 public class UsuarioController {
 
-    @Autowired
-    private UsuarioService usuarioService;
+    private final UsuarioService usuarioService;
 
-    // 1. Rota para registrar a ENTRADA do aluno
-    @PostMapping("/{id}/entrada")
-    public ResponseEntity<String> registrarEntrada(
-            @PathVariable Long id,
-            @RequestParam Turno turno) {
-
-        String resposta = usuarioService.processarEntrada(id, turno);
-        return ResponseEntity.ok(resposta);
+    public UsuarioController(UsuarioService usuarioService) {
+        this.usuarioService = usuarioService;
     }
 
-    // 2. Rota para registrar a SAÍDA do aluno
-    @PostMapping("/{id}/saida")
-    public ResponseEntity<String> registrarSaida(
-            @PathVariable Long id,
-            @RequestParam Turno turno) {
+    // POST /usuarios/cadastro
+    @PostMapping("/cadastro")
+    public ResponseEntity<UsuarioResponse> cadastrar(@Valid @RequestBody CadastroRequest request) {
+        Usuario criado = usuarioService.cadastrar(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(UsuarioResponse.de(criado));
+    }
 
-        String resposta = usuarioService.processarSaida(id, turno);
-        return ResponseEntity.ok(resposta);
+    // POST /usuarios/login
+    @PostMapping("/login")
+    public ResponseEntity<UsuarioResponse> login(@Valid @RequestBody LoginRequest request) {
+        Usuario usuario = usuarioService.login(request);
+        return ResponseEntity.ok(UsuarioResponse.de(usuario));
     }
 }

@@ -10,12 +10,13 @@ export default [
     route("ExibicaoAluno" , "routes/exibicaoAluno.tsx"),
     route("HistoricoMensal" , "routes/historicoMensal.tsx"),
     route("HistoricoSemanal" , "routes/historicoSemanal.tsx"),
-    //route("PaginaInicio" , "routes/paginainicio.tsx"),
+    route("PaginaInicio" , "routes/paginainicio.tsx"),
     route("Login" , "routes/login.tsx"),
     route("PerfilSecretarias" , "routes/perfilSecretarias.tsx"),
     route("SaidaAntecipada" , "routes/saidaAntecipada.tsx"),
     route("Seguranca" , "routes/seguranca.tsx"),
-    route("SobreNos" , "routes/sobreNos.tsx")
+    route("SobreNos" , "routes/sobreNos.tsx"),
+    route("perguntasFrequentes","routes/perguntas_Frequentes.tsx")
     
 
 

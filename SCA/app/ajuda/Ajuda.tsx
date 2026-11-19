@@ -12,10 +12,10 @@ export function Ajuda() {
         {/* Ponte entre páginas sem precisar de biblioteca */}
         <div className="flex items-center gap-3">
           <a 
-            href="/sobre-nos" 
+            href="/perguntasFrequentes" 
             className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors border border-white/20"
           >
-            Sobre Nós →
+            Perguntas Frequentes →
           </a>
         </div>
       </div>

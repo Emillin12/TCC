@@ -1,4 +1,5 @@
 import { useState } from "react"
+import {Link} from "react-router"
 
 export function HistoricoMensal() {
   const menu = [
@@ -247,6 +248,14 @@ export function HistoricoMensal() {
     }
   }
 
+  const rotas: Record<string, string> = {
+    "Alertas Pendentes" : "routes/alertasPendentes.tsx",
+    "Anexo de Atestado" : "/anexoAtestados",
+    "Cadastrar Aluno" : "/cadastroalunos",
+    "Histórico Mensal" : "/historicoMensal",
+    "Histórico Semanal" : "/historicoSemanal",
+    "Início" : "/paginainicio",
+  }
   
   function t(texto: string) {
     return traducoes[idioma]?.[texto] ?? texto
@@ -279,12 +288,13 @@ export function HistoricoMensal() {
         />
 
         {menu.map((item) => (
-          <button
+          <Link
             key={item.id}
+            to={rotas[item.nome]}
             className={`block w-full text-left text-xs px-2 py-2 mb-6 ${item.nome === "Histórico Mensal" ? " rounded" : ""}`}
           >
             {t(item.nome)}
-          </button>
+          </Link>
         ))}
       </div>
 
@@ -347,7 +357,7 @@ export function HistoricoMensal() {
             <select
               value={filtroMes}
               onChange={(e) => setFiltroMes(e.target.value)}
-              className={`w-full max-w-[220px] h-9 px-2 border rounded text-xs ${campo}`}
+              className={`w-full max-w-220px h-9 px-2 border rounded text-xs ${campo}`}
               aria-label={t("Mês")}
             >
               <option value="">{t("Mês")}</option>
@@ -359,7 +369,7 @@ export function HistoricoMensal() {
             <select
               value={filtroTurma}
               onChange={(e) => setFiltroTurma(e.target.value)}
-              className={`w-full max-w-[220px] h-9 px-2 border rounded text-xs ${campo}`}
+              className={`w-full max-w-220px h-9 px-2 border rounded text-xs ${campo}`}
               aria-label={t("Turma")}
             >
               <option value="">{t("Turma")}</option>
@@ -371,7 +381,7 @@ export function HistoricoMensal() {
 
           <div className="flex flex-col xl:flex-row gap-8">
             <div className={`flex-1 min-w-0 overflow-x-auto border ${caixa} rounded self-start`}>
-              <table className={`w-full min-w-[700px] text-xs text-left border-collapse ${textoMedio}`}>
+              <table className={`w-full min-w-(700px) text-xs text-left border-collapse ${textoMedio}`}>
                 <thead className={cabecalho}>
                   <tr>
                     {colunas.map((coluna) => (
@@ -411,6 +421,8 @@ export function HistoricoMensal() {
                 </tbody>
               </table>
             </div>
+
+            
 
             <div className="flex flex-col gap-6 xl:w-80 shrink-0">
               {tabelasLaterais.map((tabela) => (

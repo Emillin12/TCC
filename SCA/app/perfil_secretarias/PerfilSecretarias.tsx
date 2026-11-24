@@ -1,4 +1,5 @@
 import { useState } from "react"
+import {Link} from "react-router"
 
 export function PerfilSecretaria() {
   const dadosPerfil = [
@@ -55,7 +56,7 @@ export function PerfilSecretaria() {
     {
       id : 1,
       icone : "✉",
-      valor : "email@exemplo.com"
+      valor : "suportesecretaria@gmail.com"
     },
     {
       id : 2,
@@ -143,12 +144,17 @@ export function PerfilSecretaria() {
   const textoFraco = escuro ? "text-gray-400" : "text-gray-600"
   const campo = escuro ? "bg-gray-700 border-gray-600 text-gray-100" : "bg-white border-gray-300 text-gray-700"
 
+  const rotas: Record<string, string> = {
+    "Sair": "/login",
+    "Voltar":"/login"
+  }
+
   return (
     <main className={`flex min-h-screen ${fundo}`}>
-      <div className=" from-blue-950 to-blue-500 text-white w-64 shrink-0 flex flex-col py-4 px-4">
-        <button className="self-start text-2xl mb-4" aria-label={t("Voltar")}>
+      <div className=" bg-blue-950 to-blue-500 text-white w-64 shrink-0 flex flex-col py-4 px-4">
+        <Link to={rotas["Voltar"]} className="self-start text-2xl mb-4" aria-label={t("Voltar")}>
           ↩
-        </button>
+        </Link>
 
         <img
           className="rounded-full w-28 h-28 object-cover mx-auto mb-6"
@@ -171,9 +177,9 @@ export function PerfilSecretaria() {
             <h1 className={`text-2xl ${textoForte}`}>
               {t("Meu Perfil")}
             </h1>
-            <button className="text-sm font-bold text-red-500">
+            <Link to={rotas["Sair"]} className="text-sm font-bold text-red-500">
               {t("Sair")}
-            </button>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">

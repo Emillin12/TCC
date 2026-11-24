@@ -1,4 +1,5 @@
 import { useState } from "react"
+import {Link} from "react-router"
 
 export function PerfilSecretaria() {
   const dadosPerfil = [
@@ -55,7 +56,7 @@ export function PerfilSecretaria() {
     {
       id : 1,
       icone : "✉",
-      valor : "email@exemplo.com"
+      valor : "suportesecretaria@gmail.com"
     },
     {
       id : 2,
@@ -64,7 +65,7 @@ export function PerfilSecretaria() {
     }
   ]
 
-  // o que o usuário escolheu
+  
   const [tema, setTema] = useState("Claro")
   const [idioma, setIdioma] = useState("Português")
 
@@ -73,7 +74,7 @@ export function PerfilSecretaria() {
     if (nome === "Idioma") setIdioma(valor)
   }
 
-  // o que for digitado nos campos do perfil
+  
   const [valores, setValores] = useState<Record<string, string>>(
     Object.fromEntries([...dadosPerfil, ...infoConta].map((item) => [item.nome, item.valor]))
   )
@@ -82,11 +83,10 @@ export function PerfilSecretaria() {
     setValores({ ...valores, [nome]: valor })
   }
 
-  // texto em português (é a chave da tradução)
+  
   const mensagem = "Por trás de uma escola organizada, acolhedora e eficiente, existe o trabalho dedicado de uma secretária escolar. Cada atendimento, cada documento e cada orientação refletem compromisso e cuidado. Nunca se esqueça: seu trabalho é essencial e sua dedicação transforma a rotina escolar todos os dias!"
 
-  // traduções. Para o português não precisa, ele usa o texto original.
-  // Para adicionar um idioma novo, crie outro bloco igual a esses.
+  
   const traducoes: Record<string, Record<string, string>> = {
     English: {
       "Voltar": "Back",
@@ -129,12 +129,12 @@ export function PerfilSecretaria() {
     }
   }
 
-  // devolve o texto no idioma escolhido (se não tiver tradução, mostra o original)
+ 
   function t(texto: string) {
     return traducoes[idioma]?.[texto] ?? texto
   }
 
-  // cores de cada tema
+  
   const escuro = tema === "Escuro"
   const fundo = escuro ? "bg-gray-900" : "bg-gray-100"
   const painel = escuro ? "bg-gray-800 border-gray-700" : "bg-white border-gray-300"
@@ -144,12 +144,17 @@ export function PerfilSecretaria() {
   const textoFraco = escuro ? "text-gray-400" : "text-gray-600"
   const campo = escuro ? "bg-gray-700 border-gray-600 text-gray-100" : "bg-white border-gray-300 text-gray-700"
 
+  const rotas: Record<string, string> = {
+    "Sair": "/login",
+    "Voltar":"/login"
+  }
+
   return (
     <main className={`flex min-h-screen ${fundo}`}>
-      <div className="bg-gradient-to-b from-blue-950 to-blue-500 text-white w-64 shrink-0 flex flex-col py-4 px-4">
-        <button className="self-start text-2xl mb-4" aria-label={t("Voltar")}>
+      <div className=" bg-blue-950 to-blue-500 text-white w-64 shrink-0 flex flex-col py-4 px-4">
+        <Link to={rotas["Voltar"]} className="self-start text-2xl mb-4" aria-label={t("Voltar")}>
           ↩
-        </button>
+        </Link>
 
         <img
           className="rounded-full w-28 h-28 object-cover mx-auto mb-6"
@@ -172,14 +177,14 @@ export function PerfilSecretaria() {
             <h1 className={`text-2xl ${textoForte}`}>
               {t("Meu Perfil")}
             </h1>
-            <button className="text-sm font-bold text-red-500">
+            <Link to={rotas["Sair"]} className="text-sm font-bold text-red-500">
               {t("Sair")}
-            </button>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
             <div className={`flex items-center gap-6 border ${caixa} rounded-md p-6`}>
-              <span className={`text-5xl ${textoMedio}`} aria-hidden="true">👤</span>
+              
               <div className="flex-1">
                 <h2 className={`text-lg ${textoForte} mb-4`}>
                   {t("Secretaria(o)")}

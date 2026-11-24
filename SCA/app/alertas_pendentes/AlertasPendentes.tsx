@@ -27,6 +27,10 @@ export function AlertasPendentes() {
       id : 6,
       nome : "Início"
     },
+    {
+      id:7,
+      nome :"Perfil Secretarias"
+    }
    
   ]
   const colunas = [
@@ -113,12 +117,13 @@ export function AlertasPendentes() {
   const campoTabela = "w-full bg-transparent px-2 py-2 text-xs text-gray-800 outline-none focus:bg-blue-50"
 
   const rotas: Record<string, string> = {
-    "Alertas Pendentes" : "routes/alertasPendentes.tsx",
-    "Anexo de Atestado" : "/anexoAtestado",
+    "Alertas Pendentes" : "routes/alertasPendentes",
+    "Anexo de Atestado" : "/anexoAtestados",
     "Cadastrar Aluno" : "/cadastroalunos",
     "Histórico Mensal" : "/historicoMensal",
     "Histórico Semanal" : "/historicoSemanal",
     "Início" : "/paginainicio",
+    "Perfil Secretarias" : "/perfilSecretarias"
   }
 
   return (
@@ -163,7 +168,7 @@ export function AlertasPendentes() {
           </div>
 
           <div className="overflow-x-auto border border-gray-300 rounded">
-            <table className="w-full min-w-[800px] text-xs text-left border-collapse">
+            <table className="w-full min-w-full text-xs text-left border-collapse">
               <thead className="bg-gray-100 text-gray-700">
                 <tr>
                   {colunas.map((coluna) => (

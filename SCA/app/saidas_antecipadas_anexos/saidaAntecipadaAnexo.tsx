@@ -1,4 +1,4 @@
-
+import{Link,} from "react-router"
 export function SaidaAntecipadaAnexo() {
 const menu = [
     {
@@ -85,37 +85,44 @@ const menu = [
     }
   ]
 
+  const rotas: Record<string, string> = {
+    "Alertas Pendentes" : "routes/alertasPendentes.tsx",
+    "Anexo de Atestado" : "/anexoAtestados",
+    "Cadastrar Aluno" : "/cadastroalunos",
+    "Histórico Mensal" : "/historicoMensal",
+    "Histórico Semanal" : "/historicoSemanal",
+    "Início" : "/paginainicio",
+  }
+
   return (
     <main className="flex min-h-screen bg-gray-100">
       
-      <div className="bg-blue-950 text-white w-44 flex-shrink-0 flex flex-col items-center py-3 px-2">
+      <div className="bg-blue-950 text-white w-44 flex-row-reverseflex flex-col items-center py-3 px-2">
         <img
           className="rounded-full w-24 h-24 object-cover mb-6"
           src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg"
           alt="Logo"
         />
 
-        <button className="block w-full text-left text-xs px-2 py-2 mb-6">
+        <Link to={rotas["Alertas Pendentes"]} className="block w-full text-left text-xs px-2 py-2 mb-6">
           Alertas Pendentes
-        </button>
-        <button className="block w-full text-left text-xs px-2 py-2 mb-6">
+        </Link>
+        <Link to={rotas["Anexo de atestado"]} className="block w-full text-left text-xs px-2 py-2 mb-6">
           Anexo de atestado
-        </button>
-        <button className="block w-full text-left text-xs px-2 py-2 mb-6">
+        </Link>
+        <Link to={rotas["Cadastrar Aluno"]} className="block w-full text-left text-xs px-2 py-2 mb-6">
           Cadastrar Aluno
-        </button>
-        <button className="block w-full text-left text-xs px-2 py-2 mb-6">
+        </Link>
+        <Link to={rotas["Histórico Mensal"]} className="block w-full text-left text-xs px-2 py-2 mb-6">
           Histórico Mensal
-        </button>
-        <button className="block w-full text-left text-xs px-2 py-2 mb-6">
+        </Link>
+        <Link to={rotas["Histórico Semanal"]} className="block w-full text-left text-xs px-2 py-2 mb-6">
           Histórico Semanal
-        </button>
-        <button className="block w-full text-left text-xs px-2 py-2 mb-6">
+        </Link>
+        <Link to={rotas["Início"]} className="block w-full text-left text-xs px-2 py-2 mb-6">
           Inicio
-        </button>
-        <button className="block w-full text-left text-xs px-2 py-2 mb-6 ">
-          Registrar ocorrência
-        </button>
+        </Link>
+        
       </div>
 
       
@@ -143,7 +150,7 @@ const menu = [
             </div>
             <div>
               <p className="text-xs text-gray-700 mb-2">Tipo da Ocorrência</p>
-              <select className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700">
+              <select className="w-full max-w-220px h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700">
                 <option value="">Select</option>
                 <option value="saida">Saída antecipada</option>
                 <option value="atraso">Atraso</option>
@@ -153,7 +160,7 @@ const menu = [
             
             <div>
               <p className="text-xs text-gray-700 mb-2">Período</p>
-              <select className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700">
+              <select className="w-full max-w-220px h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700">
                 <option value="">Select</option>
                 <option value="manha">Manhã</option>
                 <option value="tarde">Tarde</option>
@@ -164,14 +171,14 @@ const menu = [
               <p className="text-xs text-gray-700 mb-2">Data da Ocorrência</p>
               <input
                 type="date"
-                className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700"
+                className="w-full max-w-220px h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700"
               />
             </div>
 
             
             <div>
               <p className="text-xs text-gray-700 mb-2">Turma</p>
-              <select className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700">
+              <select className="w-full max-w-220px h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700">
                 <option value="">Selecione a turma</option>
                 <option value="6ano">6° ano</option>
                 <option value="7ano">7° ano</option>
@@ -186,7 +193,7 @@ const menu = [
               <p className="text-xs text-gray-700 mb-2">Horário de chegada</p>
               <input
                 type="time"
-                className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700"
+                className="w-full max-w-220px h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700"
               />
             </div>
 
@@ -205,7 +212,7 @@ const menu = [
               <p className="text-xs text-gray-700 mb-2">Horário de saída</p>
               <input
                 type="time"
-                className="w-full max-w-[220px] h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700"
+                className="w-full max-w-220px h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700"
               />
             </div>
 

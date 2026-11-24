@@ -25,8 +25,8 @@ export function CadastroAlunos() {
       nome :"Inicio"
     },
     {
-      id : 6,
-      nome :"Registrar ocorrencia"
+      id:6,
+      nome:"exibição de aluno"
     }
 
   ]
@@ -38,6 +38,7 @@ export function CadastroAlunos() {
     "Histórico Mensal" : "/historicoMensal",
     "Histórico Semanal" : "/historicoSemanal",
     "Início" : "/paginainicio",
+    "Exibição de Aluno" : "/exibicaoAluno"
   }
 
 
@@ -65,7 +66,9 @@ export function CadastroAlunos() {
         <Link to={rotas["Início"]} className="block text-left mb-2">
           Início
         </Link>
-        
+        <Link to={rotas["Exibição de Aluno"]} className="block text-left mb-2">
+          Exibição de Aluno
+        </Link>
       </aside>
       
       <div className="flex m-10 w-screen   flex-col rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">

@@ -1,3 +1,4 @@
+import {Link} from "react-router"
 export function Login() {
   const login = [
     {
@@ -28,6 +29,9 @@ export function Login() {
     }
   ]
   
+  const rotas: Record<string, string> = {
+    "Entrar" : "/perfilSecretarias" 
+  }
 
 
   return (
@@ -36,7 +40,7 @@ export function Login() {
         <img className="rounded-full w-20 mb-4" src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg" alt="Logo" />
         <h2 className="text-xl font-bold mb-2">Bem-Vindo(a) de Volta!</h2>
         <p className="mb-2">Acesse sua conta para continuar conectado ao portal e aproveitar todos os recursos disponíveis.</p>
-        <img className ="w-32 mt-16" src="https://via.placeholder.com/300x150" alt="imagem da escola"/>
+        
 
       </aside>
 
@@ -60,7 +64,9 @@ export function Login() {
         </div>
 
         <button className="bg-blue-900 text-white font-medium py-2 px-6 rounded-md mt-6">
-          Entrar
+          <Link to={rotas["Entrar"]}>
+            Entrar
+          </Link>
         </button>
       </section>
     </main>

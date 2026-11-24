@@ -2,13 +2,9 @@ package com.tcc.back.Service;
 
 import com.tcc.back.Model.Enum.Usuario;
 import com.tcc.back.Repository.UsuarioRepository;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 @Service
 public class UsuarioService {
@@ -19,62 +15,24 @@ public class UsuarioService {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public Usuario cadastrar(Usuario usuario) {
-        if (vazio(usuario.getNome()) || usuario.getTurno() == null
-                || vazio(usuario.getEmailInstitucional())
-                || vazio(usuario.getSenha()) || vazio(usuario.getMasp())) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Preencha todos os campos");
-        }
-
-        String email = usuario.getEmailInstitucional().trim().toLowerCase();
-
-        if (usuarioRepository.existsByEmailInstitucional(email)) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "E-mail institucional já cadastrado");
-        }
-        if (usuarioRepository.existsByMasp(usuario.getMasp().trim())) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "MASP já cadastrado");
-        }
-
-        usuario.setId(null);
-        usuario.setNome(usuario.getNome().trim());
-        usuario.setEmailInstitucional(email);
-        usuario.setMasp(usuario.getMasp().trim());
-        usuario.setSenha(hash(usuario.getSenha()));
-
-        return usuarioRepository.save(usuario);
+    public List<Usuario> listarUsuarios() {
+        return usuarioRepository.getLista();
     }
 
-    public Usuario login(String emailInstitucional, String senha) {
-        if (vazio(emailInstitucional) || vazio(senha)) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Informe e-mail e senha");
+    public String cadastrarUsuario(Usuario usuario) {
+        if (usuario.getNome() == null || usuario.getNome().isBlank()) {
+            return "O nome do usuário é obrigatório.";
         }
-
-        Usuario usuario = usuarioRepository
-                .findByEmailInstitucional(emailInstitucional.trim().toLowerCase())
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "E-mail ou senha inválidos"));
-
-        if (!usuario.getSenha().equals(hash(senha))) {
-            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "E-mail ou senha inválidos");
+        if (usuario.getEmailInstitucional() == null || usuario.getEmailInstitucional().isBlank()) {
+            return "O e-mail institucional é obrigatório.";
         }
-        return usuario;
+        if (usuario.getTurno() == null) {
+            return "O turno é obrigatório.";
+        }
+        return usuarioRepository.addUsuario(usuario);
     }
 
-    private boolean vazio(String s) {
-        return s == null || s.trim().isEmpty();
-    }
-
-    // SHA-256 (sem dependências extras). Para produção, o ideal é BCrypt.
-    private String hash(String senha) {
-        try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
-            byte[] bytes = md.digest(senha.getBytes(StandardCharsets.UTF_8));
-            StringBuilder sb = new StringBuilder();
-            for (byte b : bytes) {
-                sb.append(String.format("%02x", b));
-            }
-            return sb.toString();
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
-        }
+    public String atualizarUsuario(String nome, Usuario usuarioAtualizado) {
+        return usuarioRepository.updateUsuario(nome, usuarioAtualizado);
     }
 }

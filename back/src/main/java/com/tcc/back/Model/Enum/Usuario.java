@@ -18,7 +18,6 @@ public class Usuario {
     @Column(name = "email_institucional", unique = true)
     private String emailInstitucional;
 
-    // A senha pode ser recebida no cadastro, mas nunca é devolvida na resposta
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String senha;
 
@@ -28,21 +27,60 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public Usuario(Long id, String nome, String masp, String emailInstitucional, Turno turno, String senha) {
+        this.id = id;
+        this.nome = nome;
+        this.masp = masp;
+        this.emailInstitucional = emailInstitucional;
+        this.turno = turno;
+        this.senha = senha;
+    }
 
-    public String getNome() { return nome; }
-    public void setNome(String nome) { this.nome = nome; }
+    public Long getId() {
+        return id;
+    }
 
-    public Turno getTurno() { return turno; }
-    public void setTurno(Turno turno) { this.turno = turno; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public String getEmailInstitucional() { return emailInstitucional; }
-    public void setEmailInstitucional(String emailInstitucional) { this.emailInstitucional = emailInstitucional; }
+    public String getNome() {
+        return nome;
+    }
 
-    public String getSenha() { return senha; }
-    public void setSenha(String senha) { this.senha = senha; }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-    public String getMasp() { return masp; }
-    public void setMasp(String masp) { this.masp = masp; }
+    public Turno getTurno() {
+        return turno;
+    }
+
+    public void setTurno(Turno turno) {
+        this.turno = turno;
+    }
+
+    public String getEmailInstitucional() {
+        return emailInstitucional;
+    }
+
+    public void setEmailInstitucional(String emailInstitucional) {
+        this.emailInstitucional = emailInstitucional;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getMasp() {
+        return masp;
+    }
+
+    public void setMasp(String masp) {
+        this.masp = masp;
+    }
 }

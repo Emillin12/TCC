@@ -1,7 +1,13 @@
 import logoDark from "./logo-dark.svg";
 import logoLight from "./logo-light.svg";
+import {Link} from "react-router";
 import SanicoImage from "./sanicoo em desenho.png";
 export function Welcome() {
+
+
+  const rotas: Record<string, string> ={
+    "Entrar" : "/paginaInicio",
+  }
   return (
     <main>
       <div className="bg-blue-900 text-white columns-2 text-2xl flex justify-start mask-right">
@@ -11,6 +17,12 @@ export function Welcome() {
           alt=""
         />
         <p>Escola Estadual Sanico Teles</p>
+
+        <Link to={rotas["Entrar"]}>
+          <button className=" bg-blue-950 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-auto mr-10">
+            Entrar
+          </button>
+        </Link>
       </div>
 
       <div className="flex m-20 justify-between ">

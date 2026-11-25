@@ -1,5 +1,5 @@
 
-
+import {Link} from "react-router"
 export function PaginaInicio() {
   const inicio = [
     {
@@ -40,6 +40,11 @@ export function PaginaInicio() {
     },
   ];
 
+  const rotas: Record<string, string> = {
+    "Sobre Nós": "/sobreNos",
+    "Perfil": "/cadastroAlunos",
+  }
+
   return (
     <main className="flex flex-col min-h-screen">
       
@@ -57,12 +62,11 @@ export function PaginaInicio() {
         </div>
 
         <nav className="flex gap-4 text-blue-500 font-medium">
-          <span
-            className="cursor-pointer hover:underline"
-            onClick={() => (window.location.href = "/ Sobre Nós")}
-          >
-            Sobre Nós
-          </span>
+          <Link to={rotas["Sobre Nós"]}>
+            <span className="cursor-pointer hover:underline">
+              Sobre Nós
+            </span>
+          </Link>
 
           <span
             className="cursor-pointer hover:underline"
@@ -71,12 +75,11 @@ export function PaginaInicio() {
             Ajuda
           </span>
 
-          <div
-            className="cursor-pointer hover:underline"
-            onClick={() => (window.location.href = "/Perfil")}
-          >
-            Perfil
-          </div>
+          <Link to={rotas["Perfil"]}>
+            <span className="cursor-pointer hover:underline">
+              Perfil
+            </span>
+          </Link>
 
           <div
             className="cursor-pointer hover:underline"

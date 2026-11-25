@@ -19,7 +19,7 @@ export function Welcome() {
         <p>Escola Estadual Sanico Teles</p>
 
         <Link to={rotas["Entrar"]}>
-          <button className=" bg-blue-950 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-auto mr-10">
+          <button className=" bg-blue-950  text-white ml-auto px-3 py-1 text-2xl rounded-md absolute right-4 top-7">
             Entrar
           </button>
         </Link>

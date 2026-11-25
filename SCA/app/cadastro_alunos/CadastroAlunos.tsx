@@ -1,186 +1,317 @@
 
-import {Link} from "react-router"
+import { useState } from "react";
+import { Link } from "react-router";
+
 export function CadastroAlunos() {
+  const [idioma, setIdioma] = useState("pt");
+  const [temaEscuro, setTemaEscuro] = useState(false);
 
-   
-      const menu = [
-    {
-      id : 1,
-      nome :"Alertas pendentes"
+  const rotas = [
+    "/alertasPendentes",
+    "/anexoAtestados",
+    "/cadastroalunos",
+    "/historicoMensal",
+    "/historicoSemanal",
+    "/paginainicio",
+    "/exibicaoAluno"
+  ];
+
+  const textos = {
+    pt: {
+      menu: ["Alertas Pendentes", "Anexo de Atestado", "Cadastrar Aluno(a)", "Histórico Mensal", "Histórico Semanal", "Início", "Exibição de Aluno"],
+      titulo: "Cadastro de Aluno",
+      subtitulo: "Preencha os dados abaixo para cadastrar um novo aluno",
+      nome: "Nome Completo",
+      nascimento: "Data de Nascimento",
+      cpf: "CPF",
+      instituicao: "Instituição de Ensino",
+      turma: "Turma",
+      turno: "Turno",
+      email: "E-mail (opcional)",
+      endereco: "Endereço",
+      responsavel: "Responsável",
+      telefone: "Telefone do Responsável",
+      selecionar: "Selecione",
+      limpar: "Limpar",
+      cadastrar: "Cadastrar",
+      anos: ["1° ano", "2° ano", "3° ano", "1° ano técnico", "2° ano técnico", "3° ano técnico", "6° ano", "7° ano", "8° ano", "9° ano"],
+      turnos: ["Matutino", "Vespertino", "Noturno", "Integral"]
     },
-    {
-      id : 2,
-      nome :"Anexo de atestado"
+    en: {
+      menu: ["Pending Alerts", "Medical Certificate", "Register Student", "Monthly History", "Weekly History", "Home", "Student List"],
+      titulo: "Student Registration",
+      subtitulo: "Fill in the information below to register a new student",
+      nome: "Full Name",
+      nascimento: "Date of Birth",
+      cpf: "ID Number",
+      instituicao: "Educational Institution",
+      turma: "Class",
+      turno: "Shift",
+      email: "Email (optional)",
+      endereco: "Address",
+      responsavel: "Guardian",
+      telefone: "Guardian's Phone",
+      selecionar: "Select",
+      limpar: "Clear",
+      cadastrar: "Register",
+      anos: ["1st grade", "2nd grade", "3rd grade", "1st technical year", "2nd technical year", "3rd technical year", "6th grade", "7th grade", "8th grade", "9th grade"],
+      turnos: ["Morning", "Afternoon", "Night", "Full-time"]
     },
-    {
-      id : 3,
-      nome :"Histórico mensal"
-    },
-    {
-      id : 4,
-      nome :"Histórico semanal"
-    },
-    {
-      id : 5,
-      nome :"Inicio"
-    },
-    {
-      id:6,
-      nome:"exibição de aluno"
+    es: {
+      menu: ["Alertas Pendientes", "Certificado Médico", "Registrar Alumno", "Historial Mensual", "Historial Semanal", "Inicio", "Lista de Alumnos"],
+      titulo: "Registro del Alumno",
+      subtitulo: "Complete los datos para registrar un nuevo alumno",
+      nome: "Nombre Completo",
+      nascimento: "Fecha de Nacimiento",
+      cpf: "Documento",
+      instituicao: "Institución Educativa",
+      turma: "Curso",
+      turno: "Turno",
+      email: "Correo electrónico (opcional)",
+      endereco: "Dirección",
+      responsavel: "Responsable",
+      telefone: "Teléfono del Responsable",
+      selecionar: "Seleccione",
+      limpar: "Limpiar",
+      cadastrar: "Registrar",
+      anos: ["1° año", "2° año", "3° año", "1° año técnico", "2° año técnico", "3° año técnico", "6° año", "7° año", "8° año", "9° año"],
+      turnos: ["Mañana", "Tarde", "Noche", "Tiempo completo"]
     }
+  };
 
-  ]
+  const t = textos[idioma as keyof typeof textos];
 
-  const rotas: Record<string, string> = {
-    "Alertas Pendentes" : "routes/alertasPendentes.tsx",
-    "Anexo de Atestado" : "/anexoAtestados",
-    "Cadastrar Aluno" : "/cadastroalunos",
-    "Histórico Mensal" : "/historicoMensal",
-    "Histórico Semanal" : "/historicoSemanal",
-    "Início" : "/paginainicio",
-    "Exibição de Aluno" : "/exibicaoAluno"
-  }
+  const fundo = temaEscuro
+    ? "bg-slate-900 text-white"
+    : "bg-gray-100 text-gray-900";
 
+  const cartao = temaEscuro
+    ? "bg-slate-800 text-white"
+    : "bg-white text-gray-900";
 
+  const campo = temaEscuro
+    ? "bg-slate-700 border-slate-600 text-white"
+    : "bg-white border-gray-300 text-gray-900";
 
   return (
-    <main className="flex h-screen w-scre">
-      <aside className=" bg-blue-900 text-white h-screen w-1/8 p-6 ">
-        <img className="rounded-full w-20 mb-4" src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg" alt="Logo" />
+    <main className={`flex min-h-screen w-full ${fundo}`}>
 
-        <Link to={rotas["Alertas Pendentes"]} className="block text-left mb-2">
-          Alertas Pendentes
-        </Link>
-        <Link to={rotas["Anexo de Atestado"]} className="block text-left mb-2">
-          Anexo de Atestado
-        </Link>
-        <Link to={rotas["Cadastrar Aluno"]} className="block text-left mb-2">
-          Cadastrar Aluno(a)
-        </Link>
-        <Link to={rotas["Histórico Mensal"]} className="block text-left mb-2">
-          Histórico Mensal
-        </Link>
-        <Link to={rotas["Histórico Semanal"]} className="block text-left mb-2">
-          Histórico Semanal
-        </Link>
-        <Link to={rotas["Início"]} className="block text-left mb-2">
-          Início
-        </Link>
-        <Link to={rotas["Exibição de Aluno"]} className="block text-left mb-2">
-          Exibição de Aluno
-        </Link>
+      {/* MENU LATERAL */}
+      <aside className="bg-blue-900 text-white min-h-screen w-44 shrink-0 p-5">
+
+        <img
+          className="rounded-full w-20 mb-8"
+          src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg"
+          alt="Logo"
+        />
+
+        <nav className="flex flex-col gap-5">
+          {t.menu.map((nome, index) => (
+            <Link
+              key={index}
+              to={rotas[index]}
+              className="block text-left text-sm hover:text-blue-300"
+            >
+              {nome}
+            </Link>
+          ))}
+        </nav>
+
       </aside>
-      
-      <div className="flex m-10 w-screen   flex-col rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
-          
-        <div>
-          <div className="text-xl font-medium text-black dark:text-white">Cadastro do Aluno</div>
-          <p className="text-gray-500 dark:text-gray-400">Preencha os dados abaixo para cadastrar o novo aluno</p>
-        </div>
 
+      {/* CONTEÚDO */}
+      <div className="flex-1 min-w-0 p-6 md:p-8">
 
-        <section className="flex p-8 justify-between">
-      
+        <div className={`min-h-full rounded-xl shadow-lg p-6 md:p-8 ${cartao}`}>
 
-        <div className="flex gap-8 flex-col justify-between">
-          
-          <div className="flex flex-row">
-            <div className="flex flex-col">
-            <p className="font-medium mb-1">Nome do aluno</p>
-            <input type="text" placeholder="Nome do aluno" className="w-50 border border-gray-300 rounded p-2" />
-            </div>
-            
-            <div className="flex flex-col justify-between">
-              <p className="font-medium mb-1 pl-20">Data de Nascimento</p>
-              <input type="date" className=" border border-gray-300 rounded p-2"/>
-            </div>
-            
-      
-          </div>
-      
-  
-            <div className="flex flex-col justify-between">
-              <p className="font-medium mb-1">CPF do aluno</p>
-              <input type="text" placeholder="Nome do aluno" className="w-2/5 border border-gray-300 rounded p-2" />
-               
-              <p className="font-medium mb-1">Instituição de Ensino</p>
-              <input type="text" placeholder="Nome do aluno" className="w-2/5 border border-gray-300 rounded p-2" />
-            
-            </div>
+          {/* CABEÇALHO */}
+          <div className="flex items-center justify-between gap-4 border-b border-gray-300 pb-5 mb-6">
 
+            <div className="flex items-center gap-4">
 
-           
+              {/* ÍCONE DO ALUNO */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.7"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-blue-900 shrink-0"
+              >
+                <circle cx="12" cy="8" r="5" />
+                <path d="M20 21a8 8 0 0 0-16 0" />
+              </svg>
 
-            <div className="flex flex-row justify-between">
-              <p className="font-medium mb-1">Turma</p>
-              
-              <select className="w-1/2 border border-gray-300 rounded p-2">
-                <option value="opções">Selecione</option>
-                <option value="opções">1° ano </option>
-                <option value="opções">2° ano </option>
-                <option value="opções">3° ano</option>
-                <option value="opções">1° ano técnico</option>
-                <option value="opções">3° ano técnico</option>
-                <option value="opções">3° ano técnico</option>
-                <option value="opções">9° ano</option>
-                <option value="opções">8° ano</option>
-                <option value="opções">7° ano</option>
-                <option value="opções">6° ano</option>
+              <div>
+                <h1 className="text-2xl font-semibold">
+                  {t.titulo}
+                </h1>
 
-                                
-
-              </select>
-              <p className="font-medium mb-1 ">Turno</p>
-              
-              <select className="w-1/2 border border-gray-300 rounded p-2">
-                
-                <option value="opções">Selecione</option>
-                <option value="opções">Matutino</option>
-                <option value="opções">Vespertino</option>
-                <option value="opções">Noturno</option>
-                <option value="opções">Integral</option>
-              </select>
-
-              
-            </div>
-
-            <div className="flex justify-between">
-              <p className="font-medium mb-1">E-mail(opicional)</p>
-                <input type="text" placeholder="Nome do aluno" className="w-2/5 border border-gray-300 rounded p-2" />
-
-                <p className="font-medium mb-1">Enderço</p>
-                <input type="text" placeholder="Nome do aluno" className="w-2/5 border border-gray-300 rounded p-2" />
-
-            </div>
-
-            <div className="flex flex-row">
-              <p className="font-medium mb-1">Responsável</p>
-                <input type="text" placeholder="Nome do aluno" className="w-2/5 border border-gray-300 rounded p-2" />
-              
-              <p className="font-medium mb-1">Telefone do Responsável</p>
-                <input type="text" placeholder="Nome do aluno" className="w-2/5 border border-gray-300 rounded p-2" />
-            </div>
-                  
-            
-            <div>
-              <div className="mt-6 flex justify-end gap-4 flex-row justify-">
-                <button className="bg-gray-300 text-gray-800 font-medium py-2 px-6 rounded-md hover:bg-blue-300 cursor-pointer">Limpar Cadastro </button>
-                <button className="bg-gray-300 text-gray-800 font-medium py-2 px-6 rounded-md hover:bg-blue-300 cursor-pointer">Cadastrar Aluno</button>
+                <p className="text-sm opacity-70">
+                  {t.subtitulo}
+                </p>
               </div>
 
-              
-                
-              
+            </div>
+
+            {/* IDIOMA E TEMA NO CANTO SUPERIOR DIREITO */}
+            <div className="flex items-center gap-3 shrink-0">
+
+              <select
+                value={idioma}
+                onChange={(e) => setIdioma(e.target.value)}
+                className={`border rounded-md p-2 text-sm ${campo}`}
+              >
+                <option value="pt">Português</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+              </select>
+
+              <button
+                type="button"
+                onClick={() => setTemaEscuro(!temaEscuro)}
+                className="rounded-md bg-blue-900 text-white px-3 py-2 text-sm hover:bg-blue-700"
+              >
+                {temaEscuro ? "☀️" : "🌙"}
+              </button>
 
             </div>
 
-            
-          
+          </div>
+
+          {/* FORMULÁRIO */}
+          <form
+            onSubmit={(e) => e.preventDefault()}
+            className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5 px-2 md:px-6"
+          >
+
+            {/* NOME */}
+            <div className="flex flex-col gap-2">
+              <label className="font-medium">{t.nome}</label>
+              <input
+                type="text"
+                placeholder={t.nome}
+                className={`w-full border rounded-md p-2 ${campo}`}
+              />
+            </div>
+
+            {/* DATA DE NASCIMENTO */}
+            <div className="flex flex-col gap-2">
+              <label className="font-medium">{t.nascimento}</label>
+              <input
+                type="date"
+                className={`w-full border rounded-md p-2 ${campo}`}
+              />
+            </div>
+
+            {/* CPF */}
+            <div className="flex flex-col gap-2">
+              <label className="font-medium">{t.cpf}</label>
+              <input
+                type="text"
+                placeholder="000.000.000-00"
+                className={`w-full border rounded-md p-2 ${campo}`}
+              />
+            </div>
+
+            {/* INSTITUIÇÃO */}
+            <div className="flex flex-col gap-2">
+              <label className="font-medium">{t.instituicao}</label>
+              <input
+                type="text"
+                placeholder={t.instituicao}
+                className={`w-full border rounded-md p-2 ${campo}`}
+              />
+            </div>
+
+            {/* TURMA */}
+            <div className="flex flex-col gap-2">
+              <label className="font-medium">{t.turma}</label>
+              <select className={`w-full border rounded-md p-2 ${campo}`}>
+                <option value="">{t.selecionar}</option>
+                {t.anos.map((ano, index) => (
+                  <option key={index} value={ano}>{ano}</option>
+                ))}
+              </select>
+            </div>
+
+            {/* TURNO */}
+            <div className="flex flex-col gap-2">
+              <label className="font-medium">{t.turno}</label>
+              <select className={`w-full border rounded-md p-2 ${campo}`}>
+                <option value="">{t.selecionar}</option>
+                {t.turnos.map((turno, index) => (
+                  <option key={index} value={turno}>{turno}</option>
+                ))}
+              </select>
+            </div>
+
+            {/* EMAIL */}
+            <div className="flex flex-col gap-2">
+              <label className="font-medium">{t.email}</label>
+              <input
+                type="email"
+                placeholder={t.email}
+                className={`w-full border rounded-md p-2 ${campo}`}
+              />
+            </div>
+
+            {/* ENDEREÇO */}
+            <div className="flex flex-col gap-2">
+              <label className="font-medium">{t.endereco}</label>
+              <input
+                type="text"
+                placeholder={t.endereco}
+                className={`w-full border rounded-md p-2 ${campo}`}
+              />
+            </div>
+
+            {/* RESPONSÁVEL */}
+            <div className="flex flex-col gap-2">
+              <label className="font-medium">{t.responsavel}</label>
+              <input
+                type="text"
+                placeholder={t.responsavel}
+                className={`w-full border rounded-md p-2 ${campo}`}
+              />
+            </div>
+
+            {/* TELEFONE */}
+            <div className="flex flex-col gap-2">
+              <label className="font-medium">{t.telefone}</label>
+              <input
+                type="tel"
+                placeholder="(00) 00000-0000"
+                className={`w-full border rounded-md p-2 ${campo}`}
+              />
+            </div>
+
+            {/* BOTÕES */}
+            <div className="md:col-span-2 flex justify-end gap-4 mt-8">
+
+              <button
+                type="reset"
+                className="bg-gray-300 text-gray-800 font-medium py-2 px-6 rounded-md hover:bg-gray-400"
+              >
+                {t.limpar}
+              </button>
+
+              <button
+                type="submit"
+                className="bg-blue-900 text-white font-medium py-2 px-6 rounded-md hover:bg-blue-700"
+              >
+                {t.cadastrar}
+              </button>
+
+            </div>
+
+          </form>
+
         </div>
-      </section>
-
-
-
       </div>
     </main>
   );

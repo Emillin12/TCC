@@ -86,7 +86,7 @@ const menu = [
   ]
 
   const rotas: Record<string, string> = {
-    "Alertas Pendentes" : "routes/alertasPendentes.tsx",
+    "Alertas Pendentes" : "routes/alertasPendentes",
     "Anexo de Atestado" : "/anexoAtestados",
     "Cadastrar Aluno" : "/cadastroalunos",
     "Histórico Mensal" : "/historicoMensal",

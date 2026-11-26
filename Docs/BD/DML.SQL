@@ -8,53 +8,37 @@ insert into secretarias (id,nome,masp,cpf,email,turno,senha) values (3,'Joana Da
 insert into secretarias (id,nome,masp,cpf,email,turno,senha) values (4,'Jaqueline Souza','345678','444.555.666-77','jaquelinesouza@educacao.mg.gov.br','Noite','4535398');
 
 Cadastro de Alunos
-insert into alunos (id,nome,cpf,data_nascimento,turma,turno,genero,raca,nacionalidade,nome_responsavel,cpf_responsavel,telefone_responsavel,email_responsavel,endereco) values (108640,'João Pedro de Oliveira','555.666.777-88','15/03/2008','3º Ano 1','Manhã','Masculino','Branco','Brasileiro','Maria Aparecida de Oliveira','222.333.444-55','(31) 99999-9999','mariaaparecida@gmail.com','Rua Exemplo, 823 - Bairro Exemplo - Santa Rita Do Sapucaí - MG');
+insert into alunos (id,nome_completo_do_aluno,cpf,data_de_nascimento,turma,turno,genero,raca,nacionalidade,nome_do_responsavel,cpf_do_responsavel,telefone_do_responsavel,email_do_responsavel,endereco_completo) values (108640,'João Pedro de Oliveira','555.666.777-88','15/03/2008','3º Ano 1','Manhã','Masculino','Branco','Brasileiro','Maria Aparecida de Oliveira','222.333.444-55','(31) 99999-9999','mariaaparecida@gmail.com','Rua Exemplo, 823 - Bairro Exemplo - Santa Rita Do Sapucaí - MG');
 
-insert into alunos (id,nome,cpf,data_nascimento,turma,turno,genero,raca,nacionalidade,nome_responsavel,cpf_responsavel,telefone_responsavel,email_responsavel,endereco) values (108641,'Ana Beatriz Souza','666.777.888-99','22/07/2009','2º Ano 2','Manhã','Feminino','Branca','Brasileira','João da Silva Souza','333.444.555-66','(31) 99999-9999','anabeatriz@gmail.com','Rua Exemplo, 1923 - Bairro Exemplo - Santa Rita Do Sapucaí - MG');
+insert into alunos (id,nome_completo_do_aluno,cpf,data_de_nascimento,turma,turno,genero,raca,nacionalidade,nome_do_responsavel,cpf_do_responsavel,telefone_do_responsavel,email_do_responsavel,endereco_completo) values (108641,'Ana Beatriz Souza','666.777.888-99','22/07/2009','2º Ano 2','Manhã','Feminino','Branca','Brasileira','João da Silva Souza','333.444.555-66','(31) 99999-9999','anabeatriz@gmail.com','Rua Exemplo, 1923 - Bairro Exemplo - Santa Rita Do Sapucaí - MG');
 
-insert into alunos (id,nome,cpf,data_nascimento,turma,turno,genero,raca,nacionalidade,nome_responsavel,cpf_responsavel,telefone_responsavel,email_responsavel,endereco) values (108642,'Carlos Eduardo Lima','777.888.999-00','10/11/2011','1º Ano 1','Manhã','Masculino','Parda','Brasileiro','Fernanda Lima','444.555.666-77','(31) 99999-9999','fernandalima@gmail.com','Rua Exemplo, 1883 - Bairro Exemplo - Santa Rita Do Sapucaí - MG');
+insert into alunos (id,nome_completo_do_aluno,cpf,data_de_nascimento,turma,turno,genero,raca,nacionalidade,nome_do_responsavel,cpf_do_responsavel,telefone_do_responsavel,email_do_responsavel,endereco_completo) values (108642,'Carlos Eduardo Lima','777.888.999-00','10/11/2011','1º Ano 1','Manhã','Masculino','Parda','Brasileiro','Fernanda Lima','444.555.666-77','(31) 99999-9999','fernandalima@gmail.com','Rua Exemplo, 1883 - Bairro Exemplo - Santa Rita Do Sapucaí - MG');
 
-insert into alunos (id,nome,cpf,data_nascimento,turma,turno,genero,raca,nacionalidade,nome_responsavel,cpf_responsavel,telefone_responsavel,email_responsavel,endereco) values (108643,'Gabriel Henrique Santos','688.999.000-11','05/05/2014','7º Ano 2','Tarde','Masculino','Pardo','Brasileiro','Luana Santos','055.666.777-88','(31) 99999-9999','luanasantos123@gmail.com','Rua Exemplo, 123 - Bairro Exemplo - Santa Rita Do Sapucaí - MG');
+insert into alunos (id,nome_completo_do_aluno,cpf,data_de_nascimento,turma,turno,genero,raca,nacionalidade,nome_do_responsavel,cpf_do_responsavel,telefone_do_responsavel,email_do_responsavel,endereco_completo) values (108643,'Gabriel Henrique Santos','688.999.000-11','05/05/2014','7º Ano 2','Tarde','Masculino','Pardo','Brasileiro','Luana Santos','055.666.777-88','(31) 99999-9999','luanasantos123@gmail.com','Rua Exemplo, 123 - Bairro Exemplo - Santa Rita Do Sapucaí - MG');
 
-insert into alunos (id,nome,cpf,data_nascimento,turma,turno,genero,raca,nacionalidade,nome_responsavel,cpf_responsavel,telefone_responsavel,email_responsavel,endereco) values (108644,'Pamela Rodrigues','777.888.999-00','15/03/2008','3º Ano 1','Manhã','Feminino','Branca','Brasileira','Helena Rodrigues','055.666.777-88','(31) 99999-9999',' helena.rodrigues@gmail.com','Rua Exemplo, 45 - Bairro Exemplo - Santa Rita Do Sapucaí - MG');
+insert into alunos (id,nome_completo_do_aluno,cpf,data_de_nascimento,turma,turno,genero,raca,nacionalidade,nome_do_responsavel,cpf_do_responsavel,telefone_do_responsavel,email_do_responsavel,endereco_completo) values (108644,'Pamela Rodrigues','777.888.999-00','15/03/2008','3º Ano 1','Manhã','Feminino','Branca','Brasileira','Helena Rodrigues','055.666.777-88','(31) 99999-9999',' helena.rodrigues@gmail.com','Rua Exemplo, 45 - Bairro Exemplo - Santa Rita Do Sapucaí - MG');
 
 
 Cadastro de Turmas
 
-insert into turmas (id,nome,turno) values (101564,'6º Ano 1','Tarde')
-
-insert into turmas (id,nome,turno) values (101565,'6º Ano 2','Tarde')
-
-insert into turmas (id,nome,turno) values (101566,'7º Ano 1','Tarde')
-
-insert into turmas (id,nome,turno) values (101567,'7º Ano 2','Tarde')
-
-insert into turmas (id,nome,turno) values (101568,'8º Ano 1','Manhã')
-
-insert into turmas (id,nome,turno) values (101569,'8º Ano 2','Manhã')
-
-insert into turmas (id,nome,turno) values (101570,'9º Ano 1','Manhã')
-
-insert into turmas (id,nome,turno) values (101571,'9º Ano 2','Manhã')
-
-insert into turmas (id,nome,turno) values (101572,'1º Ano 1','Manhã')
-
-insert into turmas (id,nome,turno) values (101573,'1º Ano 2','Manhã')
-
-insert into turmas (id,nome,turno) values (1015744,'1º Ano Técnico em Energias Renovaveis','Integral')
-
-insert into turmas (id,nome,turno) values (101574,'2º Ano 1','Manhã')
-
-insert into turmas (id,nome,turno) values (101575,'2º Ano 2','Manhã')
-
-insert into turmas (id,nome,turno) values (101575,'2º Ano Técnico em Energias Renovaveis','Integral')
-
-insert into turmas (id,nome,turno) values (101576,'3º Ano 1','Manhã')
-
-insert into turmas (id,nome,turno) values (101577,'3º Ano 2','Manhã')
-
-insert into turmas (id,nome,turno) values (101578,'3º Ano Técnico em Informática','Integral')
-
+INSERT INTO turmas (id, nome_da_turma, turno) VALUES
+(101564, '6º Ano 1', 'Tarde'),
+(101565, '6º Ano 2', 'Tarde'),
+(101566, '7º Ano 1', 'Tarde'),
+(101567, '7º Ano 2', 'Tarde'),
+(101568, '8º Ano 1', 'Manhã'),
+(101569, '8º Ano 2', 'Manhã'),
+(101570, '9º Ano 1', 'Manhã'),
+(101571, '9º Ano 2', 'Manhã'),
+(101572, '1º Ano 1', 'Manhã'),
+(101573, '1º Ano 2', 'Manhã'),
+(101574, '1º Ano Técnico em Energias Renovaveis', 'Integral'),
+(101575, '2º Ano 1', 'Manhã'),
+(101576, '2º Ano 2', 'Manhã'),
+(101577, '2º Ano Técnico em Energias Renovaveis', 'Integral'),
+(101578, '3º Ano 1', 'Manhã'),
+(101579, '3º Ano 2', 'Manhã'),
+(101580, '3º Ano Técnico em Informática', 'Integral');
 
 
 

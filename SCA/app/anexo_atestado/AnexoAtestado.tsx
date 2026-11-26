@@ -1,164 +1,340 @@
 
-import {Link} from "react-router"
+import { useState } from "react"
+import { Link } from "react-router"
 
 export function AnexoAtestados() {
-  const anexoAtestados = [
-    {
-      id : 1,
-      nome : "alerta pendencias"
+  const [tema, setTema] = useState("Claro")
+  const [idioma, setIdioma] = useState("Português")
 
+  const traducoes: Record<string, Record<string, string>> = {
+    English: {
+      "Alertas Pendentes": "Pending Alerts",
+      "Anexo de Atestado": "Attach Certificate",
+      "Cadastrar Aluno": "Register Student",
+      "Histórico Mensal": "Monthly History",
+      "Histórico Semanal": "Weekly History",
+      "Início": "Home",
+      "Perfil Secretarias": "Secretariat Profile",
+      "Anexe o atestado médico ou justificativa do aluno": "Attach the student's medical certificate or justification",
+      "Nome do Aluno": "Student Name",
+      "Data do Atestado": "Certificate Date",
+      "Período do Atestado": "Certificate Period",
+      "Horário de início": "Start Time",
+      "Horário final": "End Time",
+      "Tipo de Atestado": "Certificate Type",
+      "Selecione": "Select",
+      "Atestado médico": "Medical Certificate",
+      "Declaração": "Statement",
+      "Anexo": "Attachment",
+      "Clique para anexar o arquivo": "Click to attach the file",
+      "Observações": "Notes",
+      "Limpar": "Clear",
+      "Salvar atestado": "Save Certificate",
+      "Tema": "Theme",
+      "Claro": "Light",
+      "Escuro": "Dark"
     },
-    {
-      id : 2,
-      nome : "anexo de atestado"
 
-    },
-    {
-      id : 3,
-      nome : "historico mensal"
+    Español: {
+      "Alertas Pendentes": "Alertas Pendientes",
+      "Anexo de Atestado": "Adjuntar Certificado",
+      "Cadastrar Aluno": "Registrar Alumno",
+      "Histórico Mensal": "Historial Mensual",
+      "Histórico Semanal": "Historial Semanal",
+      "Início": "Inicio",
+      "Perfil Secretarias": "Perfil de Secretaría",
+      "Anexe o atestado médico ou justificativa do aluno": "Adjunte el certificado médico o justificación del alumno",
+      "Nome do Aluno": "Nombre del Alumno",
+      "Data do Atestado": "Fecha del Certificado",
+      "Período do Atestado": "Período del Certificado",
+      "Horário de início": "Hora de inicio",
+      "Horário final": "Hora final",
+      "Tipo de Atestado": "Tipo de Certificado",
+      "Selecione": "Seleccione",
+      "Atestado médico": "Certificado médico",
+      "Declaração": "Declaración",
+      "Anexo": "Adjunto",
+      "Clique para anexar o arquivo": "Haga clic para adjuntar el archivo",
+      "Observações": "Observaciones",
+      "Limpar": "Limpiar",
+      "Salvar atestado": "Guardar certificado",
+      "Tema": "Tema",
+      "Claro": "Claro",
+      "Escuro": "Oscuro"
+    }
+  }
 
-    },
-    {
-      id : 4,
-      nome : "historico semanal"
+  function t(texto: string) {
+    return traducoes[idioma]?.[texto] ?? texto
+  }
 
-    },
-    {
-      id : 5,
-      nome : "inicio"
-
-    },
-    {
-      id : 6,
-      nome : "registrar ocorrencia"
-
-    },
+  const menu = [
+    { id: 1, nome: "Alertas Pendentes", rota: "/alertasPendentes" },
+    { id: 2, nome: "Anexo de Atestado", rota: "/anexoAtestados" },
+    { id: 3, nome: "Cadastrar Aluno", rota: "/cadastroalunos" },
+    { id: 4, nome: "Histórico Mensal", rota: "/historicoMensal" },
+    { id: 5, nome: "Histórico Semanal", rota: "/historicoSemanal" },
+    { id: 6, nome: "Início", rota: "/paginainicio" },
+    { id: 7, nome: "Perfil Secretarias", rota: "/perfilSecretarias" }
   ]
 
-  const rotas: Record<string, string> = {
-    "Alertas Pendentes" : "routes/alertasPendentes.tsx",
-    "Anexo de Atestado" : "/anexoAtestados",
-    "Cadastrar Aluno" : "/cadastroalunos",
-    "Histórico Mensal" : "/historicoMensal",
-    "Histórico Semanal" : "/historicoSemanal",
-    "Início" : "/paginainicio",
+  const escuro = tema === "Escuro"
+
+  const fundo = escuro ? "bg-gray-900" : "bg-gray-100"
+
+  const painel = escuro
+    ? "bg-gray-800 border-gray-700"
+    : "bg-white border-gray-300"
+
+  const textoForte = escuro ? "text-gray-100" : "text-gray-900"
+
+  const textoMedio = escuro ? "text-gray-300" : "text-gray-700"
+
+  const campo = escuro
+    ? "bg-gray-700 border-gray-600 text-gray-100 placeholder-gray-400"
+    : "bg-white border-gray-300 text-gray-700 placeholder-gray-400"
+
+  const borda = escuro ? "border-gray-600" : "border-gray-300"
+
+  const [nomeAluno, setNomeAluno] = useState("")
+  const [dataAtestado, setDataAtestado] = useState("")
+  const [horarioInicio, setHorarioInicio] = useState("")
+  const [horarioFinal, setHorarioFinal] = useState("")
+  const [tipoAtestado, setTipoAtestado] = useState("")
+  const [observacoes, setObservacoes] = useState("")
+  const [arquivo, setArquivo] = useState<File | null>(null)
+
+  function limparFormulario() {
+    setNomeAluno("")
+    setDataAtestado("")
+    setHorarioInicio("")
+    setHorarioFinal("")
+    setTipoAtestado("")
+    setObservacoes("")
+    setArquivo(null)
+
+    const inputArquivo = document.getElementById("arquivo-atestado") as HTMLInputElement | null
+    if (inputArquivo) inputArquivo.value = ""
   }
+
   return (
-    <main className="flex min-h-screen bg-gray-100">
-      
-      <aside className="bg-blue-950 text-white w-44 flex-shrink-0 flex flex-col items-center py-3 px-2">
+    <main className={`flex min-h-screen ${fundo}`}>
+
+      {/* MENU LATERAL */}
+      <aside className="bg-blue-950 text-white w-44 shrink-0 flex flex-col items-center py-3 px-2">
         <img
           className="rounded-full w-24 h-24 object-cover mb-6"
           src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg"
           alt="Logo"
         />
 
-        <Link to={rotas["Alertas Pendentes"]} className="block w-full text-left text-xs px-2 py-2 mb-6">
-          Alertas Pendentes
-        </Link>
-        <Link to={rotas["Anexo de Atestado"]} className="block w-full text-left text-xs px-2 py-2 mb-6">
-          Anexo de atestado
-        </Link>
-        <Link to={rotas["Histórico Mensal"]} className="block w-full text-left text-xs px-2 py-2 mb-6">
-          Histórico Mensal
-        </Link>
-        <Link to={rotas["Histórico Semanal"]} className="block w-full text-left text-xs px-2 py-2 mb-6">
-          Histórico Semanal
-        </Link>
-        <Link to={rotas["Início"]} className="block w-full text-left text-xs px-2 py-2 mb-6">
-          Inicio
-        </Link>
-  
+        {menu.map((item) => (
+          <Link
+            key={item.id}
+            to={item.rota}
+            className={`block w-full text-left text-xs px-2 py-2 mb-6 ${
+              item.nome === "Anexo de Atestado"
+                ? "rounded bg-blue-800"
+                : ""
+            }`}
+          >
+            {t(item.nome)}
+          </Link>
+        ))}
       </aside>
 
-      
-      <section className="flex-1 p-0">
-        <div className="bg-white border border-gray-300 rounded-md w-full min-h-screen p-8 flex flex-col">
-          
-          <header className="flex items-center gap-6 mb-10">
-            
+      {/* CONTEÚDO PRINCIPAL */}
+      <section className="flex-1 min-w-0 p-6">
+        <div className={`${painel} border rounded-md w-full min-h-screen p-8 flex flex-col`}>
+
+          {/* CABEÇALHO */}
+          <header className="flex flex-wrap justify-between items-start gap-4 mb-10">
+
             <div>
-              <h1 className="text-2xl text-gray-900">Anexo de Atestado</h1>
-              <p className="text-xs text-gray-800">
-                Anexe o atestado médico ou justificativa do aluno
+              <h1 className={`text-2xl ${textoForte}`}>
+                {t("Anexo de Atestado")}
+              </h1>
+
+              <p className={`text-xs ${textoMedio}`}>
+                {t("Anexe o atestado médico ou justificativa do aluno")}
               </p>
+            </div>
+
+            {/* TEMA E IDIOMA */}
+            <div className="flex gap-3">
+
+              <label className={`text-xs ${textoMedio}`}>
+                {t("Tema")}
+
+                <select
+                  value={tema}
+                  onChange={(e) => setTema(e.target.value)}
+                  className={`block w-28 h-8 px-2 mt-1 border rounded text-xs ${campo}`}
+                >
+                  <option value="Claro">{t("Claro")}</option>
+                  <option value="Escuro">{t("Escuro")}</option>
+                </select>
+              </label>
+
+              <label className={`text-xs ${textoMedio}`}>
+                {t("Idioma")}
+
+                <select
+                  value={idioma}
+                  onChange={(e) => setIdioma(e.target.value)}
+                  className={`block w-28 h-8 px-2 mt-1 border rounded text-xs ${campo}`}
+                >
+                  <option value="Português">Português</option>
+                  <option value="English">English</option>
+                  <option value="Español">Español</option>
+                </select>
+              </label>
+
             </div>
           </header>
 
-          <div className="grid grid-cols-3 gap-x-8 gap-y-6 flex-1">
-            
-            <div className="col-span-2">
-              <p className="text-xs text-gray-700 mb-2">Nome do Aluno</p>
+          {/* FORMULÁRIO */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-6 flex-1">
+
+            <div className="md:col-span-2">
+              <p className={`text-xs mb-2 ${textoMedio}`}>
+                {t("Nome do Aluno")}
+              </p>
+
               <input
                 type="text"
-                placeholder="Placeholder"
-                className="w-full h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700"
+                value={nomeAluno}
+                onChange={(e) => setNomeAluno(e.target.value)}
+                placeholder={t("Nome do Aluno")}
+                className={`w-full h-9 px-2 border rounded text-xs ${campo}`}
               />
             </div>
 
-            
             <div>
-              <p className="text-xs text-gray-700 mb-2">Data do Atestado</p>
-              <input type="date" className="w-full h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700 max-w-[180px]" />
+              <p className={`text-xs mb-2 ${textoMedio}`}>
+                {t("Data do Atestado")}
+              </p>
+
+              <input
+                type="date"
+                value={dataAtestado}
+                onChange={(e) => setDataAtestado(e.target.value)}
+                className={`w-full h-9 px-2 border rounded text-xs ${campo}`}
+              />
             </div>
 
-            
-            <div className="col-span-2">
-              <p className="text-base text-gray-800 mb-4 mt-6">
-                Periodo do Atestado
+            <div className="md:col-span-2">
+              <p className={`text-base mb-4 mt-6 ${textoForte}`}>
+                {t("Período do Atestado")}
               </p>
-              <div className="flex gap-8">
+
+              <div className="flex flex-wrap gap-8">
+
                 <div className="w-44">
-                  <p className="text-xs text-gray-700 mb-2">Horario de inicio</p>
-                  <input type="time" step="1" className="w-full h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700" />
+                  <p className={`text-xs mb-2 ${textoMedio}`}>
+                    {t("Horário de início")}
+                  </p>
+
+                  <input
+                    type="time"
+                    step="1"
+                    value={horarioInicio}
+                    onChange={(e) => setHorarioInicio(e.target.value)}
+                    className={`w-full h-9 px-2 border rounded text-xs ${campo}`}
+                  />
                 </div>
+
                 <div className="w-44">
-                  <p className="text-xs text-gray-700 mb-2">Horario final</p>
-                  <input type="time" step="1" className="w-full h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700" />
+                  <p className={`text-xs mb-2 ${textoMedio}`}>
+                    {t("Horário final")}
+                  </p>
+
+                  <input
+                    type="time"
+                    step="1"
+                    value={horarioFinal}
+                    onChange={(e) => setHorarioFinal(e.target.value)}
+                    className={`w-full h-9 px-2 border rounded text-xs ${campo}`}
+                  />
                 </div>
+
               </div>
             </div>
 
-            
-            <div className="-mt-2">
-              <p className="text-xs text-gray-700 mb-2">Tipo de Atestado</p>
-              <select className="w-full h-9 px-2 border border-gray-300 rounded bg-white text-xs text-gray-700 max-w-[180px]">
-                <option value="">Select</option>
-                <option value="medico">Atestado médico</option>
-                <option value="declaracao">Declaração</option>
+            <div className="mt-4">
+              <p className={`text-xs mb-2 ${textoMedio}`}>
+                {t("Tipo de Atestado")}
+              </p>
+
+              <select
+                value={tipoAtestado}
+                onChange={(e) => setTipoAtestado(e.target.value)}
+                className={`w-full h-9 px-2 border rounded text-xs ${campo}`}
+              >
+                <option value="">{t("Selecione")}</option>
+                <option value="medico">{t("Atestado médico")}</option>
+                <option value="declaracao">{t("Declaração")}</option>
               </select>
             </div>
 
-            
-            <div className="col-span-3">
-              <p className="text-xs text-gray-700 mb-3">Anexo de Atestado</p>
-              <label className="flex items-center justify-center w-full max-w-3xl h-28 border border-gray-300 bg-white text-xs text-gray-500 cursor-pointer">
-                Clique para anexar o arquivo
-                <input type="file" className="hidden" />
+            {/* ANEXO */}
+            <div className="md:col-span-3">
+              <p className={`text-xs mb-3 ${textoMedio}`}>
+                {t("Anexo")}
+              </p>
+
+              <label className={`flex flex-col items-center justify-center w-full max-w-3xl h-28 border ${borda} rounded ${escuro ? "bg-gray-700" : "bg-white"} text-xs ${textoMedio} cursor-pointer`}>
+                {arquivo ? arquivo.name : t("Clique para anexar o arquivo")}
+
+                <input
+                  id="arquivo-atestado"
+                  type="file"
+                  accept=".pdf,.jpg,.jpeg,.png"
+                  className="hidden"
+                  onChange={(e) => setArquivo(e.target.files?.[0] ?? null)}
+                />
               </label>
             </div>
 
-            
-            <div className="col-span-3">
-              <p className="text-xs text-gray-700 mb-3">Observações</p>
+            {/* OBSERVAÇÕES */}
+            <div className="md:col-span-3">
+              <p className={`text-xs mb-3 ${textoMedio}`}>
+                {t("Observações")}
+              </p>
+
               <textarea
-                placeholder="Observações"
-                className="w-full max-w-md h-44 p-2 border border-gray-300 text-xs resize-none"
+                value={observacoes}
+                onChange={(e) => setObservacoes(e.target.value)}
+                placeholder={t("Observações")}
+                className={`w-full max-w-md h-44 p-2 border rounded text-xs resize-none ${campo}`}
               />
             </div>
+
           </div>
 
-          
-          <div className="flex justify-end gap-8 mt-6">
-            <button className="bg-blue-900 text-white text-xs py-2 w-32 rounded-sm">
-              Limpar
+          {/* BOTÕES */}
+          <div className="flex flex-wrap justify-end gap-4 mt-6">
+
+            <button
+              type="button"
+              onClick={limparFormulario}
+              className="bg-blue-900 text-white text-xs py-2 w-32 rounded-sm hover:bg-blue-800"
+            >
+              {t("Limpar")}
             </button>
-            <button className="bg-blue-900 text-white text-xs py-2 w-32 rounded-sm">
-              Salvar atestado
+
+            <button
+              type="button"
+              onClick={() => alert("Atestado preenchido!")}
+              className="bg-blue-900 text-white text-xs py-2 w-32 rounded-sm hover:bg-blue-800"
+            >
+              {t("Salvar atestado")}
             </button>
+
           </div>
+
         </div>
       </section>
     </main>
-  );
+  )
 }

@@ -15,10 +15,7 @@ export function HistoricoMensal() {
       id : 3,
       nome : "Cadastrar Aluno"
     },
-    {
-      id : 4,
-      nome : "Histórico Mensal"
-    },
+  
     {
       id : 5,
       nome : "Histórico Semanal"
@@ -27,10 +24,7 @@ export function HistoricoMensal() {
       id : 6,
       nome : "Inicio"
     },
-    {
-      id : 7,
-      nome : "Registrar ocorrência"
-    }
+    
   ]
   const cards = [
     {
@@ -249,7 +243,7 @@ export function HistoricoMensal() {
   }
 
   const rotas: Record<string, string> = {
-    "Alertas Pendentes" : "routes/alertasPendentes.tsx",
+    "Alertas Pendentes" : "/alertasPendentes",
     "Anexo de Atestado" : "/anexoAtestados",
     "Cadastrar Aluno" : "/cadastroalunos",
     "Histórico Mensal" : "/historicoMensal",

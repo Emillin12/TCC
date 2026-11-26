@@ -119,7 +119,7 @@ export function CadastroAlunos() {
 
       </aside>
 
-      {/* CONTEÚDO */}
+      
       <div className="flex-1 min-w-0 p-6 md:p-8">
 
         <div className={`min-h-full rounded-xl shadow-lg p-6 md:p-8 ${cartao}`}>

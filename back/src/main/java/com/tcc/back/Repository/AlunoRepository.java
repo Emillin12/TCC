@@ -43,8 +43,8 @@ public class AlunoRepository {
 
     public String addAluno(Aluno aluno) {
         jdbc.update(
-                "INSERT INTO aluno (nome, cpf, data_nascimento, turma, turno, genero, raca, nacionalidade, " +
-                        "nome_responsavel, cpf_responsavel, telefone_responsavel, email_responsavel, endereco) " +
+                "INSERT INTO aluno (nome_do_aluno_completo, cpf, data_de_nascimento, turma, turno, genero, raca, nacionalidade, " +
+                        "nome_do_responsavel, cpf_do_responsavel, telefone_do_responsavel, email_do_responsavel, endereco_completo) " +
                         "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 aluno.getNome(),
                 aluno.getCpf(),
@@ -65,7 +65,7 @@ public class AlunoRepository {
 
     public String updateAluno(Long id, Aluno alunoAtualizado) {
         int linhas = jdbc.update(
-                "UPDATE aluno SET nome = ?, cpf = ?, data_nascimento = ?, turma = ?, turno = ?, genero = ?, " +
+                "UPDATE aluno SET nome_do_aluno_completo = ?, cpf = ?, data_do_nascimento = ?, turma = ?, turno = ?, genero = ?, " +
                         "raca = ?, nacionalidade = ?, nome_responsavel = ?, cpf_responsavel = ?, telefone_responsavel = ?, " +
                         "email_responsavel = ?, endereco = ? WHERE id = ?",
                 alunoAtualizado.getNome(),

@@ -18,7 +18,7 @@ public class TurmaRepository {
 
     public List<Turma> getLista() {
         return jdbc.query(
-                "SELECT id, nome, serie, turno, ano_letivo FROM turma ORDER BY serie, nome",
+                "SELECT id, nome, serie, turno, ano_letivo FROM turmas ORDER BY serie, nome",
                 (linha, numero) -> new Turma(
                         linha.getLong("id"),
                         linha.getString("nome"),
@@ -31,7 +31,7 @@ public class TurmaRepository {
 
     public String addTurma(Turma turma) {
         jdbc.update(
-                "INSERT INTO turma (nome, serie, turno, ano_letivo) VALUES (?, ?, ?, ?)",
+                "INSERT INTO turmas (nome, serie, turno, ano_letivo) VALUES (?, ?, ?, ?)",
                 turma.getNome(),
                 turma.getSerie(),
                 turma.getTurno().name(),
@@ -42,7 +42,7 @@ public class TurmaRepository {
 
     public String updateTurma(Long id, Turma turmaAtualizada) {
         int linhas = jdbc.update(
-                "UPDATE turma SET nome = ?, serie = ?, turno = ?, ano_letivo = ? WHERE id = ?",
+                "UPDATE turmas SET nome = ?, serie = ?, turno = ?, ano_letivo = ? WHERE id = ?",
                 turmaAtualizada.getNome(),
                 turmaAtualizada.getSerie(),
                 turmaAtualizada.getTurno().name(),
@@ -53,7 +53,7 @@ public class TurmaRepository {
     }
 
     public String deleteTurma(Long id) {
-        int linhas = jdbc.update("DELETE FROM turma WHERE id = ?", id);
+        int linhas = jdbc.update("DELETE FROM turmas WHERE id = ?", id);
         return linhas > 0 ? "Turma removida com sucesso!" : "Turma não encontrada.";
     }
 }

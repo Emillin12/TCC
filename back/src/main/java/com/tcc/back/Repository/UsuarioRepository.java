@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+// Usuario = tabela "secretarias"
 @Repository
 public class UsuarioRepository {
 
@@ -18,7 +19,7 @@ public class UsuarioRepository {
 
     public List<Usuario> getLista() {
         return jdbc.query(
-                "SELECT id, nome, masp, email_institucional, turno, senha FROM usuario ORDER BY id",
+                "SELECT id, nome, masp, email_institucional, turno, senha FROM secretarias ORDER BY id",
                 (linha, numero) -> new Usuario(
                         linha.getLong("id"),
                         linha.getString("nome"),
@@ -32,7 +33,7 @@ public class UsuarioRepository {
 
     public String addUsuario(Usuario usuario) {
         jdbc.update(
-                "INSERT INTO usuario (nome, masp, email_institucional, turno, senha) VALUES (?, ?, ?, ?, ?)",
+                "INSERT INTO secretarias (nome, masp, email_institucional, turno, senha) VALUES (?, ?, ?, ?, ?)",
                 usuario.getNome(),
                 usuario.getMasp(),
                 usuario.getEmailInstitucional(),
@@ -44,7 +45,7 @@ public class UsuarioRepository {
 
     public String updateUsuario(String nome, Usuario usuarioAtualizado) {
         int linhas = jdbc.update(
-                "UPDATE usuario SET nome = ?, masp = ?, email_institucional = ?, turno = ?, senha = ? WHERE LOWER(nome) = LOWER(?)",
+                "UPDATE secretarias SET nome = ?, masp = ?, email_institucional = ?, turno = ?, senha = ? WHERE LOWER(nome) = LOWER(?)",
                 usuarioAtualizado.getNome(),
                 usuarioAtualizado.getMasp(),
                 usuarioAtualizado.getEmailInstitucional(),

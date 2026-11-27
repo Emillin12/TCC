@@ -23,7 +23,7 @@ public class AlertaRepository {
         List<Alerta> alertas = jdbc.query(
                 "SELECT id, id_aluno, nome_aluno, turma, mensagem, limite_atingido, " +
                         "atrasos_semanal, saidas_semanal, atrasos_mensal, saidas_mensal, data_alerta, lido " +
-                        "FROM alerta ORDER BY data_alerta DESC",
+                        "FROM alertas ORDER BY data_alerta DESC",
                 (linha, numero) -> new Alerta(
                         linha.getLong("id"),
                         linha.getLong("id_aluno"),
@@ -49,7 +49,7 @@ public class AlertaRepository {
     // Conta ocorrências (ATRASO ou SAIDA_ANTECIPADA) nos últimos X dias (7 = semanal, 30 = mensal)
     public int contarOcorrenciasPorPeriodo(Long idAluno, String tipoOcorrencia, int dias) {
         Integer total = jdbc.queryForObject(
-                "SELECT COUNT(*) FROM acao " +
+                "SELECT COUNT(*) FROM ocorrencias " +
                         "WHERE id_aluno = ? AND UPPER(tipo_ocorrencia) = UPPER(?) " +
                         "AND data_ocorrencia >= CURRENT_DATE - (? * INTERVAL '1 day')",
                 Integer.class,
@@ -63,15 +63,16 @@ public class AlertaRepository {
     // Busca as ocorrências detalhadas do aluno no período para compor o histórico do alerta
     public List<Acao> buscarHistoricoAluno(Long idAluno, int dias) {
         return jdbc.query(
-                "SELECT id, id_aluno, id_turma, data_ocorrencia, hora_ocorrencia, tipo_ocorrencia, " +
-                        "justificativa, observacao, tipo_documento, imagem_documento, descricao_documento " +
-                        "FROM acao " +
-                        "WHERE id_aluno = ? AND data_ocorrencia >= CURRENT_DATE - (? * INTERVAL '1 day') " +
-                        "ORDER BY data_ocorrencia DESC, hora_ocorrencia DESC",
+                "SELECT o.id, o.id_aluno, o.id_turma, o.data_ocorrencia, o.hora_ocorrencia, o.tipo_ocorrencia, " +
+                        "o.justificativa, o.observacao, a.tipo_documento, a.imagem_documento, a.descricao_documento " +
+                        "FROM ocorrencias o " +
+                        "LEFT JOIN anexos a ON a.id_ocorrencia = o.id " +
+                        "WHERE o.id_aluno = ? AND o.data_ocorrencia >= CURRENT_DATE - (? * INTERVAL '1 day') " +
+                        "ORDER BY o.data_ocorrencia DESC, o.hora_ocorrencia DESC",
                 (linha, numero) -> new Acao(
                         linha.getLong("id"),
                         linha.getLong("id_aluno"),
-                        linha.getLong("id_turma"),
+                        linha.getObject("id_turma", Long.class),
                         linha.getDate("data_ocorrencia") != null ? linha.getDate("data_ocorrencia").toLocalDate() : null,
                         linha.getTime("hora_ocorrencia") != null ? linha.getTime("hora_ocorrencia").toLocalTime() : null,
                         linha.getString("tipo_ocorrencia"),
@@ -89,7 +90,7 @@ public class AlertaRepository {
     // Busca nome e turma do aluno
     public String[] buscarDadosAluno(Long idAluno) {
         List<String[]> dados = jdbc.query(
-                "SELECT nome, turma FROM aluno WHERE id = ?",
+                "SELECT nome, turma FROM alunos WHERE id = ?",
                 (linha, numero) -> new String[]{linha.getString("nome"), linha.getString("turma")},
                 idAluno
         );
@@ -98,7 +99,7 @@ public class AlertaRepository {
 
     public void salvarAlerta(Alerta alerta) {
         jdbc.update(
-                "INSERT INTO alerta (id_aluno, nome_aluno, turma, mensagem, limite_atingido, " +
+                "INSERT INTO alertas (id_aluno, nome_aluno, turma, mensagem, limite_atingido, " +
                         "atrasos_semanal, saidas_semanal, atrasos_mensal, saidas_mensal, data_alerta, lido) " +
                         "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 alerta.getIdAluno(),
@@ -116,12 +117,12 @@ public class AlertaRepository {
     }
 
     public String marcarComoLido(Long id) {
-        int linhas = jdbc.update("UPDATE alerta SET lido = true WHERE id = ?", id);
+        int linhas = jdbc.update("UPDATE alertas SET lido = true WHERE id = ?", id);
         return linhas > 0 ? "Alerta marcado como lido!" : "Alerta não encontrado.";
     }
 
     public String deleteAlerta(Long id) {
-        int linhas = jdbc.update("DELETE FROM alerta WHERE id = ?", id);
+        int linhas = jdbc.update("DELETE FROM alertas WHERE id = ?", id);
         return linhas > 0 ? "Alerta removido com sucesso!" : "Alerta não encontrado.";
     }
 }

@@ -19,32 +19,32 @@ public class AlunoRepository {
 
     public List<Aluno> getLista() {
         return jdbc.query(
-                "SELECT id, nome, cpf, data_nascimento, turma, turno, genero, raca, nacionalidade, " +
-                        "nome_responsavel, cpf_responsavel, telefone_responsavel, email_responsavel, endereco " +
-                        "FROM aluno ORDER BY id",
+                "SELECT id, nome_completo_do_aluno, cpf, data_de_nascimento, turma, turno, genero, raca, nacionalidade, " +
+                        "nome_do_responsavel, cpf_do_responsavel, telefone_do_responsavel, email_do_responsavel, endereco_completo " +
+                        "FROM alunos ORDER BY id",
                 (linha, numero) -> new Aluno(
                         linha.getLong("id"),
-                        linha.getString("nome"),
+                        linha.getString("nome_completo_do_aluno"),
                         linha.getString("cpf"),
-                        linha.getDate("data_nascimento") != null ? linha.getDate("data_nascimento").toLocalDate() : null,
+                        linha.getDate("data_de_nascimento") != null ? linha.getDate("data_nascimento").toLocalDate() : null,
                         linha.getString("turma"),
                         Turno.valueOf(linha.getString("turno")),
                         linha.getString("genero"),
                         linha.getString("raca"),
                         linha.getString("nacionalidade"),
-                        linha.getString("nome_responsavel"),
-                        linha.getString("cpf_responsavel"),
-                        linha.getString("telefone_responsavel"),
-                        linha.getString("email_responsavel"),
-                        linha.getString("endereco")
+                        linha.getString("nome_do_responsavel"),
+                        linha.getString("cpf_do_responsavel"),
+                        linha.getString("telefone_do_responsavel"),
+                        linha.getString("email_do_responsavel"),
+                        linha.getString("endereco_)completo")
                 )
         );
     }
 
     public String addAluno(Aluno aluno) {
         jdbc.update(
-                "INSERT INTO aluno (nome, cpf, data_nascimento, turma, turno, genero, raca, nacionalidade, " +
-                        "nome_responsavel, cpf_responsavel, telefone_responsavel, email_responsavel, endereco) " +
+                "INSERT INTO aluno (nome_do_aluno_completo, cpf, data_de_nascimento, turma, turno, genero, raca, nacionalidade, " +
+                        "nome_do_responsavel, cpf_do_responsavel, telefone_do_responsavel, email_do_responsavel, endereco_completo) " +
                         "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 aluno.getNome(),
                 aluno.getCpf(),
@@ -65,7 +65,7 @@ public class AlunoRepository {
 
     public String updateAluno(Long id, Aluno alunoAtualizado) {
         int linhas = jdbc.update(
-                "UPDATE aluno SET nome = ?, cpf = ?, data_nascimento = ?, turma = ?, turno = ?, genero = ?, " +
+                "UPDATE aluno SET nome_do_aluno_completo = ?, cpf = ?, data_do_nascimento = ?, turma = ?, turno = ?, genero = ?, " +
                         "raca = ?, nacionalidade = ?, nome_responsavel = ?, cpf_responsavel = ?, telefone_responsavel = ?, " +
                         "email_responsavel = ?, endereco = ? WHERE id = ?",
                 alunoAtualizado.getNome(),

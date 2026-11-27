@@ -1,10 +1,11 @@
 
 import { useState } from "react"
-import { Link } from "react-router"
+import { Link , useNavigate} from "react-router"
 
 export function AlertasPendentes() {
   const [tema, setTema] = useState("Claro")
   const [idioma, setIdioma] = useState("Português")
+  const navigate = useNavigate()
 
   const traducoes: Record<string, Record<string, string>> = {
     English: {
@@ -73,23 +74,24 @@ export function AlertasPendentes() {
   }
 
   const menu = [
-    { id: 1, nome: "Alertas Pendentes" },
     { id: 2, nome: "Anexo de Atestado" },
     { id: 3, nome: "Cadastrar Aluno" },
     { id: 4, nome: "Histórico Mensal" },
     { id: 5, nome: "Histórico Semanal" },
     { id: 6, nome: "Início" },
-    { id: 7, nome: "Perfil Secretarias" }
+    { id: 7, nome: "Perfil Secretarias" },
+    { id: 8, nome: "Login" }
   ]
 
   const rotas: Record<string, string> = {
-    "Alertas Pendentes": "/alertasPendentes",
+    
     "Anexo de Atestado": "/anexoAtestados",
     "Cadastrar Aluno": "/cadastroalunos",
     "Histórico Mensal": "/historicoMensal",
     "Histórico Semanal": "/historicoSemanal",
     "Início": "/paginainicio",
-    "Perfil Secretarias": "/perfilSecretarias"
+    "Perfil Secretarias": "/perfilSecretarias",
+    "Login": "/login"
   }
 
   const colunas = [
@@ -181,8 +183,15 @@ export function AlertasPendentes() {
 
   return (
     <main className={`flex min-h-screen ${fundo}`}>
-      {/* MENU LATERAL */}
       <div className="bg-blue-950 text-white w-44 shrink-0 flex flex-col items-center py-3 px-2">
+
+        <button
+          onClick={() => navigate(-1)}
+          className="self-start text-2xl mb-4"
+          aria-label={t("Voltar")}
+        >
+          ↩
+        </button>
         <img
           className="rounded-full w-24 h-24 object-cover mb-6"
           src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg"
@@ -204,12 +213,11 @@ export function AlertasPendentes() {
         ))}
       </div>
 
-      {/* CONTEÚDO PRINCIPAL */}
       <div className="flex-1 min-w-0 p-6">
         <div
           className={`${painel} border rounded-md w-full min-h-screen p-8 flex flex-col`}
         >
-          {/* CABEÇALHO */}
+          
           <div className="flex flex-wrap justify-between items-start gap-4 mb-10">
             <div className="flex items-center gap-4">
               <span className="text-3xl" aria-hidden="true">
@@ -229,7 +237,7 @@ export function AlertasPendentes() {
               </div>
             </div>
 
-            {/* TEMA E IDIOMA */}
+            
             <div className="flex flex-wrap gap-3">
               <label className={`text-xs ${textoMedio}`}>
                 {t("Tema")}
@@ -260,7 +268,7 @@ export function AlertasPendentes() {
             </div>
           </div>
 
-          {/* TOTAL DE ALERTAS */}
+          
           <div className="flex justify-end mb-6">
             <div className="bg-red-100 text-red-700 rounded px-5 py-3 text-center">
               <p className="text-xs font-bold">
@@ -273,9 +281,9 @@ export function AlertasPendentes() {
             </div>
           </div>
 
-          {/* TABELA */}
+          
           <div className={`overflow-x-auto border ${borda} rounded`}>
-            <table className={`w-full min-w-[700px] text-xs text-left border-collapse ${textoMedio}`}>
+            <table className={`w-full min-w-700px text-xs text-left border-collapse ${textoMedio}`}>
               <thead className={cabecalho}>
                 <tr>
                   {colunas.map((coluna) => (
@@ -387,7 +395,7 @@ export function AlertasPendentes() {
             </table>
           </div>
 
-          {/* ADICIONAR LINHA */}
+          
           <button
             onClick={adicionarLinha}
             className="self-start mt-4 px-4 py-2 text-xs text-white bg-blue-700 rounded hover:bg-blue-800"

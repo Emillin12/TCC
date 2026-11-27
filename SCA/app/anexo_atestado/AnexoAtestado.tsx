@@ -1,10 +1,11 @@
 
 import { useState } from "react"
-import { Link } from "react-router"
+import { Link, useNavigate } from "react-router"
 
 export function AnexoAtestados() {
   const [tema, setTema] = useState("Claro")
   const [idioma, setIdioma] = useState("Português")
+  const navigate = useNavigate()
 
   const traducoes: Record<string, Record<string, string>> = {
     English: {
@@ -70,12 +71,11 @@ export function AnexoAtestados() {
 
   const menu = [
     { id: 1, nome: "Alertas Pendentes", rota: "/alertasPendentes" },
-    { id: 2, nome: "Anexo de Atestado", rota: "/anexoAtestados" },
-    { id: 3, nome: "Cadastrar Aluno", rota: "/cadastroalunos" },
-    { id: 4, nome: "Histórico Mensal", rota: "/historicoMensal" },
-    { id: 5, nome: "Histórico Semanal", rota: "/historicoSemanal" },
-    { id: 6, nome: "Início", rota: "/paginainicio" },
-    { id: 7, nome: "Perfil Secretarias", rota: "/perfilSecretarias" }
+    { id: 3, nome: "Histórico Mensal", rota: "/historicoMensal" },
+    { id: 4, nome: "Histórico Semanal", rota: "/historicoSemanal" },
+    { id: 5, nome: "Início", rota: "/paginainicio" },
+    { id: 6, nome: "Perfil Secretarias", rota: "/perfilSecretarias" },
+    { id: 7, nome: "Login", rota: "/login" },
   ]
 
   const escuro = tema === "Escuro"
@@ -120,8 +120,16 @@ export function AnexoAtestados() {
   return (
     <main className={`flex min-h-screen ${fundo}`}>
 
-      {/* MENU LATERAL */}
+      
       <aside className="bg-blue-950 text-white w-44 shrink-0 flex flex-col items-center py-3 px-2">
+
+        <button
+          onClick={() => navigate(-1)}
+          className="self-start text-2xl mb-4"
+          aria-label={t("Voltar")}
+        >
+          ↩
+        </button>
         <img
           className="rounded-full w-24 h-24 object-cover mb-6"
           src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg"
@@ -143,11 +151,11 @@ export function AnexoAtestados() {
         ))}
       </aside>
 
-      {/* CONTEÚDO PRINCIPAL */}
+      
       <section className="flex-1 min-w-0 p-6">
         <div className={`${painel} border rounded-md w-full min-h-screen p-8 flex flex-col`}>
 
-          {/* CABEÇALHO */}
+          
           <header className="flex flex-wrap justify-between items-start gap-4 mb-10">
 
             <div>
@@ -160,7 +168,7 @@ export function AnexoAtestados() {
               </p>
             </div>
 
-            {/* TEMA E IDIOMA */}
+            
             <div className="flex gap-3">
 
               <label className={`text-xs ${textoMedio}`}>
@@ -277,7 +285,7 @@ export function AnexoAtestados() {
               </select>
             </div>
 
-            {/* ANEXO */}
+            
             <div className="md:col-span-3">
               <p className={`text-xs mb-3 ${textoMedio}`}>
                 {t("Anexo")}
@@ -296,7 +304,7 @@ export function AnexoAtestados() {
               </label>
             </div>
 
-            {/* OBSERVAÇÕES */}
+            
             <div className="md:col-span-3">
               <p className={`text-xs mb-3 ${textoMedio}`}>
                 {t("Observações")}
@@ -312,7 +320,7 @@ export function AnexoAtestados() {
 
           </div>
 
-          {/* BOTÕES */}
+          
           <div className="flex flex-wrap justify-end gap-4 mt-6">
 
             <button

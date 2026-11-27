@@ -1,7 +1,8 @@
 import { useState } from "react"
-import {Link} from "react-router"
+import {Link, useNavigate} from "react-router"
 
 export function HistoricoMensal() {
+  const navegar = useNavigate()
   const menu = [
     {
       id : 1,
@@ -275,6 +276,14 @@ export function HistoricoMensal() {
   return (
     <main className={`flex min-h-screen ${fundo}`}>
       <div className="bg-blue-950 text-white w-44 shrink-0 flex flex-col items-center py-3 px-2">
+
+        <button
+          onClick={() => navegar(-1)}
+          className="self-start text-2xl mb-4"
+          aria-label={t("Voltar")}
+        >
+          ↩
+        </button>
         <img
           className="rounded-full w-24 h-24 object-cover mb-6"
           src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg"

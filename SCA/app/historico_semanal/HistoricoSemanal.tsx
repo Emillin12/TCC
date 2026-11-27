@@ -1,10 +1,11 @@
 
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link , useNavigate} from "react-router";
 
 export function HistoricoSemanal() {
   const [tema, setTema] = useState("Claro");
   const [idioma, setIdioma] = useState("Português");
+  const navegar = useNavigate();
 
   const traducoes: Record<string, Record<string, string>> = {
     English: {
@@ -12,6 +13,7 @@ export function HistoricoSemanal() {
       "Anexo atestado": "Attach Certificate",
       "Cadastrar Aluno": "Register Student",
       "Histórico Mensal": "Monthly History",
+      "Perfil Secretarias": "Secretaries Profile",
       "Histórico Semanal": "Weekly History",
       "inicio": "Home",
       "Alunos cadastrados": "Registered Students",
@@ -48,6 +50,7 @@ export function HistoricoSemanal() {
       "Anexo atestado": "Adjuntar Certificado",
       "Cadastrar Aluno": "Registrar Alumno",
       "Histórico Mensal": "Historial Mensual",
+      "Perfil Secretarias": "Perfil de Secretarías",
       "Histórico Semanal": "Historial Semanal",
       "inicio": "Inicio",
       "Alunos cadastrados": "Alumnos Registrados",
@@ -105,8 +108,9 @@ export function HistoricoSemanal() {
     { id: 2, nome: "Anexo atestado" },
     { id: 3, nome: "Cadastrar Aluno" },
     { id: 4, nome: "Histórico Mensal" },
-    { id: 5, nome: "Histórico Semanal" },
+    { id: 5, nome:"Perfil Secretarias"},
     { id: 6, nome: "inicio" },
+    { id: 7, nome:"Login"}
   ];
 
   const rotas: Record<string, string> = {
@@ -114,8 +118,9 @@ export function HistoricoSemanal() {
     "Anexo atestado": "/anexoAtestados",
     "Cadastrar Aluno": "/cadastroalunos",
     "Histórico Mensal": "/historicoMensal",
-    "Histórico Semanal": "/historicoSemanal",
+    "Perfil Secretarias": "/perfilSecretarias",
     "inicio": "/paginainicio",
+    "Login": "/login"
   };
 
   const tabelas = [
@@ -133,6 +138,14 @@ export function HistoricoSemanal() {
     <main className={`flex min-h-screen ${fundo}`}>
 
       <div className="bg-blue-950 text-white w-44 shrink-0 flex flex-col items-center py-3 px-2">
+
+        <button
+          onClick={() => navegar(-1)}
+          className="self-start text-2xl mb-4"
+          aria-label={t("Voltar")}
+        >
+          ↩
+        </button>
         <img
           className="rounded-full w-24 h-24 object-cover mb-6"
           src="https://valeindependente.com.br/wp-content/uploads/2016/04/logo-oficial-sanico.jpg"
@@ -155,7 +168,7 @@ export function HistoricoSemanal() {
       <div className="flex-1 p-6">
         <div className={`${painel} border rounded-md w-full min-h-screen p-8 flex flex-col`}>
 
-          {/* Seleção de tema e idioma */}
+          
           <div className="flex justify-end gap-4 mb-6">
 
             <div>
@@ -321,7 +334,7 @@ export function HistoricoSemanal() {
                         <td
                           key={tabela.id}
                           contentEditable={true}
-                          className={`border ${borda} p-2 h-9 min-w-[80px] ${
+                          className={`border ${borda} p-2 h-9 min-w-80px ${
                             escuro ? "focus:bg-gray-600" : "focus:bg-yellow-50"
                           }`}
                         ></td>
